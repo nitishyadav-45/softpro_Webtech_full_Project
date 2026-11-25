@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>लोकल के लिए सरकारी विचार — Vocal For Local</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="f1.png" rel="icon">
+
+    <style>
+         :root {
+            --accent: #FF6B35;
+            --muted: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fbff;
+            padding-top: 80px;
+        }
+        
+        .section-title {
+            font-weight: 800;
+            font-size: 2rem;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .idea-card {
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #fff;
+            transition: transform 0.3s;
+        }
+        
+        .idea-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .idea-icon {
+            font-size: 2rem;
+            color: #FF6B35;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-link.active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+        /* footor */
+        
+        .footer {
+            /* background: linear-gradient(135deg, #e77808, #de5d08); */
+            background: #ff6b35;
+            color: #fff;
+            padding: 30px;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            transition: 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #131212;
+            transform: translateX(5px);
+        }
+        
+        .social-btn {
+            font-size: 1.4rem;
+            color: white;
+            transition: 0.3s;
+        }
+        
+        .social-btn.youtube:hover {
+            color: #f10505;
+            transform: scale(1.2);
+        }
+        
+        .social-btn.instagram:hover {
+            color: #E4405F;
+            transform: scale(1.2);
+        }
+        
+        .social-btn.twitter:hover {
+            color: #1DA1F2;
+            transform: scale(1.2);
+        }
+        
+        hr {
+            opacity: 0.2;
+        }
+        /* Dropdown opens on hover */
+        
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            /* prevent gap */
+            transition: all 0.3s;
+        }
+        /* Optional: smooth fade-in effect */
+        
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="homeh.html" style="color:#FF6B35;">वोकल फॉर लोकल</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="homeh.html">मुख्य पृष्ठ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shoph.html">दुकान</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galleryh.html">गैलरी</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gov.ideah.html">सरकारी विचार</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacth.html">संपर्क करें</a></li>
+                    <li class="nav-item"><a class="nav-link " href="abouth.html">हमारे बारे में</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    अधिक
+    </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li class="nav-item"><a class="nav-link" href="smallh.html">व्यवसाय के विचार</a></li>
+                            <li class="nav-item"><a class="nav-link" href="sucsessh.html">सफलता की कहानियाँ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        🌐 भाषा चुनें
+    </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="gov.idea.html">अंग्रेज़ी</a></li>
+                            <li><a class="dropdown-item" href="gov.ideah.html">हिंदी</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-down">“लोकल के लिए” सरकारी विचार</h2>
+            <p class="text-center text-muted mb-5" data-aos="fade-up">
+                2025 और उसके बाद स्थानीय व्यवसायों, कारीगरों और स्टार्टअप्स को सशक्त बनाने के लिए सरकार द्वारा लागू की जा सकने वाली नवीन रणनीतियाँ।
+            </p>
+
+            <div class="row g-4">
+                <!-- Idea 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-certificate"></i></div>
+                        <h5>स्थानीय ब्रांड प्रमाणन</h5>
+                        <p>“गौरव से लोकल” या “मेरे जिले में बना” प्रमाणन विश्वास पैदा करता है और छोटे उत्पादकों की बिक्री बढ़ाता है।</p>
+                    </div>
+                </div>
+
+                <!-- Idea 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h5>डिजिटल मार्केटप्लेस</h5>
+                        <p>कारीगरों, किसानों और स्टार्टअप्स के लिए एक आधिकारिक ऐप ताकि वे सुरक्षित तरीके से उत्पाद बेच सकें और सरकार द्वारा डिलीवरी सुनिश्चित हो।</p>
+                    </div>
+                </div>
+
+                <!-- Idea 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-school"></i></div>
+                        <h5>स्कूलों में स्थानीय उद्यमिता</h5>
+                        <p>छात्र स्थानीय व्यवसायों को अपनाएँ, डिजिटल मार्केटिंग, डिजाइन और मिनी स्टार्टअप चुनौतियों में मदद करें।</p>
+                    </div>
+                </div>
+
+                <!-- Idea 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="650">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-satellite"></i></div>
+                        <h5>स्थानीय व्यवसायों का जियो-टैगिंग</h5>
+                        <p>पंजीकृत स्थानीय व्यवसायों को डिजिटल रूप से मैप करें ताकि लोग अपने क्षेत्र की उद्योग गतिविधियाँ ऐप के माध्यम से देख सकें।</p>
+                    </div>
+                </div>
+
+                <!-- Idea 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h5>स्थानीय पर्यटन + उत्पाद</h5>
+                        <p>पर्यटकों को जिले के स्मृति चिन्ह खरीदने के लिए प्रोत्साहित करें और हवाई अड्डों एवं पर्यटन स्थलों पर ODOP कियोस्क स्थापित करें।</p>
+                    </div>
+                </div>
+
+                <!-- Idea 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="550">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+                        <h5>त्योहार अभियान</h5>
+                        <p>दिवाली, रक्षा बंधन, स्वतंत्रता दिवस के दौरान स्थानीय उपहार और कारीगर उत्पादों का प्रचार करें।</p>
+                    </div>
+                </div>
+
+                <!-- अन्य विचार इसी तरह जोड़े जा सकते हैं -->
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <!-- ====== FOOTER SECTION ====== -->
+
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Column 1: Logo & Message -->
+                <div class="col-md-4 mb-4">
+                    <h3 class="fw-bold text-white">वोकल फॉर लोकल 🇮🇳</h3>
+                    <p class="text-light small mt-3">
+                        स्थानीय कारीगरों, किसानों और छोटे उद्योगों को समर्थन देकर आत्मनिर्भर भारत का निर्माण।
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3" style="color: rgb(246, 233, 0);">त्वरित लिंक</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="homeh.html" class="footer-link">मुख्य पृष्ठ</a></li>
+                        <li><a href="abouth.html" class="footer-link">हमारे बारे में</a></li>
+                        <li><a href="galleryh.html" class="footer-link">गैलरी</a></li>
+                        <li><a href="contacth.html" class="footer-link">संपर्क करें</a></li>
+                        <li><a href="pledge.html" class="footer-link">प्रतिज्ञा लें</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Media -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3" style="color: rgb(246, 233, 0);">हमसे जुड़ें</h5>
+                    <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="#" class="social-btn youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-btn instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="text-secondary">
+
+            <div class="text-center text-light small">
+                सुप्रिया मौर्या टीम उन्नति द्वारा बनाया गया — वोकल फॉर लोकल • अपने देश की अर्थव्यवस्था को सहयोग दें
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800
+        });
+    </script>
+</body>
+
+</html>

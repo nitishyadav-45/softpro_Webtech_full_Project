@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pledge — Vocal For Local</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom right, #fdf3e7, #fff);
+            color: #333;
+        }
+        /* Header Section */
+        
+        .pledge-header {
+            background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
+            color: #000;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .pledge-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        .pledge-header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        /* Pledge Counter */
+        
+        .counter-box {
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: -40px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .counter-number {
+            font-size: 3rem;
+            color: #ff9933;
+            font-weight: bold;
+        }
+        /* Pledge Form */
+        
+        .pledge-form {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        
+        .pledge-form h3 {
+            text-align: center;
+            color: #138808;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            padding: 10px;
+        }
+        
+        .btn-pledge {
+            background: #ff9933;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        
+        .btn-pledge:hover {
+            background: #138808;
+            transform: scale(1.03);
+        }
+        /* Footer */
+        
+        footer {
+            background: #111;
+            color: #ddd;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section class="pledge-header" data-aos="fade-down">
+        <h1>Take the Pledge 🇮🇳</h1>
+        <p>“Every rupee spent on local hands strengthens the heart of India.”</p>
+    </section>
+
+    <!-- Counter Section -->
+    <div class="container">
+        <div class="counter-box" data-aos="fade-up">
+            <h4>People Who Have Taken the Pledge</h4>
+            <div id="pledgeCounter" class="counter-number">0</div>
+        </div>
+    </div>
+
+    <!-- Pledge Form -->
+    <div class="pledge-form" data-aos="zoom-in">
+        <h3>Join the Movement — Make Your Pledge</h3>
+        <form id="pledgeForm">
+            <div class="mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn-pledge">I Pledge to Support Local</button>
+        </form>
+        <p class="text-center mt-3 text-muted small">
+            Your details are safe. This pledge is a symbol of your support — not for marketing.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Made by Supriya Maurya Team Unnati — Vocal for Local • Support Your Economy
+        </p>
+    </footer>
+
+    <!-- AOS & JS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Pledge Counter Increment Effect
+        let counter = 0;
+        document.getElementById("pledgeForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            counter++;
+            document.getElementById("pledgeCounter").textContent = counter.toLocaleString();
+            alert("Thank you for pledging to support local 🇮🇳!");
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(32,34,56);
+
+}
+.ludo{
+
+    width: 750px;
+    height: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    
+}
+
+.blue,.red,.yellow,.green{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.blue{
+    background-color: royalblue;
+
+}
+.red{
+    background-color: red;
+
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+/***********box inside*****************/
+.box{
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    
+}
+ .box .insidebox{
+    width: 60px;
+    height: 60px;
+    
+    margin: 20px;
+}
+
+/****color******/
+.blueBackground{
+    background-color: royalblue;
+}
+.redBackground{
+    background-color: red;
+}
+.yellowBackground{
+    background-color: yellow;
+}
+.greenBackground{
+    background-color: green;
+}
+
+
+
+.square{
+    width: 48px;
+    height: 48px;
+    border: solid black;
+
+}

@@ -1,0 +1,171 @@
+<html>
+<head>
+<script>
+// Required number
+function tab()
+{
+//alert("hii hiii ")
+var name=document.getElementById("fn").value;
+//alert(name);
+if(name=="")
+{
+//alert("Invalid")
+document.getElementById("sp").innerHTML="Invalid";
+document.getElementById("fn").style.border="2px solid red";   
+}
+
+else
+{
+//alert("Valid")
+document.getElementById("sp").innerHTML="Valid";
+document.getElementById("fn").style.border="";
+}
+
+var fname=document.getElementById("ln").value;
+//alert(fname);
+if(fname=="")
+{
+//alert("Invalid")
+document.getElementById("sp1").innerHTML="Invalid";
+document.getElementById("ln").style.border="2px solid red";
+}
+else
+{
+//alert("Valid")
+document.getElementById("sp1").innerHTML="Valid";
+document.getElementById("ln").style.border="";
+}
+
+var email=document.getElementById("Em").value;
+//alert(email);
+if(email=="")
+{
+//alert("Invalid")
+document.getElementById("sp2").innerHTML="Invalid";
+document.getElementById("Em").style.border="2px solid red";
+
+}
+else
+{
+//alert("Valid")
+document.getElementById("sp2").innerHTML="Valid";
+document.getElementById("Em").style.border="";
+
+}
+
+var pass=document.getElementById("pa").value;
+//alert(pass);
+if(pass=="")
+{
+//alert("Invalid")
+document.getElementById("sp3").innerHTML="Invalid";
+document.getElementById("pa").style.border="2px solid red";
+
+}
+else
+{
+//alert("Valid")
+document.getElementById("sp3").innerHTML="Valid";
+document.getElementById("pa").style.border="";
+
+}
+
+var num=document.getElementById("mo").value;
+//alert(num);
+if(num=="")
+{
+//alert("Invalid")
+document.getElementById("sp4").innerHTML="Invalid";
+document.getElementById("mo").style.border="2px solid red";
+}
+else
+{
+//alert("Valid")
+document.getElementById("sp4").innerHTML="Valid";
+document.getElementById("mo").style.border="";
+
+}
+
+var city=document.getElementById("cy").value;
+//alert(city);
+if(city=="")
+{
+//alert("Invalid")
+document.getElementById("sp5").innerHTML="Invalid";
+document.getElementById("cy").style.border="2px solid red";
+
+}
+else
+{
+//alert("Valid")
+document.getElementById("sp5").innerHTML="Valid";
+document.getElementById("cy").style.border="";
+}
+var ads=document.getElementById("ad").value;
+//alert(ads);
+if(ads=="")
+{
+//alert("Invalid")
+document.getElementById("sp6").innerHTML="Invalid";
+document.getElementById("ad").style.border="2px solid red";
+}
+else
+{
+//alert("Valid")
+document.getElementById("sp6").innerHTML="Valid";
+document.getElementById("ad").style.border="";
+}
+
+
+}
+</script>
+</head>
+<body>
+
+<form>
+
+Name
+<input type="text" id="fn">
+<span id="sp" style="color:red;"></span>
+<br>
+
+F'Name
+<input type="text" id="ln">
+<span id="sp1" style="color:red;"></span>
+<br>
+
+Email
+<input type="text" id="Em">
+<span id="sp2" style="color:red;"></span>
+<br>
+
+Password
+<input type="password" id="pa">
+<span id="sp3" style="color:red;"></span>
+<br>
+
+Mobile No.
+<input type="number" id="mo">
+<span id="sp4" style="color:red;"></span>
+<br>
+
+City
+<select id="cy" onchange="tab()">
+<option></option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+<span id="sp5" style="color:red;"></span>
+<br>
+
+Address
+<textarea type="text" id="ad"></textarea>
+<span id="sp6" style="color:red;"></span>
+<br>
+
+<input type="button" value="check" onclick="tab()"/>
+</form>
+</body>
+</html>

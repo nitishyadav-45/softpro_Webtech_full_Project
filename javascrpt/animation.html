@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nitish Kumar Yadav — 3D Portfolio</title>
+
+  <!-- Orbitron font for neon heading -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #05060a;
+      --blue: #00f7ff;
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Orbitron", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Container that holds iframe */
+    .frame-wrap {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35));
+      z-index: 0;
+    }
+
+    .frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Optional overlay header / controls */
+    .topbar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 12px;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      pointer-events: none; /* allow clicks to pass through to iframe except buttons */
+    }
+
+    .title {
+      pointer-events: auto;
+      background: linear-gradient(90deg, rgba(0,247,255,0.06), rgba(212,0,255,0.04));
+      padding: 8px 18px;
+      border-radius: 12px;
+      color: var(--blue);
+      text-shadow: 0 0 8px rgba(0,247,255,0.9);
+      font-weight: 800;
+      letter-spacing: 6px;
+      font-size: clamp(14px, 2.5vw, 20px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+    }
+
+    /* Small responsive footer note */
+    .footer {
+      position: fixed;
+      bottom: 14px;
+      left: 14px;
+      z-index: 5;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      pointer-events: none;
+      background: rgba(0,0,0,0.25);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+    /* Make iframe pointer-events enabled on desktop; on mobile we still allow touch */
+    @media (pointer: fine) {
+      .frame-wrap {
+        pointer-events: auto;
+      }
+      .frame-wrap iframe {
+        pointer-events: auto;
+      }
+    }
+
+    @media (max-width:600px){
+      .title { font-size: 14px; letter-spacing: 3px; padding: 6px 12px; }
+      .footer { font-size: 12px; padding: 5px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top centered name badge (optional) -->
+  <div class="topbar">
+    <div class="title">NITISH KUMAR YADAV</div>
+  </div>
+
+  <!-- Fullscreen Spline iframe -->
+  <div class="frame-wrap" aria-hidden="false">
+    <!-- Replace the src URL below with your updated Spline share link if needed -->
+    <iframe src="https://my.spline.design/thresholddarkambientui-aPDiTTX15qwG0Ddtxm3Ikq26/"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Nitish Kumar Yadav — 3D Portfolio">
+    </iframe>
+  </div>
+
+  <div class="footer">Tip: click and drag inside the scene to interact</div>
+
+</body>
+</html>

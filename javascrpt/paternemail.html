@@ -1,0 +1,37 @@
+<html>
+<head>
+<script>
+//pattern validation
+function as(){
+var pemail = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{0,3}$/;
+//alert("hii hii");
+var email=document.getElementById("tb").value;
+//alert(name);
+if(!pemail.test(email)){
+
+//alert("invalid");
+document.getElementById("sp").innerHTML="invalid email"
+document.getElementById("tb").style.border="2px solid red";
+
+}
+else{
+//alert("valid");
+document.getElementById("sp").innerHTML="valid email "
+document.getElementById("tb").style.border="2px solid green";
+}
+
+}
+
+
+</script>
+</head>
+<body>
+Enter email:
+<input type="text" id="tb">
+
+
+<br>
+<input type="button" value="check" onclick="as()"/>
+<span id="sp"></span>
+</body>
+</html>

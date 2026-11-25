@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 2026 - Festival of Colors</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Rang+Kriti&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink: #ff0077;
+            --yellow: #ffde00;
+            --blue: #00b4ff;
+            --green: #22ff88;
+            --purple: #9d00ff;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            color: #fff;
+            /* Animated Gradient Background */
+            background: linear-gradient(-45deg, var(--pink), var(--purple), var(--blue), var(--green), var(--yellow));
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Canvas for color splash */
+        #color-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-family: 'Rang+Kriti', 'Poppins', cursive;
+            font-weight: 800;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 30px rgba(0,0,0,0.4);
+            background: linear-gradient(90deg, #fff, #ffde00, #ff0077, #00b4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textRainbow 6s linear infinite;
+        }
+        @keyframes textRainbow {
+            0% {filter: hue-rotate(0deg);}
+            100% {filter: hue-rotate(360deg);}
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 550px;
+            border: 10px solid rgba(255,255,255,0.8);
+            border-radius: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+            animation: pop-in 1s ease-out;
+        }
+        .hero-img:hover {
+            transform: scale(1.08) rotate(-3deg);
+            box-shadow: 0 0 60px #ffde00, 0 0 100px var(--pink);
+            filter: saturate(1.5);
+        }
+        @keyframes pop-in {
+            0% {transform: scale(0.5) rotate(10deg); opacity: 0;}
+            100% {transform: scale(1) rotate(0); opacity: 1;}
+        }
+
+        /* Colorful Cards */
+        .wish-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 1.5rem;
+            color: #fff;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .wish-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.25);
+        }
+        .wish-card .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {transform: translateY(0);}
+            50% {transform: translateY(-10px);}
+        }
+
+        /* High-Animation Button */
+        .btn-play {
+            background: linear-gradient(45deg, var(--yellow), var(--pink), var(--blue));
+            background-size: 200% 200%;
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.25rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            animation: btnGradient 3s ease infinite;
+        }
+        .btn-play:hover {
+            transform: scale(1.15) rotate(3deg);
+            box-shadow: 0 10px 40px #fff, 0 0 30px var(--yellow);
+        }
+        @keyframes btnGradient {
+            0% { background-position: 0% 50%;}
+            50% { background-position: 100% 50%;}
+            100% { background-position: 0% 50%;}
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="color-canvas"></canvas>
+
+<div class="content">
+    <div class="container py-5">
+        <!-- Hero Section -->
+        <div class="row align-items-center text-center text-lg-start min-vh-100">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="hero-title mb-3">Happy Holi 2026</h1>
+                <p class="subtitle mb-4">Let the colors of joy, love & happiness paint your life this year! <br> <strong>3rd March 2026</strong></p>
+                <button class="btn btn-play" id="splashBtn">Play with Colors!</button>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="images/amy-vosters-JM6CElFPvto-unsplash.jpg" alt="Holi Celebration Colors" class="img-fluid hero-img">
+            </div>
+        </div>
+
+        <!-- Wishes Cards -->
+        <div class="row text-center g-4 my-5 py-5">
+            <div class="col-md-4">
+                <div class="wish-card p-4 p-lg-5">
+                    <div class="card-icon">��</div>
+                    <h3 class="mb-3">Colorful Life</h3>
+                    <p class="mb-0">May your life be as vibrant and joyful as the colors of Holi.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wish-card p-4 p-lg-5">
+                    <div class="card-icon">��</div>
+                    <h3 class="mb-3">Sweet Memories</h3>
+                    <p class="mb-0">Let’s fill every moment with laughter, gujiya, and unforgettable fun.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wish-card p-4 p-lg-5">
+                    <div class="card-icon">✨</div>
+                    <h3 class="mb-3">New Beginnings</h3>
+                    <p class="mb-0">Wash away worries and start fresh with beautiful new hopes!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center py-4">
+            <p class="footer-text">Made with ❤️ for Holi 2026 | Bura Na Mano Holi Hai!</p>
+        </footer>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Color Splash / Gulal Animation on Canvas
+    const canvas = document.getElementById('color-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const colors = ['#ff0077', '#ffde00', '#00b4ff', '#22ff88', '#9d00ff', '#ff6f00'];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 12 + 6;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.speedX = (Math.random() - 0.5) * 8;
+            this.speedY = (Math.random() - 0.5) * 8;
+            this.gravity = 0.15;
+            this.life = 100; // frames
+        }
+        update() {
+            this.speedY += this.gravity;
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.life--;
+            this.size *= 0.98;
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = this.life / 100;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        }
+    }
+
+    function createSplash(x, y, count = 40) {
+        for (let i = 0; i < count; i++) {
+            particles.push(new Particle(x, y));
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = particles.length - 1; i >= 0; i--) {
+            particles[i].update();
+            particles[i].draw();
+            if (particles[i].life <= 0 || particles[i].size < 1) {
+                particles.splice(i, 1);
+            }
+        }
+        requestAnimationFrame(animateParticles);
+    }
+
+    // Auto splash on load + interval
+    window.addEventListener('load', () => {
+        for(let i=0;i<4;i++){
+            setTimeout(() => {
+              createSplash(Math.random()*canvas.width, Math.random()*canvas.height, 60);
+            }, i*300);
+        }
+    });
+
+    // Splash on click anywhere
+    document.addEventListener('click', (e) => {
+        createSplash(e.clientX, e.clientY, 80);
+    });
+    
+    // Splash on button click
+    document.getElementById('splashBtn').addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent double splash
+        for(let i=0;i<5;i++){
+          setTimeout(()=>{
+            createSplash(Math.random()*canvas.width, Math.random()*canvas.height, 70);
+          }, i*150);
+        }
+    });
+
+    animateParticles();
+</script>
+
+</body>
+</html>

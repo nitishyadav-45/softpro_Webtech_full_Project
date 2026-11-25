@@ -1,0 +1,384 @@
+body
+{
+background-color:lightgrey;
+}
+#outer
+{
+height:1200px;
+width:1500px;
+border:1px solid;
+}
+#one
+{
+height:1150px;
+width:695px;
+//border:1px solid;
+float:left;
+margin-top:25px;
+margin-left:25px;
+}
+
+#ot
+{
+height:400px;
+width:695px;
+border:1px solid;
+background:ligtgray;
+}
+#otl
+{
+height:400px;
+width:400px;
+//border:1px solid;
+float:left;
+}
+//#text
+{
+height:300px;
+width:300px;
+//border:1px solid ;
+margin:0 auto;
+margin-top:50px;
+}
+#otr
+{
+height:400px;
+width:290px;
+border:1px solid ;
+float:left;
+}
+
+
+#ob
+{
+height:725px;
+width:695px;
+margin-top:25px;
+//border:1px solid;
+}
+#obl
+{
+height:725px;
+width:330px;
+//border:1px solid;
+float:left;
+//background-color:red;
+
+}
+#obl1
+{
+height:325px;
+width:325px;
+border:1px solid ;
+background-color:red;
+
+}
+#oblim1
+{
+height:100px;
+width:100px;
+border:1px solid ;
+margin:0 auto;
+margin-top:20px;
+background-color:red;
+
+}
+#te1
+{
+height:75px;
+width:325px;
+border:1px solid ;
+margin-top:128px;
+background-color:#D44A28;
+
+}
+
+
+#obl2
+{
+height:370px;
+width:325px;
+margin-top:25px;
+border:1px solid ;
+background-color:lightgreen;
+}
+
+#oblim2
+{
+height:200px;
+width:200px;
+border:1px solid lightgreen;
+margin:0 auto;
+margin-top:42px;
+background-color:lightgreen;
+
+}
+#te2
+{
+height:75px;
+width:325px;
+border:1px solid ;
+margin-top:50px;
+background-color:#A4C639;
+}
+
+
+
+#obr
+{
+height:725px;
+width:330px;
+//border:1px solid;
+margin-left:25px;
+float:right;
+}
+#obr1
+{
+height:370px;
+width:325px;
+border:1px solid ;
+background-color:brown;
+}
+#obrim1
+{
+height:150px;
+width:150px;
+border:1px solid brown;
+margin:0 auto;
+margin-top:92px;
+background-color:brown;
+
+}
+#te3
+{
+height:75px;
+width:325px;
+border:1px solid ;
+margin-top:50px;
+background-color:#8A2524;
+
+}
+
+
+#obr2
+{
+height:325px;
+width:325px;
+margin-top:25px;
+border:1px solid ;
+background-color:yellow;
+}
+#obrim2
+{
+height:150px;
+width:150px;
+border:1px solid yellow;
+margin:0 auto;
+margin-top:20px;
+background-color:yellow;
+}
+#te4
+{
+height:75px;
+width:325px;
+border:1px solid ;
+margin-top:80px;
+background-color:#F4C20D;
+}
+
+
+
+
+#two
+{
+height:1150px;
+width:350px;
+//border:1px solid;
+float:left;
+margin-top:25px;
+margin-left:25px;
+}
+#tb1
+{
+height:366px;
+width:350px;
+border:1px solid ;
+background-color:#A7C7E7;
+
+}
+
+#tbim1
+{
+height:100px;
+width:150px;
+border:1px solid ;
+margin:0 auto;
+margin-top:60px;
+}
+#te5
+{
+height:75px;
+width:350px;
+border:1px solid ;
+margin-top:128px;
+background-color:#A7C7E7;
+
+}
+
+#tb2
+{
+height:316px;
+width:350px;
+margin-top:25px;
+border:1px solid ;
+background-color:darkgreen;
+
+}
+#tbim2
+{
+height:100px;
+width:100px;
+border:1px solid darkgreen;
+margin:0 auto;
+margin-top:40px;
+background-color:darkgreen;
+}
+#te6
+{
+height:75px;
+width:350px;
+border:1px solid ;
+margin-top:98px;
+background-color:#74C2A8;
+}
+
+#tb3
+{
+height:416px;
+width:350px;
+margin-top:25px;
+border:1px solid ;
+background-color:darkblue;
+}
+#tbim3
+{
+height:150px;
+width:150px;
+border:1px solid darkblue ;
+margin:0 auto;
+margin-top:60px;
+background-color:darkblue;
+
+}
+#te7
+{
+height:75px;
+width:350px;
+border:1px solid ;
+margin-top:128px;
+background-color:#1C305C;
+
+}
+
+
+#three
+{
+height:1150px;
+width:350px;
+//border:1px solid;
+float:left;
+margin-top:25px;
+margin-left:25px;
+}
+
+#th1
+{
+height:416px;
+width:350px;
+border:1px solid;
+background-color:orange;
+
+}
+#thim1
+{
+height:150px;
+width:150px;
+border:1px solid orange;
+margin:0 auto;
+margin-top:60px;
+background-color:#F4B400;
+}
+#te8
+{
+height:75px;
+width:350px;
+border:1px solid ;
+margin-top:128px;
+background-color:#F4B400;
+
+}
+
+
+#th2
+{
+height:366px;
+width:350px;
+margin-top:25px;
+border:1px solid ;
+background-color:blue;
+}
+#thim2
+{
+height:100px;
+width:100px;
+border:1px solid blue;
+margin:0 auto;
+margin-top:60px;
+background-color:blue;
+
+}
+#te9
+{
+height:75px;
+width:350px;
+border:1px solid ;
+margin-top:128px;
+background-color:#4285FA;
+
+}
+
+
+#th3
+{
+height:316px;
+width:350px;
+margin-top:25px;
+border:1px solid;
+background-color:black;
+}
+
+#thim3
+{
+height:100px;
+width:125px;
+border:1px solid ;
+margin:0 auto;
+margin-top:40px;
+background-color:black;
+}
+#te10
+{
+height:75px;
+width:350px;
+border:1px solid ;
+margin-top:98px;
+color:white;
+background-color:#000000;
+}
+
+
+
+
+
+
+

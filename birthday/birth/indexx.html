@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Celebration 🎉</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Quicksand:wght@300;400;600;700&family=Great+Vibes&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff6b9d;
+            --gold: #f7d794;
+            --purple: #a29bfe;
+            --dark: #2d1b69;
+            --coral: #ff7979;
+            --mint: #55efc4;
+            --lavender: #dfe6e9;
+            --deep: #0c0032;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--deep);
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* ============ PRELOADER ============ */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #1a0533, #0c0032);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        #preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-cake {
+            font-size: 5rem;
+            animation: preloaderBounce 1s ease infinite;
+        }
+        .preloader-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-top: 20px;
+            animation: preloaderFade 1.5s ease infinite alternate;
+        }
+        @keyframes preloaderBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+        @keyframes preloaderFade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* ============ NAVIGATION ============ */
+        .navbar-birthday {
+            background: rgba(12, 0, 50, 0.9) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 107, 157, 0.15);
+            padding: 12px 0;
+            transition: all 0.4s ease;
+        }
+        .navbar-birthday.scrolled {
+            padding: 6px 0;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.15);
+        }
+        .navbar-birthday .navbar-brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--pink), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s;
+        }
+        .navbar-birthday .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        .navbar-birthday .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0 5px;
+            padding: 8px 16px !important;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .navbar-birthday .nav-link:hover,
+        .navbar-birthday .nav-link.active {
+            color: #fff !important;
+            background: linear-gradient(135deg, rgba(255,107,157,0.3), rgba(162,155,254,0.3));
+        }
+        .navbar-toggler {
+            border: 2px solid var(--pink) !important;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ff6b9d' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        /* ============ PAGE 1: GRAND HERO ============ */
+        .page-hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 20% 50%, #1a0533 0%, #0c0032 50%, #060019 100%);
+        }
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+            opacity: 0;
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: orbMove 8s ease-in-out infinite alternate;
+        }
+        .orb-1 { width: 400px; height: 400px; background: var(--pink); top: 10%; left: -5%; }
+        .orb-2 { width: 350px; height: 350px; background: var(--purple); bottom: 10%; right: -5%; animation-delay: 2s; }
+        .orb-3 { width: 250px; height: 250px; background: var(--gold); top: 50%; left: 50%; animation-delay: 4s; }
+        @keyframes orbMove {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(30px, -30px) scale(1.2); }
+        }
+
+        .hero-inner {
+            text-align: center;
+            z-index: 10;
+            padding: 0 20px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(162,155,254,0.2));
+            border: 1px solid rgba(255,107,157,0.3);
+            padding: 8px 28px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            animation: heroFadeIn 1s ease 0.5s both;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: heroFadeIn 1s ease 0.8s both;
+        }
+        .hero-title .line-1 {
+            display: block;
+            background: linear-gradient(135deg, #fff, #dfe6e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-title .line-2 {
+            display: block;
+            font-family: 'Great Vibes', cursive;
+            font-size: 7rem;
+            background: linear-gradient(135deg, var(--pink), var(--purple), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite;
+            background-size: 200% 200%;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 40px;
+            animation: heroFadeIn 1s ease 1.1s both;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            color: #fff;
+            padding: 16px 45px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+            animation: heroFadeIn 1s ease 1.4s both;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-cta::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -200%;
+            background: linear-gradient(60deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        .hero-cta:hover::after {
+            left: 100%;
+        }
+        .hero-cta:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 50px rgba(255, 107, 157, 0.5);
+            color: #fff;
+        }
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            animation: heroFadeIn 1s ease 2s both;
+            z-index: 10;
+        }
+        .scroll-mouse {
+            width: 28px;
+            height: 42px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            margin: 0 auto 8px;
+            position: relative;
+        }
+        .scroll-mouse::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 10px;
+            background: var(--pink);
+            border-radius: 4px;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollDown 1.8s ease infinite;
+        }
+        @keyframes scrollDown {
+            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(16px); opacity: 0; }
+        }
+        .scroll-text {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+        }
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============ PAGE 2: COUNTDOWN AGE REVEAL ============ */
+        .page-countdown {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0c0032 0%, #190a3d 50%, #2d1b69 100%);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-countdown::before {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(255,107,157,0.08), transparent 70%);
+            top: -200px; right: -200px;
+            border-radius: 50%;
+        }
+
+        .sec-label {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--pink);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .sec-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .sec-heading span {
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .sec-desc {
+            color: rgba(255,255,255,0.5);
+            font-size: 1.05rem;
+            max-width: 500px;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .countdown-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,107,157,0.12);
+            border-radius: 24px;
+            padding: 30px 15px;
+            text-align: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .countdown-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255,107,157,0.05), rgba(162,155,254,0.05));
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .countdown-box:hover::before { opacity: 1; }
+        .countdown-box:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,107,157,0.4);
+            box-shadow: 0 20px 50px rgba(255,107,157,0.1);
+        }
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .countdown-label {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 5px;
+        }
+
+        .age-reveal-card {
+            background: linear-gradient(135deg, rgba(255,107,157,0.1), rgba(162,155,254,0.1));
+            border: 1px solid rgba(255,107,157,0.2);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .age-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 10rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--pink), var(--purple), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            animation: gradientShift 3s ease infinite;
+            background-size: 200% 200%;
+        }
+        .age-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        /* ============ PAGE 3: INTERACTIVE CAKE ============ */
+        .page-cake {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #2d1b69, #1a0a3e, #0c0032);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .cake-3d {
+            perspective: 800px;
+            text-align: center;
+        }
+        .cake-wrapper {
+            display: inline-block;
+            transform-style: preserve-3d;
+            animation: cakeHover 4s ease-in-out infinite;
+            cursor: pointer;
+        }
+        @keyframes cakeHover {
+            0%, 100% { transform: rotateY(-3deg) translateY(0); }
+            50% { transform: rotateY(3deg) translateY(-10px); }
+        }
+        .cake-plate {
+            width: 350px;
+            height: 20px;
+            background: linear-gradient(135deg, #c0a86e, #e8d5a3);
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .c-layer {
+            margin: 0 auto;
+            border-radius: 18px 18px 22px 22px;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .c-layer-1 {
+            width: 160px; height: 70px;
+            background: linear-gradient(180deg, #ff9ecb, #ff6b9d);
+            border-radius: 15px 15px 10px 10px;
+        }
+        .c-layer-1::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 15px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(255,255,255,0.2) 15px, rgba(255,255,255,0.2) 17px);
+            border-radius: 0 0 10px 10px;
+        }
+        .c-layer-2 {
+            width: 230px; height: 80px;
+            background: linear-gradient(180deg, var(--gold), #e8c860);
+        }
+        .c-layer-2::after {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+        }
+        .c-layer-3 {
+            width: 300px; height: 90px;
+            background: linear-gradient(180deg, #b388ff, #7c4dff);
+            border-radius: 18px 18px 25px 25px;
+        }
+        .c-layer-3::after {
+            content: '';
+            position: absolute;
+            bottom: 8px; left: 15px; right: 15px;
+            height: 12px;
+            background: repeating-linear-gradient(90deg, #ff6b9d, #ff6b9d 8px, transparent 8px, transparent 20px);
+            border-radius: 6px;
+            opacity: 0.7;
+        }
+
+        .candle-row {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-bottom: -5px;
+            position: relative;
+            z-index: 5;
+        }
+        .candle-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .c-flame {
+            width: 14px; height: 22px;
+            background: radial-gradient(ellipse, #ffd700, #ff6b00, #ff3300);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flameFlicker 0.4s ease-in-out infinite alternate;
+            margin-bottom: 2px;
+            box-shadow: 0 0 15px #ffd700, 0 0 30px rgba(255, 107, 0, 0.5);
+            transition: all 0.5s ease;
+        }
+        .c-flame.out {
+            opacity: 0;
+            transform: scale(0);
+            box-shadow: none;
+        }
+        @keyframes flameFlicker {
+            0% { transform: scaleX(1) rotate(-4deg); }
+            50% { transform: scaleX(0.85) scaleY(1.1) rotate(4deg); }
+            100% { transform: scaleX(1.05) scaleY(0.95) rotate(-2deg); }
+        }
+        .c-stick {
+            width: 6px; height: 45px;
+            background: linear-gradient(90deg, #fff5cc, #ffe066, #fff5cc);
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(255,224,102,0.3);
+        }
+        .c-stick::after {
+            content: '';
+            display: block;
+            width: 10px; height: 10px;
+            background: var(--pink);
+            border-radius: 50%;
+            margin: -2px auto 0;
+        }
+
+        .cake-action-area {
+            margin-top: 40px;
+        }
+        .btn-blow {
+            background: linear-gradient(135deg, var(--gold), #e8a430);
+            color: var(--deep);
+            border: none;
+            padding: 16px 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.4s;
+            box-shadow: 0 8px 30px rgba(247, 215, 148, 0.3);
+            letter-spacing: 1px;
+        }
+        .btn-blow:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 45px rgba(247, 215, 148, 0.5);
+        }
+        .cake-wish-msg {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-top: 30px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .cake-wish-msg.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ============ PAGE 4: WISH CARDS (FLIP CARDS) ============ */
+        .page-wishes {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0c0032, #130040, #1a0a3e);
+            padding: 120px 0;
+            position: relative;
+        }
+        .page-wishes::before {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(162,155,254,0.06), transparent 70%);
+            bottom: -150px; left: -150px;
+            border-radius: 50%;
+        }
+
+        .flip-card {
+            height: 320px;
+            perspective: 1000px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            width: 100%; height: 100%;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%; height: 100%;
+            backface-visibility: hidden;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+        }
+        .flip-card-front {
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(5px);
+        }
+        .flip-card-front .flip-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .flip-card-front h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .flip-card-front .flip-hint {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+            border: 1px solid rgba(255,107,157,0.3);
+        }
+        .flip-card-back p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+        }
+        .flip-card-back .back-emoji {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .flip-card:nth-child(1) .flip-card-back { background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(162,155,254,0.15)); }
+        .flip-card:nth-child(2) .flip-card-back { background: linear-gradient(135deg, rgba(247,215,148,0.2), rgba(255,107,157,0.15)); }
+        .flip-card:nth-child(3) .flip-card-back { background: linear-gradient(135deg, rgba(85,239,196,0.2), rgba(162,155,254,0.15)); }
+        .flip-card:nth-child(4) .flip-card-back { background: linear-gradient(135deg, rgba(162,155,254,0.2), rgba(247,215,148,0.15)); }
+        .flip-card:nth-child(5) .flip-card-back { background: linear-gradient(135deg, rgba(255,121,121,0.2), rgba(85,239,196,0.15)); }
+        .flip-card:nth-child(6) .flip-card-back { background: linear-gradient(135deg, rgba(85,239,196,0.15), rgba(255,107,157,0.2)); }
+
+        /* ============ PAGE 5: PHOTO MEMORIES TIMELINE ============ */
+        .page-memories {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #1a0a3e, #2d1b69, #1a0a3e);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--pink), var(--purple), var(--gold), transparent);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .timeline-item:nth-child(odd) { flex-direction: row; }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: 3px solid var(--deep);
+            z-index: 5;
+            box-shadow: 0 0 15px rgba(255,107,157,0.4);
+        }
+        .timeline-content {
+            width: 42%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .timeline-content:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255,107,157,0.3);
+            box-shadow: 0 15px 40px rgba(255,107,157,0.1);
+            background: rgba(255,255,255,0.06);
+        }
+        .timeline-item:nth-child(odd) .timeline-content { margin-right: auto; }
+        .timeline-item:nth-child(even) .timeline-content { margin-left: auto; }
+        .timeline-emoji {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .timeline-desc {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .timeline-year {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(162,155,254,0.2));
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--pink);
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* ============ PAGE 6: BALLOON POP GAME ============ */
+        .page-balloons {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #1a0a3e, #0c0032);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balloon-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 50px;
+        }
+        .balloon-wrap {
+            text-align: center;
+        }
+        .balloon-item {
+            width: 90px; height: 110px;
+            border-radius: 50% 50% 50% 50%;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.15), inset 10px 10px 20px rgba(255,255,255,0.1);
+        }
+        .balloon-item::before {
+            content: '';
+            position: absolute;
+            top: 15%; left: 20%;
+            width: 20px; height: 25px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+        }
+        .balloon-item::after {
+            content: '';
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            width: 1.5px;
+            height: 35px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+            transform: translateX(-50%);
+        }
+        .balloon-item:hover { transform: scale(1.15) rotate(5deg); }
+        .balloon-item.popped {
+            animation: balloonPop 0.4s ease forwards;
+        }
+        @keyframes balloonPop {
+            0% { transform: scale(1); opacity: 1; }
+            40% { transform: scale(1.4); opacity: 0.7; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+        .balloon-float {
+            animation: bFloat 3.5s ease-in-out infinite;
+        }
+        @keyframes bFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-18px) rotate(2deg); }
+        }
+
+        .balloon-msg {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: var(--gold);
+            min-height: 60px;
+            margin-top: 50px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        .balloon-msg.show {
+            opacity: 1;
+            animation: msgPop 0.5s ease;
+        }
+        @keyframes msgPop {
+            0% { transform: scale(0.5); }
+            60% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-reset-balloons {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,107,157,0.3);
+            color: var(--pink);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        .btn-reset-balloons:hover {
+            background: rgba(255,107,157,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,157,0.15);
+        }
+
+        /* ============ PAGE 7: LOVE LETTER ============ */
+        .page-letter {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0c0032, #190a3d);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .letter-envelope {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .envelope-top {
+            text-align: center;
+            margin-bottom: -20px;
+            font-size: 4rem;
+            animation: envelopeWiggle 2s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 5;
+            position: relative;
+        }
+        @keyframes envelopeWiggle {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        .letter-paper {
+            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            border: 1px solid rgba(247,215,148,0.2);
+            border-radius: 30px;
+            padding: 60px 50px;
+            position: relative;
+            transition: all 0.5s;
+        }
+        .letter-paper:hover {
+            border-color: rgba(247,215,148,0.4);
+            box-shadow: 0 0 60px rgba(247,215,148,0.05);
+        }
+        .letter-paper::before {
+            content: '❝';
+            position: absolute;
+            top: 20px; left: 30px;
+            font-size: 4rem;
+            color: rgba(255,107,157,0.15);
+            font-family: serif;
+        }
+        .letter-body {
+            font-family: 'Sacramento', cursive;
+            font-size: 1.8rem;
+            line-height: 2.2;
+            color: rgba(255,255,255,0.85);
+            text-align: center;
+        }
+        .letter-closing {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--gold);
+            text-align: right;
+            margin-top: 30px;
+        }
+        .letter-hearts {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            animation: pulse 2s ease infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* ============ PAGE 8: GIFT SURPRISE ============ */
+        .page-gift {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #190a3d, #2d1b69);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-box-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .gift-box {
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+        .gift-box:hover { transform: scale(1.08); }
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .gift-icon {
+            font-size: 8rem;
+            display: block;
+            filter: drop-shadow(0 10px 30px rgba(255,107,157,0.3));
+        }
+        .gift-label {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-top: 15px;
+        }
+        .gift-opened {
+            display: none;
+            animation: giftReveal 0.8s ease;
+        }
+        .gift-opened.show { display: block; }
+        @keyframes giftReveal {
+            0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .gift-message-card {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(255,107,157,0.1), rgba(162,155,254,0.1));
+            border: 1px solid rgba(255,107,157,0.25);
+            border-radius: 25px;
+            text-align: center;
+        }
+        .gift-message-card h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--pink), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .gift-message-card p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+        .gift-coupon {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 40px;
+            border: 2px dashed var(--gold);
+            border-radius: 15px;
+            background: rgba(247,215,148,0.05);
+        }
+        .gift-coupon span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        /* ============ FOOTER ============ */
+        .page-footer {
+            background: #050018;
+            padding: 60px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255,107,157,0.1);
+        }
+        .footer-brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--pink), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            margin: 0 8px;
+            font-size: 1rem;
+            transition: all 0.4s;
+            text-decoration: none;
+        }
+        .footer-socials a:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255,107,157,0.2);
+            background: rgba(255,107,157,0.05);
+        }
+        .footer-copy {
+            color: rgba(255,255,255,0.25);
+            font-size: 0.85rem;
+            margin-top: 25px;
+        }
+
+        /* ============ CONFETTI ============ */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            z-index: 99998;
+            pointer-events: none;
+            animation: confettiDrop linear forwards;
+        }
+        @keyframes confettiDrop {
+            0% { transform: translateY(0) rotateZ(0); opacity: 1; }
+            100% { transform: translateY(105vh) rotateZ(720deg); opacity: 0; }
+        }
+
+        /* ============ FLOATING MUSIC BTN ============ */
+        .floating-music {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            width: 55px; height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            box-shadow: 0 5px 25px rgba(255,107,157,0.3);
+        }
+        .floating-music:hover {
+            transform: scale(1.12);
+            box-shadow: 0 10px 35px rgba(255,107,157,0.5);
+        }
+        .floating-music.playing {
+            animation: musicPulse 1s ease infinite;
+        }
+        @keyframes musicPulse {
+            0%, 100% { box-shadow: 0 5px 25px rgba(255,107,157,0.3); }
+            50% { box-shadow: 0 5px 25px rgba(255,107,157,0.6), 0 0 0 10px rgba(255,107,157,0.1); }
+        }
+
+        /* ============ SCROLL REVEAL ============ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============ SPARKLE TRAIL ============ */
+        .spark {
+            position: fixed;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9997;
+            animation: sparkOut 0.7s ease-out forwards;
+        }
+        @keyframes sparkOut {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 4rem; }
+            .hero-title .line-2 { font-size: 5rem; }
+            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+            .age-number { font-size: 7rem; }
+            .timeline::before { left: 20px; }
+            .timeline-dot { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { flex-direction: row; }
+            .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 50px;
+                margin-right: 0;
+            }
+        }
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2.8rem; }
+            .hero-title .line-2 { font-size: 3.5rem; }
+            .sec-heading { font-size: 2.5rem; }
+            .letter-paper { padding: 40px 25px; }
+            .letter-body { font-size: 1.4rem; }
+            .countdown-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .balloon-item { width: 65px; height: 80px; }
+            .balloon-grid { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-cake">🎂</div>
+        <div class="preloader-text">Preparing Your Surprise...</div>
+    </div>
+
+    <!-- MUSIC BTN -->
+    <button class="floating-music" id="musicBtn" title="Toggle Music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-birthday fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">🎂 Birthday</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#countdown">Countdown</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cake">Cake</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#wishes">Wishes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#memories">Memories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#balloons">Balloons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#letter">Letter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gift">Gift</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE 1: HERO ===== -->
+    <section class="page-hero" id="hero">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">✨ Today is Special ✨</div>
+            <h1 class="hero-title">
+                <span class="line-1">Happy</span>
+                <span class="line-2">Birthday!</span>
+            </h1>
+            <p class="hero-subtitle">A celebration of joy, laughter, and everything wonderful about you!</p>
+            <a href="#countdown" class="hero-cta">
+                <i class="fas fa-gift"></i> Begin the Celebration
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse"></div>
+            <div class="scroll-text">Scroll Down</div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 2: COUNTDOWN ===== -->
+    <section class="page-countdown" id="countdown">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="sec-label reveal-left">🎉 Celebrating</div>
+                    <h2 class="sec-heading reveal-left" style="transition-delay:0.1s">Time to <span>Celebrate</span> Another Amazing Year</h2>
+                    <p class="sec-desc reveal-left" style="transition-delay:0.2s">Every second with you is a blessing. Here's how long we've been counting down to this magical day!</p>
+                </div>
+                <div class="col-lg-7">
+                    <div class="countdown-grid reveal" style="transition-delay:0.3s">
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="cdDays">00</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="cdHours">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="cdMins">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="cdSecs">00</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                    <div class="age-reveal-card reveal" style="transition-delay:0.5s">
+                        <div class="age-number">25</div>
+                        <div class="age-text">& Fabulous!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 3: CAKE ===== -->
+    <section class="page-cake" id="cake">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="sec-label reveal">🎂 Interactive</div>
+                <h2 class="sec-heading reveal text-center mx-auto" style="max-width:600px;transition-delay:0.1s">Make a <span>Wish</span> & Blow the Candles</h2>
+            </div>
+            <div class="cake-3d reveal" style="transition-delay:0.3s">
+                <div class="cake-wrapper" id="cakeWrapper">
+                    <div class="candle-row">
+                        <div class="candle-item"><div class="c-flame" id="fl1"></div><div class="c-stick"></div></div>
+                        <div class="candle-item"><div class="c-flame" id="fl2"></div><div class="c-stick"></div></div>
+                        <div class="candle-item"><div class="c-flame" id="fl3"></div><div class="c-stick"></div></div>
+                        <div class="candle-item"><div class="c-flame" id="fl4"></div><div class="c-stick"></div></div>
+                        <div class="candle-item"><div class="c-flame" id="fl5"></div><div class="c-stick"></div></div>
+                    </div>
+                    <div class="c-layer c-layer-1"></div>
+                    <div class="c-layer c-layer-2"></div>
+                    <div class="c-layer c-layer-3"></div>
+                    <div class="cake-plate"></div>
+                </div>
+            </div>
+            <div class="cake-action-area text-center reveal" style="transition-delay:0.5s">
+                <button class="btn-blow" id="btnBlow" onclick="blowOutCandles()">
+                    <i class="fas fa-wind me-2"></i>Blow the Candles!
+                </button>
+                <div class="cake-wish-msg" id="cakeWishMsg">🌟 May All Your Dreams Come True! 🌟</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 4: WISHES ===== -->
+    <section class="page-wishes" id="wishes">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="sec-label reveal">💝 Heartfelt</div>
+                <h2 class="sec-heading reveal text-center mx-auto" style="max-width:600px;transition-delay:0.1s">Birthday <span>Wishes</span> Just For You</h2>
+                <p class="sec-desc reveal mx-auto text-center" style="transition-delay:0.2s">Hover over each card to reveal a special wish</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="flip-card reveal" style="transition-delay:0.1s">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="flip-icon">🌟</span>
+                                <h4>Happiness</h4>
+                                <div class="flip-hint">Hover to reveal</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-emoji">😊</div>
+                                <p>May every single day bring you moments of pure happiness that make your heart overflow with joy and gratitude.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="flip-card reveal" style="transition-delay:0.2s">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="flip-icon">💖</span>
+                                <h4>Love</h4>
+                                <div class="flip-hint">Hover to reveal</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-emoji">💕</div>
+                                <p>May you be surrounded by the warmth of love from those who cherish you. You are loved beyond measure!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="flip-card reveal" style="transition-delay:0.3s">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="flip-icon">🚀</span>
+                                <h4>Success</h4>
+                                <div class="flip-hint">Hover to reveal</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-emoji">🏆</div>
+                                <p>May your ambitions soar higher than ever. Every goal you set, may you crush it with grace and confidence!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="flip-card reveal" style="transition-delay:0.4s">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="flip-icon">🌈</span>
+                                <h4>Adventures</h4>
+                                <div class="flip-hint">Hover to reveal</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-emoji">🗺️</div>
+                                <p>May this year bring thrilling adventures, unforgettable journeys, and stories worth telling forever!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="flip-card reveal" style="transition-delay:0.5s">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="flip-icon">💪</span>
+                                <h4>Health</h4>
+                                <div class="flip-hint">Hover to reveal</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-emoji">🧘</div>
+                                <p>Wishing you vibrant health, endless energy, and inner peace. Take care of yourself — the world needs your light!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="flip-card reveal" style="transition-delay:0.6s">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="flip-icon">✨</span>
+                                <h4>Magic</h4>
+                                <div class="flip-hint">Hover to reveal</div>
+                            </div>
+                            <div class="flip-card-back">
+                                <div class="back-emoji">🪄</div>
+                                <p>May life surprise you with magical moments, unexpected blessings, and reasons to smile every single day!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 5: MEMORIES TIMELINE ===== -->
+    <section class="page-memories" id="memories">
+        <div class="container">
+            <div class="text-center mb-3">
+                <div class="sec-label reveal">📸 Timeline</div>
+                <h2 class="sec-heading reveal text-center mx-auto" style="max-width:600px;transition-delay:0.1s">Cherished <span>Memories</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content reveal-left">
+                        <span class="timeline-emoji">👶</span>
+                        <div class="timeline-title">The Day You Were Born</div>
+                        <div class="timeline-desc">A star was born! The world became a brighter, more beautiful place the moment you arrived.</div>
+                        <span class="timeline-year">Day 1</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content reveal-right">
+                        <span class="timeline-emoji">🎒</span>
+                        <div class="timeline-title">First Day of School</div>
+                        <div class="timeline-desc">With a backpack full of dreams and eyes full of wonder, you stepped into the world of learning.</div>
+                        <span class="timeline-year">Growing Up</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content reveal-left">
+                        <span class="timeline-emoji">🎓</span>
+                        <div class="timeline-title">Achievements & Milestones</div>
+                        <div class="timeline-desc">Every trophy, every achievement — you've made everyone so proud. Your dedication is truly inspiring.</div>
+                        <span class="timeline-year">Proud Moments</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content reveal-right">
+                        <span class="timeline-emoji">🥳</span>
+                        <div class="timeline-title">Unforgettable Celebrations</div>
+                        <div class="timeline-desc">From surprise parties to quiet dinners, every birthday has been a beautiful chapter in your story.</div>
+                        <span class="timeline-year">Party Time</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content reveal-left">
+                        <span class="timeline-emoji">💫</span>
+                        <div class="timeline-title">Today — Your Special Day!</div>
+                        <div class="timeline-desc">And here we are, celebrating YOU. The best is yet to come, and we can't wait to see what's next!</div>
+                        <span class="timeline-year">Today ❤️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 6: BALLOONS ===== -->
+    <section class="page-balloons" id="balloons">
+        <div class="container text-center">
+            <div class="sec-label reveal">🎈 Interactive</div>
+            <h2 class="sec-heading reveal text-center mx-auto" style="max-width:600px;transition-delay:0.1s">Pop the <span>Balloons!</span></h2>
+            <p class="sec-desc reveal mx-auto text-center" style="transition-delay:0.2s">Click each balloon for a hidden birthday message!</p>
+
+            <div class="balloon-grid reveal" id="balloonArea" style="transition-delay:0.3s">
+                <div class="balloon-wrap">
+                    <div class="balloon-item balloon-float" style="background:radial-gradient(circle at 30% 30%, #ff9ecb, #ff6b9d);" onclick="popB(this,'You are one in a million! 🌟')"></div>
+                </div>
+                <div class="balloon-wrap">
+                    <div class="balloon-item balloon-float" style="background:radial-gradient(circle at 30% 30%, #ffe38a, #f7d794);animation-delay:0.4s;" onclick="popB(this,'Keep shining bright! ✨')"></div>
+                </div>
+                <div class="balloon-wrap">
+                    <div class="balloon-item balloon-float" style="background:radial-gradient(circle at 30% 30%, #c4b0ff, #a29bfe);animation-delay:0.8s;" onclick="popB(this,'Dream bigger than ever! 🚀')"></div>
+                </div>
+                <div class="balloon-wrap">
+                    <div class="balloon-item balloon-float" style="background:radial-gradient(circle at 30% 30%, #7dffcd, #55efc4);animation-delay:1.2s;" onclick="popB(this,'You make the world better! 🌍')"></div>
+                </div>
+                <div class="balloon-wrap">
+                    <div class="balloon-item balloon-float" style="background:radial-gradient(circle at 30% 30%, #ff9f9f, #ff7979);animation-delay:1.6s;" onclick="popB(this,'Love you to the moon! 🌙')"></div>
+                </div>
+                <div class="balloon-wrap">
+                    <div class="balloon-item balloon-float" style="background:radial-gradient(circle at 30% 30%, #74b9ff, #0984e3);animation-delay:2s;" onclick="popB(this,'Stay awesome forever! 💎')"></div>
+                </div>
+            </div>
+
+            <div class="balloon-msg" id="balloonMsg"></div>
+            <button class="btn-reset-balloons" onclick="resetB()">
+                <i class="fas fa-redo me-2"></i>Reset Balloons
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 7: LETTER ===== -->
+    <section class="page-letter" id="letter">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="sec-label reveal">💌 Personal</div>
+                <h2 class="sec-heading reveal text-center mx-auto" style="max-width:600px;transition-delay:0.1s">A <span>Letter</span> From The Heart</h2>
+            </div>
+            <div class="letter-envelope reveal" style="transition-delay:0.3s">
+                <div class="envelope-top">💌</div>
+                <div class="letter-paper">
+                    <div class="letter-body">
+                        Dearest Birthday Star,<br><br>
+                        On this beautiful day, I want you to know how incredibly special you are to me and to everyone whose life you've touched.
+                        Your smile is the sun on a cloudy day, your laughter is the sweetest melody, and your kindness is a gift to this world.<br><br>
+                        May this new chapter of your life be filled with endless adventures, boundless love, and moments that take your breath away.
+                        You deserve every beautiful thing this universe has to offer.<br><br>
+                        Here's to you — today, tomorrow, and always. 🥂
+                    </div>
+                    <div class="letter-closing">Forever Yours ❤️</div>
+                    <div class="letter-hearts">💖 💛 💜 💙 💚</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 8: GIFT ===== -->
+    <section class="page-gift" id="gift">
+        <div class="container text-center">
+            <div class="sec-label reveal">🎁 Surprise</div>
+            <h2 class="sec-heading reveal text-center mx-auto" style="max-width:600px;transition-delay:0.1s">A Special <span>Gift</span> Awaits</h2>
+            <p class="sec-desc reveal mx-auto text-center" style="transition-delay:0.2s">Click the gift to unwrap your surprise!</p>
+
+            <div class="gift-box-container reveal" style="transition-delay:0.3s">
+                <div class="gift-box" id="giftBox" onclick="openGift()">
+                    <span class="gift-icon">🎁</span>
+                    <div class="gift-label">Tap to Open!</div>
+                </div>
+                <div class="gift-opened" id="giftOpened">
+                    <div class="gift-message-card">
+                        <h3>Happy Birthday!</h3>
+                        <p>You are the most incredible person, and you deserve the world. This birthday marks the beginning of your best year yet! May every dream you chase become your reality.</p>
+                        <div class="gift-coupon">
+                            <span>🎂 UNLIMITED HUGS & LOVE 🎂</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-brand">🎂 Happy Birthday!</div>
+            <div class="footer-socials mb-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="footer-copy">Made with ❤️ for the most special person | © 2024</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ========== PRELOADER ==========
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('fade-out');
+                setTimeout(() => launchConfetti(100), 500);
+            }, 2200);
+        });
+
+        // ========== HERO PARTICLES ==========
+        (function createParticles() {
+            const container = document.getElementById('heroParticles');
+            const colors = ['#ff6b9d', '#a29bfe', '#f7d794', '#55efc4', '#ff7979', '#ffffff'];
+            for (let i = 0; i < 50; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.width = p.style.height = (Math.random() * 6 + 2) + 'px';
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(p);
+            }
+        })();
+
+        // ========== COUNTDOWN (counts UP since birthday) ==========
+        function startCountdown() {
+            const now = new Date();
+            const birthdayThisYear = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+            
+            setInterval(() => {
+                const current = new Date();
+                const diff = current - birthdayThisYear;
+                
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / (1000 * 60)) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('cdDays').textContent = '01';
+                document.getElementById('cdHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cdMins').textContent = String(mins).padStart(2, '0');
+                document.getElementById('cdSecs').textContent = String(secs).padStart(2, '0');
+            }, 1000);
+        }
+        startCountdown();
+
+        // ========== BLOW CANDLES ==========
+        let candlesOut = false;
+        function blowOutCandles() {
+            if (candlesOut) return;
+            candlesOut = true;
+            const flames = document.querySelectorAll('.c-flame');
+            flames.forEach((f, i) => {
+                setTimeout(() => f.classList.add('out'), i * 250);
+            });
+            setTimeout(() => {
+                document.getElementById('cakeWishMsg').classList.add('visible');
+                launchConfetti(120);
+                const btn = document.getElementById('btnBlow');
+                btn.innerHTML = '<i class="fas fa-check me-2"></i>Wish Made!';
+                btn.style.background = 'linear-gradient(135deg, #55efc4, #00b894)';
+            }, 1500);
+        }
+
+        // ========== POP BALLOONS ==========
+        function popB(el, msg) {
+            if (el.classList.contains('popped')) return;
+            el.classList.add('popped');
+            const msgEl = document.getElementById('balloonMsg');
+            msgEl.textContent = msg;
+            msgEl.classList.remove('show');
+            void msgEl.offsetWidth;
+            msgEl.classList.add('show');
+            launchConfetti(20);
+        }
+        function resetB() {
+            document.querySelectorAll('.balloon-item').forEach(b => {
+                b.classList.remove('popped');
+            });
+            const msgEl = document.getElementById('balloonMsg');
+            msgEl.classList.remove('show');
+            msgEl.textContent = '';
+        }
+
+        // ========== OPEN GIFT ==========
+        let giftOpen = false;
+        function openGift() {
+            if (giftOpen) return;
+            giftOpen = true;
+            const box = document.getElementById('giftBox');
+            const opened = document.getElementById('giftOpened');
+            box.style.animation = 'none';
+            box.style.transition = 'all 0.5s ease';
+            box.style.transform = 'scale(0)';
+            box.style.opacity = '0';
+            setTimeout(() => {
+                box.style.display = 'none';
+                opened.classList.add('show');
+                launchConfetti(150);
+            }, 500);
+        }
+
+        // ========== CONFETTI ==========
+        function launchConfetti(count = 80) {
+            const colors = ['#ff6b9d', '#f7d794', '#a29bfe', '#55efc4', '#ff7979', '#74b9ff', '#ffd700', '#ff1493'];
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const c = document.createElement('div');
+                    c.className = 'confetti';
+                    c.style.left = Math.random() * 100 + 'vw';
+                    c.style.width = (Math.random() * 10 + 5) + 'px';
+                    c.style.height = (Math.random() * 10 + 5) + 'px';
+                    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    c.style.animationDuration = (Math.random() * 2.5 + 2) + 's';
+                    document.body.appendChild(c);
+                    setTimeout(() => c.remove(), 5000);
+                }, i * 25);
+            }
+        }
+
+        // ========== SCROLL REVEAL ==========
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+        // ========== NAVBAR SCROLL ==========
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar-birthday');
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ========== ACTIVE NAV LINK ==========
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 100;
+                if (window.scrollY >= top) current = sec.getAttribute('id');
+            });
+            document.querySelectorAll('.navbar-birthday .nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+
+        // ========== SMOOTH SCROLL ==========
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const collapse = document.querySelector('.navbar-collapse');
+                    if (collapse.classList.contains('show')) {
+                        new bootstrap.Collapse(collapse).hide();
+                    }
+                }
+            });
+        });
+
+        // ========== SPARKLE TRAIL ==========
+        document.addEventListener('mousemove', e => {
+            if (Math.random() > 0.75) {
+                const s = document.createElement('div');
+                s.className = 'spark';
+                const colors = ['#ff6b9d', '#f7d794', '#a29bfe', '#55efc4', '#fff'];
+                s.style.background = colors[Math.floor(Math.random() * colors.length)];
+                s.style.left = (e.clientX + (Math.random() * 16 - 8)) + 'px';
+                s.style.top = (e.clientY + (Math.random() * 16 - 8)) + 'px';
+                document.body.appendChild(s);
+                setTimeout(() => s.remove(), 700);
+            }
+        });
+
+        // ========== MUSIC BUTTON ==========
+        let isPlaying = false;
+        document.getElementById('musicBtn').addEventListener('click', function() {
+            isPlaying = !isPlaying;
+            this.innerHTML = isPlaying ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-music"></i>';
+            this.classList.toggle('playing', isPlaying);
+        });
+    </script>
+</body>
+</html>

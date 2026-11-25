@@ -1,0 +1,12 @@
+
+
+
+
+
+
+
+var pname=/^[A-Za-z]{3,7}$/;
+var pmobile=/^[0-9]{10}$/;
+var pemail = /^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{0,3}$/;
+
+stack overflow

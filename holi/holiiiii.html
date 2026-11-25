@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Happy Holi 2026 — Festival of Colors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --pink: #ff006e;
+            --yellow: #ffbe0b;
+            --green: #00f5d4;
+            --purple: #8338ec;
+            --orange: #fb5607;
+            --blue: #3a86ff;
+            --red: #ef233c;
+            --magenta: #f72585;
+            --lime: #b5e48c;
+            --cyan: #00b4d8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #0a0a1a;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23ff006e' opacity='0.7'/%3E%3C/svg%3E") 12 12, auto;
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0a0a1a;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            background: linear-gradient(90deg, var(--pink), var(--yellow), var(--green), var(--purple), var(--orange), var(--pink));
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: loaderGradient 2s linear infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .loader-bar::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--pink), var(--yellow), var(--green));
+            border-radius: 10px;
+            animation: loaderSlide 1s ease-in-out infinite;
+        }
+
+        @keyframes loaderGradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            100% {
+                background-position: 300% 50%
+            }
+        }
+
+        @keyframes loaderSlide {
+            0% {
+                transform: translateX(-100%)
+            }
+
+            100% {
+                transform: translateX(350%)
+            }
+        }
+
+        /* ===== PARTICLE CANVAS ===== */
+        #particleCanvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== GLOWING ORBS ===== */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .orb1 {
+            width: 500px;
+            height: 500px;
+            background: var(--pink);
+            top: -15%;
+            left: -10%;
+            animation: orbFloat1 12s ease-in-out infinite alternate;
+        }
+
+        .orb2 {
+            width: 450px;
+            height: 450px;
+            background: var(--yellow);
+            top: 30%;
+            right: -15%;
+            animation: orbFloat2 14s ease-in-out infinite alternate;
+        }
+
+        .orb3 {
+            width: 400px;
+            height: 400px;
+            background: var(--green);
+            bottom: -10%;
+            left: 20%;
+            animation: orbFloat3 10s ease-in-out infinite alternate;
+        }
+
+        .orb4 {
+            width: 350px;
+            height: 350px;
+            background: var(--purple);
+            top: 60%;
+            left: -10%;
+            animation: orbFloat4 11s ease-in-out infinite alternate;
+        }
+
+        .orb5 {
+            width: 300px;
+            height: 300px;
+            background: var(--orange);
+            top: 10%;
+            left: 50%;
+            animation: orbFloat5 13s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbFloat1 {
+            to {
+                transform: translate(80px, 60px) scale(1.2);
+            }
+        }
+
+        @keyframes orbFloat2 {
+            to {
+                transform: translate(-60px, 80px) scale(1.15);
+            }
+        }
+
+        @keyframes orbFloat3 {
+            to {
+                transform: translate(50px, -70px) scale(1.3);
+            }
+        }
+
+        @keyframes orbFloat4 {
+            to {
+                transform: translate(70px, -50px) scale(1.1);
+            }
+        }
+
+        @keyframes orbFloat5 {
+            to {
+                transform: translate(-40px, 60px) scale(1.25);
+            }
+        }
+
+        /* ===== NAVBAR ===== */
+        .holi-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 12px 0;
+            background: rgba(10, 10, 26, 0.6);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.5s ease;
+        }
+
+        .holi-navbar.scrolled {
+            padding: 8px 0;
+            background: rgba(10, 10, 26, 0.9);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--pink), var(--yellow), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            transform: scale(1.05);
+            filter: brightness(1.3);
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            text-shadow: 0 0 20px var(--yellow);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--pink), var(--purple)) !important;
+            color: #fff !important;
+            padding: 8px 24px !important;
+            box-shadow: 0 4px 20px rgba(255, 0, 110, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(255, 0, 110, 0.5) !important;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 28px;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.15), rgba(131, 56, 236, 0.15));
+            border: 1px solid rgba(255, 0, 110, 0.3);
+            border-radius: 50px;
+            color: var(--yellow);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            animation: badgePulse 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes badgePulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 0, 110, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(255, 0, 110, 0.4), 0 0 80px rgba(255, 190, 11, 0.2);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            animation: heroTitleIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            text-shadow: 0 0 40px rgba(255, 0, 110, 0.4), 0 0 80px rgba(255, 190, 11, 0.2);
+        }
+
+        @keyframes heroTitleIn {
+            0% {
+                opacity: 0;
+                transform: translateY(60px) scale(0.8) rotateX(20deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0deg);
+            }
+        }
+
+        .hero-title .word {
+            display: inline-block;
+            animation: wordBounce 4s ease-in-out infinite;
+        }
+
+        .hero-title .word:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-title .word:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes wordBounce {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-8px) rotate(-2deg);
+            }
+
+            75% {
+                transform: translateY(4px) rotate(1deg);
+            }
+        }
+
+        .hero-year {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 900;
+            line-height: 1;
+            margin: 5px 0 15px;
+            background: linear-gradient(135deg, var(--pink), var(--yellow), var(--green), var(--purple), var(--orange));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: yearGradient 4s ease infinite, heroTitleIn 1.5s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            filter: drop-shadow(0 0 30px rgba(255, 190, 11, 0.3));
+        }
+
+        @keyframes yearGradient {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 30px;
+            animation: heroTitleIn 1.5s 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle span {
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        /* ===== ANIMATED TEXT CHARACTERS ===== */
+        .char-animate {
+            display: inline-block;
+            animation: charDance 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .char-animate:hover {
+            transform: scale(1.5) translateY(-10px) !important;
+            color: var(--yellow);
+            text-shadow: 0 0 30px var(--yellow);
+        }
+
+        @keyframes charDance {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* ===== HERO IMAGE ===== */
+        .hero-img-wrapper {
+            position: relative;
+            margin: 30px auto;
+            max-width: 520px;
+            animation: heroTitleIn 1.5s 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 80px rgba(255, 0, 110, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: imgFloat 5s ease-in-out infinite;
+        }
+
+        .hero-img:hover {
+            transform: scale(1.06) rotate(1deg) translateY(-10px);
+            box-shadow: 0 40px 100px rgba(255, 0, 110, 0.5), 0 0 60px rgba(131, 56, 236, 0.3), 0 0 120px rgba(255, 190, 11, 0.2);
+            border-color: rgba(255, 190, 11, 0.4);
+        }
+
+        @keyframes imgFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-12px) rotate(0.5deg);
+            }
+
+            66% {
+                transform: translateY(-6px) rotate(-0.5deg);
+            }
+        }
+
+        .img-glow {
+            position: absolute;
+            inset: -3px;
+            border-radius: 32px;
+            background: linear-gradient(135deg, var(--pink), var(--yellow), var(--green), var(--purple));
+            background-size: 300% 300%;
+            animation: yearGradient 4s ease infinite;
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.5;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2.5rem;
+            animation: floatIcon 4s ease-in-out infinite;
+            filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+            z-index: 5;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.5) !important;
+        }
+
+        .fi-1 {
+            top: -20px;
+            left: -30px;
+            animation-delay: 0s;
+        }
+
+        .fi-2 {
+            top: -20px;
+            right: -30px;
+            animation-delay: 0.5s;
+        }
+
+        .fi-3 {
+            bottom: -20px;
+            left: -30px;
+            animation-delay: 1s;
+        }
+
+        .fi-4 {
+            bottom: -20px;
+            right: -30px;
+            animation-delay: 1.5s;
+        }
+
+        .fi-5 {
+            top: 50%;
+            left: -40px;
+            animation-delay: 2s;
+        }
+
+        .fi-6 {
+            top: 50%;
+            right: -40px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(10deg);
+            }
+        }
+
+        /* Orbiting rings */
+        .orbit-ring {
+            position: absolute;
+            border: 2px dashed;
+            border-radius: 50%;
+            animation: orbitSpin linear infinite;
+            pointer-events: none;
+        }
+
+        .or-1 {
+            inset: -25px;
+            border-color: rgba(255, 0, 110, 0.2);
+            animation-duration: 15s;
+        }
+
+        .or-2 {
+            inset: -50px;
+            border-color: rgba(255, 190, 11, 0.15);
+            animation-duration: 20s;
+            animation-direction: reverse;
+        }
+
+        .or-3 {
+            inset: -75px;
+            border-color: rgba(0, 245, 212, 0.1);
+            animation-duration: 25s;
+        }
+
+        @keyframes orbitSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== CTA BUTTONS ===== */
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: heroTitleIn 1.5s 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .btn-holi {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.35);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-holi::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-holi:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 0, 110, 0.5), 0 0 40px rgba(131, 56, 236, 0.3);
+            color: #fff;
+        }
+
+        .btn-holi:hover::before {
+            opacity: 1;
+        }
+
+        .btn-holi span,
+        .btn-holi i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-holi .shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.6s ease;
+        }
+
+        .btn-holi:hover .shine {
+            left: 150%;
+        }
+
+        .btn-outline-holi {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--yellow);
+            background: transparent;
+            border: 2px solid rgba(255, 190, 11, 0.4);
+            border-radius: 60px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+
+        .btn-outline-holi:hover {
+            background: rgba(255, 190, 11, 0.1);
+            border-color: var(--yellow);
+            color: var(--yellow);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(255, 190, 11, 0.2);
+        }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            animation: heroTitleIn 1.5s 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .cd-box {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px 15px;
+            min-width: 100px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cd-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.08), rgba(131, 56, 236, 0.08));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .cd-box:hover {
+            transform: translateY(-12px) scale(1.08);
+            border-color: var(--pink);
+            box-shadow: 0 20px 50px rgba(255, 0, 110, 0.25);
+        }
+
+        .cd-box:hover::before {
+            opacity: 1;
+        }
+
+        .cd-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--pink), var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            position: relative;
+        }
+
+        .cd-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 0;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 20px;
+            background: rgba(255, 190, 11, 0.1);
+            border: 1px solid rgba(255, 190, 11, 0.2);
+            border-radius: 30px;
+            color: var(--yellow);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .section-desc {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* ===== REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.7);
+            transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===== COLOR PALETTE ===== */
+        .color-orb {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: orbBob 3s ease-in-out infinite;
+        }
+
+        .color-orb::after {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            animation: orbRingPulse 2s ease-in-out infinite;
+        }
+
+        .color-orb:hover {
+            transform: scale(1.35) rotate(15deg) translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .color-orb:hover::after {
+            inset: -12px;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes orbBob {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes orbRingPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* ===== WISH CARDS ===== */
+        .wish-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            padding: 45px 30px 35px;
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .wish-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pink), var(--yellow), var(--green), var(--purple));
+            background-size: 300% 100%;
+            animation: yearGradient 3s ease infinite;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .wish-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 190, 11, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-18px) scale(1.02);
+            border-color: rgba(255, 190, 11, 0.3);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 0, 110, 0.1);
+        }
+
+        .wish-card:hover::before {
+            opacity: 1;
+        }
+
+        .wish-card:hover::after {
+            opacity: 1;
+        }
+
+        .wish-icon {
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-radius: 24px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        .wish-card:hover .wish-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .wish-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wish-card p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 30px;
+            group: true;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 0, 110, 0.15);
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.2);
+            filter: brightness(0.5) saturate(1.3);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px 25px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            color: var(--yellow);
+            font-size: 1.3rem;
+            font-weight: 700;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.1s;
+        }
+
+        .gallery-card:hover .gallery-overlay h4 {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .gallery-card:hover .gallery-overlay p {
+            transform: translateY(0);
+        }
+
+        .gallery-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 0, 110, 0.8);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: translateY(-50px);
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .gallery-card:hover .gallery-tag {
+            transform: translateY(0);
+        }
+
+        /* ===== MESSAGE BOX ===== */
+        .msg-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            padding: 70px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .msg-box:hover {
+            border-color: rgba(255, 190, 11, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .msg-box .rotating-border {
+            position: absolute;
+            inset: -2px;
+            border-radius: 42px;
+            background: conic-gradient(from 0deg, var(--pink), var(--yellow), var(--green), var(--purple), var(--orange), var(--pink));
+            animation: orbitSpin 6s linear infinite;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .msg-box .inner-bg {
+            position: absolute;
+            inset: 2px;
+            background: #0a0a1a;
+            border-radius: 38px;
+            z-index: -1;
+        }
+
+        .msg-quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .msg-author {
+            color: var(--yellow);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* ===== GREETING GENERATOR ===== */
+        .gen-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border-radius: 18px;
+            padding: 16px 24px;
+            font-size: 1.05rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.4s ease;
+            width: 100%;
+        }
+
+        .gen-input:focus {
+            outline: none;
+            border-color: var(--pink);
+            box-shadow: 0 0 30px rgba(255, 0, 110, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .gen-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== IMAGE GALLERY ROW ===== */
+        .img-strip {
+            display: flex;
+            gap: 15px;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .img-strip-item {
+            flex: 0 0 250px;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .img-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .img-strip-item:hover {
+            flex: 0 0 400px;
+        }
+
+        .img-strip-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ===== TRADITIONS SECTION ===== */
+        .tradition-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+        }
+
+        .tradition-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 0, 110, 0.1);
+            border-color: rgba(255, 0, 110, 0.3);
+        }
+
+        .tradition-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .tradition-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+        }
+
+        .tradition-card:hover .tradition-img img {
+            transform: scale(1.15);
+        }
+
+        .tradition-body {
+            padding: 25px;
+        }
+
+        .tradition-body h4 {
+            color: var(--yellow);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .tradition-body p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ===== PARALLAX IMAGE SECTION ===== */
+        .parallax-section {
+            position: relative;
+            z-index: 1;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            inset: -50px;
+            background: url('https://images.unsplash.com/photo-1576024391592-fa32f5c7d21a?w=1920&h=800&fit=crop') center/cover no-repeat;
+            filter: brightness(0.3) saturate(1.5);
+            transition: transform 0.3s ease;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .parallax-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: #fff;
+            text-shadow: 0 0 50px rgba(255, 0, 110, 0.5);
+            margin-bottom: 15px;
+        }
+
+        .parallax-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+        }
+
+        /* ===== STATS ===== */
+        .stat-box {
+            text-align: center;
+            padding: 30px 15px;
+            transition: all 0.4s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--pink), var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            position: relative;
+            z-index: 1;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 6px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .social-link:hover {
+            color: #fff;
+            transform: translateY(-8px) scale(1.15);
+        }
+
+        .social-link:nth-child(1):hover {
+            background: #1877f2;
+            border-color: #1877f2;
+            box-shadow: 0 10px 30px rgba(24, 119, 242, 0.4);
+        }
+
+        .social-link:nth-child(2):hover {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba(225, 48, 108, 0.4);
+        }
+
+        .social-link:nth-child(3):hover {
+            background: #1da1f2;
+            border-color: #1da1f2;
+            box-shadow: 0 10px 30px rgba(29, 161, 242, 0.4);
+        }
+
+        .social-link:nth-child(4):hover {
+            background: #25d366;
+            border-color: #25d366;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .social-link:nth-child(5):hover {
+            background: #ff0000;
+            border-color: #ff0000;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+        }
+
+        /* ===== MUSIC BTN ===== */
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: none;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(255, 0, 110, 0.4);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: 0 12px 40px rgba(255, 0, 110, 0.6);
+        }
+
+        .music-btn.playing {
+            animation: musicPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(255, 0, 110, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 8px 30px rgba(255, 0, 110, 0.4), 0 0 0 12px rgba(255, 0, 110, 0.15);
+            }
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-top:hover {
+            background: var(--pink);
+            border-color: var(--pink);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.3);
+        }
+
+        /* ===== POWDER EFFECT ===== */
+        .powder {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: powderExplode 1.2s ease-out forwards;
+        }
+
+        @keyframes powderExplode {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(var(--dx), var(--dy)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ===== CONFETTI ===== */
+        .confetti {
+            position: fixed;
+            top: -15px;
+            z-index: 9998;
+            pointer-events: none;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotateZ(0deg) rotateY(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotateZ(720deg) rotateY(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== CURSOR TRAIL ===== */
+        .trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: trailOut 0.7s ease-out forwards;
+        }
+
+        @keyframes trailOut {
+            0% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ===== EMOJI FLOAT ===== */
+        .emoji-float {
+            position: fixed;
+            font-size: 1.8rem;
+            z-index: 999;
+            pointer-events: none;
+            animation: emojiUp linear forwards;
+        }
+
+        @keyframes emojiUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(720deg) scale(0.3);
+                opacity: 0;
+            }
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 26, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 20px;
+                flex-direction: column;
+                gap: 5px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 20px;
+            }
+
+            .countdown .cd-box {
+                min-width: 75px;
+                padding: 15px 10px;
+            }
+
+            .cd-num {
+                font-size: 2rem;
+            }
+
+            .msg-box {
+                padding: 40px 20px;
+                border-radius: 24px;
+            }
+
+            .color-orb {
+                width: 65px;
+                height: 65px;
+                font-size: 1.5rem;
+                margin: 8px;
+            }
+
+            .parallax-section {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 15px 40px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-holi,
+            .btn-outline-holi {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ===== COLOR WAVE DIVIDER ===== */
+        .wave-divider {
+            position: relative;
+            z-index: 1;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-text">Happy Holi 🎨</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Glowing Orbs -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="orb orb4"></div>
+    <div class="orb orb5"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="holi-navbar" id="navbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="nav-brand">🎨 Holi 2026</a>
+                <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links d-md-flex gap-2 align-items-center">
+                    <a href="#home">Home</a>
+                    <a href="#colors">Colors</a>
+                    <a href="#wishes">Wishes</a>
+                    <a href="#traditions">Traditions</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#message">Message</a>
+                    <a href="#wishes" class="nav-cta">Send Wish 🌈</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="container text-center">
+            <div class="hero-badge">
+                <i class="fas fa-palette"></i> Festival of Colors 2026
+            </div>
+            <h1 class="hero-title">
+                <span class="word">Happy</span> <span class="word">Holi</span>
+            </h1>
+            <div class="hero-year" id="yearText">2026</div>
+            <p class="hero-subtitle">
+                🪷 May your life be filled with <span>vibrant colors</span> of joy, love & happiness 🪷
+            </p>
+
+            <!-- Hero Image -->
+            <div class="hero-img-wrapper">
+                <div class="orbit-ring or-1"></div>
+                <div class="orbit-ring or-2"></div>
+                <div class="orbit-ring or-3"></div>
+                <div class="img-glow"></div>
+                <img src="https://images.unsplash.com/photo-1576024391592-fa32f5c7d21a?w=600&h=400&fit=crop&q=90"
+                    alt="Holi Festival Colors" class="hero-img"
+                    onerror="this.src='https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=600&h=400&fit=crop'">
+                <div class="floating-icon fi-1">🎨</div>
+                <div class="floating-icon fi-2">🌈</div>
+                <div class="floating-icon fi-3">💜</div>
+                <div class="floating-icon fi-4">🧡</div>
+                <div class="floating-icon fi-5">💗</div>
+                <div class="floating-icon fi-6">💛</div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-group">
+                <a href="#wishes" class="btn-holi" onclick="launchConfetti()">
+                    <span class="shine"></span>
+                    <i class="fas fa-heart"></i>
+                    <span>Send Holi Wishes</span>
+                    <span>✨</span>
+                </a>
+                <a href="#gallery" class="btn-outline-holi">
+                    <i class="fas fa-images"></i>
+                    <span>View Gallery</span>
+                </a>
+            </div>
+
+            <!-- Countdown -->
+            <div class="countdown">
+                <div class="cd-box">
+                    <div class="cd-num" id="c-days">000</div>
+                    <div class="cd-label">Days</div>
+                </div>
+                <div class="cd-box">
+                    <div class="cd-num" id="c-hours">00</div>
+                    <div class="cd-label">Hours</div>
+                </div>
+                <div class="cd-box">
+                    <div class="cd-num" id="c-mins">00</div>
+                    <div class="cd-label">Minutes</div>
+                </div>
+                <div class="cd-box">
+                    <div class="cd-num" id="c-secs">00</div>
+                    <div class="cd-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COLORS SECTION ===== -->
+    <section class="section" id="colors">
+        <div class="container text-center">
+            <div class="section-tag reveal">🎨 Splash Colors</div>
+            <h2 class="section-title reveal">Colors of Holi</h2>
+            <p class="section-desc reveal">Click on any color to create a magical splash! Each color represents a unique
+                emotion of this beautiful festival.</p>
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #ff006e, #ff4081); animation-delay:0s;"
+                    onclick="splashPowder(event,'#ff006e')" data-meaning="Love">💗</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #ffbe0b, #ffd600); animation-delay:0.2s;"
+                    onclick="splashPowder(event,'#ffbe0b')" data-meaning="Joy">💛</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #00f5d4, #00e676); animation-delay:0.4s;"
+                    onclick="splashPowder(event,'#00f5d4')" data-meaning="Growth">💚</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #8338ec, #b388ff); animation-delay:0.6s;"
+                    onclick="splashPowder(event,'#8338ec')" data-meaning="Royalty">💜</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #fb5607, #ff9800); animation-delay:0.8s;"
+                    onclick="splashPowder(event,'#fb5607')" data-meaning="Energy">🧡</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #3a86ff, #448aff); animation-delay:1s;"
+                    onclick="splashPowder(event,'#3a86ff')" data-meaning="Peace">💙</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #ef233c, #ff1744); animation-delay:1.2s;"
+                    onclick="splashPowder(event,'#ef233c')" data-meaning="Passion">❤️</div>
+                <div class="color-orb"
+                    style="background: linear-gradient(135deg, #f72585, #ff80ab); animation-delay:1.4s;"
+                    onclick="splashPowder(event,'#f72585')" data-meaning="Beauty">🩷</div>
+            </div>
+            <p class="text-white-50 mt-4 reveal" style="transition-delay: 0.4s;"><i
+                    class="fas fa-hand-pointer me-2"></i>Tap on any color ball to splash!</p>
+        </div>
+    </section>
+
+    <!-- ===== WISHES SECTION ===== -->
+    <section class="section" id="wishes">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag reveal">✨ Heartfelt Wishes</div>
+                <h2 class="section-title reveal">Holi Wishes For You</h2>
+                <p class="section-desc reveal">Each wish carries the warmth and colors of this beautiful festival. Share
+                    them with your loved ones!</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.1s;">
+                        <div class="wish-icon" style="background: rgba(255,0,110,0.1);">🌈</div>
+                        <h3>Rainbow of Happiness</h3>
+                        <p>May the festival of colors bring a rainbow of happiness in your life. Let every hue fill your
+                            heart with joy and your soul with peace!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.2s;">
+                        <div class="wish-icon" style="background: rgba(255,190,11,0.1);">💝</div>
+                        <h3>Love & Togetherness</h3>
+                        <p>Let the colors of Holi spread the beautiful message of love and togetherness. May your bonds
+                            grow stronger with every color shared!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.3s;">
+                        <div class="wish-icon" style="background: rgba(0,245,212,0.1);">🎉</div>
+                        <h3>Prosperity & Success</h3>
+                        <p>Wishing you a Holi filled with sweet moments and colorful memories. May success paint your
+                            life with its most beautiful strokes!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.4s;">
+                        <div class="wish-icon" style="background: rgba(131,56,236,0.1);">🕊️</div>
+                        <h3>Peace & Harmony</h3>
+                        <p>May the spirit of Holi fill your heart with everlasting peace and your home with endless
+                            harmony. Wishing you a blessed Holi 2026!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.5s;">
+                        <div class="wish-icon" style="background: rgba(251,86,7,0.1);">🌺</div>
+                        <h3>New Beginnings</h3>
+                        <p>Let the old colors fade away and new colors of hope, dreams, and aspirations brighten your
+                            path this Holi and always!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.6s;">
+                        <div class="wish-icon" style="background: rgba(58,134,255,0.1);">🎊</div>
+                        <h3>Fun & Laughter</h3>
+                        <p>May your Holi be as colorful as your dreams, as sweet as gujiya, as joyful as bhang, and
+                            filled with endless laughter!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARALLAX DIVIDER ===== -->
+    <div class="parallax-section">
+        <div class="parallax-bg" id="parallaxBg"></div>
+        <div class="parallax-content reveal-scale">
+            <h2>🌸 Bura Na Mano, Holi Hai! 🌸</h2>
+            <p>The festival that brings everyone together with love, laughter and colors</p>
+        </div>
+    </div>
+
+    <!-- ===== TRADITIONS ===== -->
+    <section class="section" id="traditions">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag reveal">🪔 Rich Heritage</div>
+                <h2 class="section-title reveal">Holi Traditions</h2>
+                <p class="section-desc reveal">Discover the beautiful customs and rituals that make Holi one of India's
+                    most cherished festivals.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="tradition-card reveal-left" style="transition-delay: 0.1s;">
+                        <div class="tradition-img">
+                            <img src="https://images.unsplash.com/photo-1604422499780-4e4c4a332c78?w=400&h=300&fit=crop"
+                                alt="Holika Dahan"
+                                onerror="this.style.background='linear-gradient(135deg,#fb5607,#ff006e)';this.alt='Holika Dahan';">
+                        </div>
+                        <div class="tradition-body">
+                            <h4>🔥 Holika Dahan</h4>
+                            <p>The night before Holi, bonfires are lit to celebrate the victory of good over evil.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tradition-card reveal" style="transition-delay: 0.2s;">
+                        <div class="tradition-img">
+                            <img src="https://images.unsplash.com/photo-1576024391592-fa32f5c7d21a?w=400&h=300&fit=crop"
+                                alt="Playing with Colors"
+                                onerror="this.style.background='linear-gradient(135deg,#ff006e,#ffbe0b)';this.alt='Colors';">
+                        </div>
+                        <div class="tradition-body">
+                            <h4>🎨 Rang Panchami</h4>
+                            <p>People play with colored powders and water, spreading joy and celebrating life's
+                                vibrancy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tradition-card reveal" style="transition-delay: 0.3s;">
+                        <div class="tradition-img">
+                            <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=300&fit=crop"
+                                alt="Gujiya"
+                                onerror="this.style.background='linear-gradient(135deg,#ffbe0b,#00f5d4)';this.alt='Sweets';">
+                        </div>
+                        <div class="tradition-body">
+                            <h4>🍬 Sweet Treats</h4>
+                            <p>Gujiya, thandai, and other traditional delicacies make the celebration even sweeter.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="tradition-card reveal-right" style="transition-delay: 0.4s;">
+                        <div class="tradition-img">
+                            <img src="https://images.unsplash.com/photo-1583932420766-6b5ab07cf981?w=400&h=300&fit=crop"
+                                alt="Music Dance"
+                                onerror="this.style.background='linear-gradient(135deg,#8338ec,#3a86ff)';this.alt='Music';">
+                        </div>
+                        <div class="tradition-body">
+                            <h4>💃 Music & Dance</h4>
+                            <p>Folk music and dance fill the air as communities come together in joyous celebration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag reveal">📸 Moments</div>
+                <h2 class="section-title reveal">Holi Gallery</h2>
+                <p class="section-desc reveal">Capturing the most vibrant and joyful moments of the festival of colors.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-card reveal" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1576024391592-fa32f5c7d21a?w=500&h=400&fit=crop"
+                            alt="Color Splash"
+                            onerror="this.style.background='linear-gradient(135deg,#ff006e,#ffbe0b)';this.style.height='300px';">
+                        <div class="gallery-tag">🎨 Colors</div>
+                        <div class="gallery-overlay">
+                            <h4>Splash of Colors</h4>
+                            <p>The pure joy of throwing vibrant gulal in the air</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-card reveal" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=500&h=400&fit=crop"
+                            alt="Celebration"
+                            onerror="this.style.background='linear-gradient(135deg,#8338ec,#00f5d4)';this.style.height='300px';">
+                        <div class="gallery-tag">🥳 Fun</div>
+                        <div class="gallery-overlay">
+                            <h4>Pure Celebration</h4>
+                            <p>Friends and family dancing with colorful joy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-card reveal" style="transition-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=500&h=400&fit=crop"
+                            alt="Powder"
+                            onerror="this.style.background='linear-gradient(135deg,#fb5607,#ff006e)';this.style.height='300px';">
+                        <div class="gallery-tag">✨ Magic</div>
+                        <div class="gallery-overlay">
+                            <h4>Gulal Magic</h4>
+                            <p>The mesmerizing beauty of colored powders</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-card reveal" style="transition-delay: 0.4s;">
+                        <img src="https://images.unsplash.com/photo-1535530992057-57d244f962b0?w=500&h=400&fit=crop"
+                            alt="Joy"
+                            onerror="this.style.background='linear-gradient(135deg,#ffbe0b,#00f5d4)';this.style.height='300px';">
+                        <div class="gallery-tag">💃 Dance</div>
+                        <div class="gallery-overlay">
+                            <h4>Dance of Joy</h4>
+                            <p>Moving to the rhythm of colorful beats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-card reveal" style="transition-delay: 0.5s;">
+                        <img src="https://images.unsplash.com/photo-1604422499780-4e4c4a332c78?w=500&h=400&fit=crop"
+                            alt="Traditions"
+                            onerror="this.style.background='linear-gradient(135deg,#3a86ff,#8338ec)';this.style.height='300px';">
+                        <div class="gallery-tag">🪔 Tradition</div>
+                        <div class="gallery-overlay">
+                            <h4>Sacred Traditions</h4>
+                            <p>Honoring the age-old customs of Holi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-card reveal" style="transition-delay: 0.6s;">
+                        <img src="https://images.unsplash.com/photo-1583932420766-6b5ab07cf981?w=500&h=400&fit=crop"
+                            alt="Friendship"
+                            onerror="this.style.background='linear-gradient(135deg,#ff006e,#8338ec)';this.style.height='300px';">
+                        <div class="gallery-tag">🤝 Bond</div>
+                        <div class="gallery-overlay">
+                            <h4>Bonds of Color</h4>
+                            <p>Colors that connect hearts and unite souls</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-box reveal">
+                        <div class="stat-num" data-count="1000">0</div>
+                        <div class="stat-label">Years Old</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box reveal" style="transition-delay:0.1s;">
+                        <div class="stat-num" data-count="50">0</div>
+                        <div class="stat-label">+ Colors</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box reveal" style="transition-delay:0.2s;">
+                        <div class="stat-num" data-count="200">0</div>
+                        <div class="stat-label">M+ People</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box reveal" style="transition-delay:0.3s;">
+                        <div class="stat-num" data-count="100">0</div>
+                        <div class="stat-label">% Joy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPECIAL MESSAGE ===== -->
+    <section class="section" id="message">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="msg-box reveal-scale">
+                        <div class="rotating-border"></div>
+                        <div class="inner-bg"></div>
+                        <div style="font-size: 4rem; margin-bottom: 25px;">🪷</div>
+                        <p class="msg-quote">"Let the colors of Holi paint your life with the shades of happiness, love,
+                            and success. May every moment be as bright and beautiful as the festival itself!"</p>
+                        <p class="msg-author">— Wishing You a Happy Holi 2026 🌸</p>
+                        <div class="mt-4">
+                            <button class="btn-holi" onclick="shareWish()">
+                                <span class="shine"></span>
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share This Wish</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GREETING GENERATOR ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-tag reveal">🎨 Create & Share</div>
+                <h2 class="section-title reveal">Your Personal Greeting</h2>
+                <p class="section-desc reveal">Create a personalized Holi greeting card and share it with your loved
+                    ones!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="wish-card reveal" style="transition-delay: 0.2s; text-align: left;">
+                        <div class="mb-3">
+                            <label
+                                style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 8px; display: block;">Your
+                                Name</label>
+                            <input type="text" id="senderName" placeholder="Enter your name..." class="gen-input">
+                        </div>
+                        <div class="mb-4">
+                            <label
+                                style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 8px; display: block;">Friend's
+                                Name</label>
+                            <input type="text" id="receiverName" placeholder="Enter friend's name..." class="gen-input">
+                        </div>
+                        <button class="btn-holi" onclick="genGreeting()" style="width: 100%; justify-content: center;">
+                            <span class="shine"></span>
+                            <i class="fas fa-magic"></i>
+                            <span>Generate Greeting ✨</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="greetingResult" class="mt-4"></div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <div class="footer-brand reveal">🎨 Happy Holi 2026</div>
+            <p class="text-white-50 mb-4 reveal" style="transition-delay:0.1s;">Spread colors, spread love, spread
+                happiness</p>
+            <div class="mb-4 reveal" style="transition-delay:0.2s;">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="reveal" style="transition-delay:0.3s;">
+                <p style="color: rgba(255,255,255,0.3); font-size: 0.85rem;">Made with ❤️ and Colors | Happy Holi 2026
+                    🌈</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Music Button -->
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Toggle Music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ===== HOLI COLORS =====
+        const COLORS = ['#ff006e', '#ffbe0b', '#00f5d4', '#8338ec', '#fb5607', '#3a86ff', '#ef233c', '#f72585', '#b5e48c', '#00b4d8', '#ff4081', '#ffd600', '#00e676', '#b388ff'];
+        const EMOJIS = ['🎨', '🌈', '💜', '💛', '💚', '🧡', '💗', '🎉', '✨', '🎊', '🪷', '🌸', '💐', '🌺', '🦋'];
+
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hide');
+                setTimeout(() => document.getElementById('preloader').style.display = 'none', 800);
+                launchConfetti();
+            }, 1500);
+        });
+
+        // ===== PARTICLE SYSTEM =====
+        const cvs = document.getElementById('particleCanvas');
+        const c = cvs.getContext('2d');
+        let W, H;
+        function resize() { W = cvs.width = innerWidth; H = cvs.height = innerHeight; }
+        resize();
+        window.addEventListener('resize', resize);
+
+        class P {
+            constructor() { this.init(); }
+            init() {
+                this.x = Math.random() * W;
+                this.y = Math.random() * H;
+                this.r = Math.random() * 3 + 0.5;
+                this.dx = (Math.random() - 0.5) * 1.2;
+                this.dy = (Math.random() - 0.5) * 1.2;
+                this.color = COLORS[~~(Math.random() * COLORS.length)];
+                this.alpha = Math.random() * 0.5 + 0.15;
+                this.life = Math.random() * 300 + 150;
+            }
+            update() {
+                this.x += this.dx;
+                this.y += this.dy;
+                this.life--;
+                if (this.life <= 0 || this.x < -10 || this.x > W + 10 || this.y < -10 || this.y > H + 10) this.init();
+            }
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                c.fillStyle = this.color;
+                c.globalAlpha = this.alpha;
+                c.fill();
+                c.globalAlpha = 1;
+            }
+        }
+
+        const pts = Array.from({ length: 100 }, () => new P());
+
+        // Stars
+        class Star {
+            constructor() {
+                this.x = Math.random() * W;
+                this.y = Math.random() * H;
+                this.r = Math.random() * 1.5;
+                this.alpha = Math.random();
+                this.da = (Math.random() - 0.5) * 0.02;
+            }
+            update() {
+                this.alpha += this.da;
+                if (this.alpha <= 0.1 || this.alpha >= 1) this.da *= -1;
+            }
+            draw() {
+                c.beginPath();
+                c.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                c.fillStyle = '#fff';
+                c.globalAlpha = this.alpha;
+                c.fill();
+                c.globalAlpha = 1;
+            }
+        }
+
+        const stars = Array.from({ length: 120 }, () => new Star());
+
+        function animate() {
+            c.clearRect(0, 0, W, H);
+            stars.forEach(s => { s.update(); s.draw(); });
+            pts.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // ===== COUNTDOWN =====
+        function updateCD() {
+            const target = new Date('March 04, 2026 00:00:00').getTime();
+            const now = Date.now();
+            const d = target - now;
+            if (d > 0) {
+                document.getElementById('c-days').textContent = String(~~(d / 864e5)).padStart(3, '0');
+                document.getElementById('c-hours').textContent = String(~~((d % 864e5) / 36e5)).padStart(2, '0');
+                document.getElementById('c-mins').textContent = String(~~((d % 36e5) / 6e4)).padStart(2, '0');
+                document.getElementById('c-secs').textContent = String(~~((d % 6e4) / 1e3)).padStart(2, '0');
+            } else {
+                ['c-days', 'c-hours', 'c-mins', 'c-secs'].forEach((id, i) => {
+                    document.getElementById(id).textContent = ['🎉', '🎨', '🌈', '💝'][i];
+                });
+            }
+        }
+        setInterval(updateCD, 1000);
+        updateCD();
+
+        // ===== SCROLL EFFECTS =====
+        const nb = document.getElementById('navbar');
+        const bt = document.getElementById('backTop');
+
+        function onScroll() {
+            const sy = window.scrollY;
+            nb.classList.toggle('scrolled', sy > 80);
+            bt.classList.toggle('show', sy > 500);
+
+            // Reveal animations
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+                if (el.getBoundingClientRect().top < innerHeight - 60) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        // ===== PARALLAX =====
+        window.addEventListener('scroll', () => {
+            const bg = document.getElementById('parallaxBg');
+            if (bg) {
+                const rect = bg.parentElement.getBoundingClientRect();
+                const speed = 0.3;
+                bg.style.transform = `translateY(${rect.top * speed}px)`;
+            }
+        });
+
+        // ===== ANIMATED YEAR TEXT =====
+        const yearEl = document.getElementById('yearText');
+        if (yearEl) {
+            const text = yearEl.textContent;
+            yearEl.innerHTML = '';
+            [...text].forEach((ch, i) => {
+                const span = document.createElement('span');
+                span.className = 'char-animate';
+                span.textContent = ch;
+                span.style.animationDelay = (i * 0.15) + 's';
+                yearEl.appendChild(span);
+            });
+        }
+
+        // ===== POWDER SPLASH =====
+        function splashPowder(e, color) {
+            const count = 40;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'powder';
+                const size = Math.random() * 18 + 4;
+                p.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;width:${size}px;height:${size}px;background:${color};`;
+                const angle = Math.random() * Math.PI * 2;
+                const dist = Math.random() * 250 + 50;
+                p.style.setProperty('--dx', `${Math.cos(angle) * dist}px`);
+                p.style.setProperty('--dy', `${Math.sin(angle) * dist}px`);
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 1200);
+            }
+            // Emoji burst
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const em = document.createElement('div');
+                    em.className = 'emoji-float';
+                    em.textContent = EMOJIS[~~(Math.random() * EMOJIS.length)];
+                    em.style.left = (e.clientX + (Math.random() - 0.5) * 100) + 'px';
+                    em.style.top = e.clientY + 'px';
+                    em.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    document.body.appendChild(em);
+                    setTimeout(() => em.remove(), 6000);
+                }, i * 100);
+            }
+        }
+
+        // ===== CLICK ANYWHERE EFFECT =====
+        document.addEventListener('click', e => {
+            for (let i = 0; i < 12; i++) {
+                const p = document.createElement('div');
+                p.className = 'powder';
+                const size = Math.random() * 10 + 3;
+                p.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;width:${size}px;height:${size}px;background:${COLORS[~~(Math.random() * COLORS.length)]};`;
+                const angle = Math.random() * Math.PI * 2;
+                const dist = Math.random() * 80 + 20;
+                p.style.setProperty('--dx', `${Math.cos(angle) * dist}px`);
+                p.style.setProperty('--dy', `${Math.sin(angle) * dist}px`);
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 1200);
+            }
+        });
+
+        // ===== CURSOR TRAIL =====
+        let lastT = 0;
+        document.addEventListener('mousemove', e => {
+            if (Date.now() - lastT < 40) return;
+            lastT = Date.now();
+            const t = document.createElement('div');
+            t.className = 'trail';
+            t.style.left = e.clientX + 'px';
+            t.style.top = e.clientY + 'px';
+            t.style.background = COLORS[~~(Math.random() * COLORS.length)];
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 700);
+        });
+
+        // ===== CONFETTI LAUNCHER =====
+        function launchConfetti() {
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const cf = document.createElement('div');
+                    cf.className = 'confetti';
+                    cf.style.left = Math.random() * 100 + '%';
+                    cf.style.background = COLORS[~~(Math.random() * COLORS.length)];
+                    const w = Math.random() * 12 + 5;
+                    const h = Math.random() * 12 + 5;
+                    cf.style.width = w + 'px';
+                    cf.style.height = h + 'px';
+                    cf.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    cf.style.animationDuration = (Math.random() * 3 + 2.5) + 's';
+                    document.body.appendChild(cf);
+                    setTimeout(() => cf.remove(), 6000);
+                }, i * 30);
+            }
+            // Emoji shower
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const em = document.createElement('div');
+                    em.className = 'emoji-float';
+                    em.textContent = EMOJIS[~~(Math.random() * EMOJIS.length)];
+                    em.style.left = Math.random() * 100 + '%';
+                    em.style.bottom = '-50px';
+                    em.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                    em.style.fontSize = (Math.random() * 1.5 + 1.2) + 'rem';
+                    document.body.appendChild(em);
+                    setTimeout(() => em.remove(), 8000);
+                }, i * 250);
+            }
+        }
+
+        // ===== AUTO EMOJIS =====
+        setInterval(() => {
+            const em = document.createElement('div');
+            em.className = 'emoji-float';
+            em.textContent = EMOJIS[~~(Math.random() * EMOJIS.length)];
+            em.style.left = Math.random() * 100 + '%';
+            em.style.bottom = '-50px';
+            em.style.animationDuration = (Math.random() * 6 + 5) + 's';
+            em.style.fontSize = (Math.random() * 1.2 + 0.8) + 'rem';
+            document.body.appendChild(em);
+            setTimeout(() => em.remove(), 11000);
+        }, 2500);
+
+        // ===== STAT COUNTER =====
+        let counted = false;
+        function countUp() {
+            if (counted) return;
+            const nums = document.querySelectorAll('.stat-num[data-count]');
+            const first = nums[0];
+            if (!first) return;
+            if (first.getBoundingClientRect().top < innerHeight - 50) {
+                counted = true;
+                nums.forEach(el => {
+                    const target = +el.dataset.count;
+                    let cur = 0;
+                    const step = target / 60;
+                    const timer = setInterval(() => {
+                        cur += step;
+                        if (cur >= target) { cur = target; clearInterval(timer); }
+                        el.textContent = Math.floor(cur);
+                    }, 25);
+                });
+            }
+        }
+        window.addEventListener('scroll', countUp);
+
+        // ===== GREETING GENERATOR =====
+        function genGreeting() {
+            const sender = document.getElementById('senderName').value || 'Someone Special';
+            const receiver = document.getElementById('receiverName').value || 'Dear Friend';
+            const wishes = [
+                'May every color of Holi add a beautiful shade of happiness in your life!',
+                'Wishing you a colorful and joyful Holi filled with sweet moments and vibrant memories!',
+                'May the vibrant colors of Holi fill your world with endless joy, love, and laughter!',
+                'Let the magic of Holi colors transform your life into a beautiful masterpiece!',
+                'May the gulal of love color your life with shades of joy and prosperity!'
+            ];
+            const w = wishes[~~(Math.random() * wishes.length)];
+            document.getElementById('greetingResult').innerHTML = `
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="msg-box" style="animation: fadeUp 0.8s ease forwards;">
+                    <div class="rotating-border"></div>
+                    <div class="inner-bg"></div>
+                    <div style="font-size:3.5rem;margin-bottom:15px;">🎨🌈✨</div>
+                    <h3 style="font-family:'Dancing Script',cursive;font-size:2.8rem;color:var(--yellow);margin-bottom:15px;">Happy Holi 2026!</h3>
+                    <p style="color:#fff;font-size:1.3rem;margin-bottom:8px;">Dear <span style="color:var(--pink);font-weight:700;">${receiver}</span>,</p>
+                    <p style="color:rgba(255,255,255,0.75);font-size:1.1rem;line-height:1.9;margin-bottom:20px;">${w}</p>
+                    <p style="color:var(--yellow);font-weight:600;font-size:1.1rem;">With Love, <span style="color:var(--green);">${sender}</span> 💝</p>
+                </div>
+            </div>
+        </div>
+    `;
+            launchConfetti();
+        }
+
+        // ===== SHARE =====
+        function shareWish() {
+            const text = '🎨 Happy Holi 2026! 🌈 May your life be filled with vibrant colors of happiness, love & prosperity! Let\'s celebrate the festival of colors together! 💝✨ #HappyHoli2026';
+            if (navigator.share) {
+                navigator.share({ title: 'Happy Holi 2026!', text });
+            } else {
+                navigator.clipboard.writeText(text).then(() => alert('🎨 Holi wish copied! Share it with loved ones! 💝'));
+            }
+        }
+
+        // ===== MUSIC =====
+        let playing = false;
+        let musicInt;
+        const aCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function toggleMusic() {
+            const btn = document.getElementById('musicBtn');
+            if (playing) {
+                clearInterval(musicInt);
+                btn.innerHTML = '<i class="fas fa-music"></i>';
+                btn.classList.remove('playing');
+                playing = false;
+            } else {
+                playBeats();
+                btn.innerHTML = '<i class="fas fa-pause"></i>';
+                btn.classList.add('playing');
+                playing = true;
+            }
+        }
+
+        function playBeats() {
+            const scale = [261.63, 293.66, 329.63, 349.23, 392, 440, 493.88, 523.25];
+            let i = 0;
+            const patterns = [0, 2, 4, 5, 4, 2, 0, 2, 5, 7, 5, 4, 2, 0, 4, 7];
+            musicInt = setInterval(() => {
+                const osc = aCtx.createOscillator();
+                const gain = aCtx.createGain();
+                osc.connect(gain);
+                gain.connect(aCtx.destination);
+                osc.type = 'triangle';
+                osc.frequency.value = scale[patterns[i % patterns.length]];
+                gain.gain.setValueAtTime(0.08, aCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, aCtx.currentTime + 0.4);
+                osc.start(aCtx.currentTime);
+                osc.stop(aCtx.currentTime + 0.4);
+                i++;
+            }, 300);
+        }
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelector('.nav-links')?.classList.remove('active');
+            });
+        });
+
+        // ===== DYNAMIC STYLE =====
+        const dynStyle = document.createElement('style');
+        dynStyle.textContent = `@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}`;
+        document.head.appendChild(dynStyle);
+
+        // ===== COLOR RAIN DROPS =====
+        function createRain() {
+            setInterval(() => {
+                const drop = document.createElement('div');
+                drop.style.cssText = `position:fixed;top:-20px;left:${Math.random() * 100}%;width:3px;height:${Math.random() * 20 + 10}px;background:${COLORS[~~(Math.random() * COLORS.length)]};border-radius:50%;z-index:0;pointer-events:none;opacity:${Math.random() * 0.4 + 0.1};animation:rainDrop ${Math.random() * 4 + 4}s linear forwards;`;
+                document.body.appendChild(drop);
+                setTimeout(() => drop.remove(), 8000);
+            }, 300);
+        }
+
+        const rainStyle = document.createElement('style');
+        rainStyle.textContent = `@keyframes rainDrop{0%{transform:translateY(-20px);opacity:0.3}100%{transform:translateY(110vh);opacity:0}}`;
+        document.head.appendChild(rainStyle);
+        createRain();
+
+        console.log('🎨 Happy Holi 2026! May your life be colorful! 🌈');
+    </script>
+</body>
+
+</html>

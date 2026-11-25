@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop — Vocal For Local</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="f1.png" rel="icon">
+
+    <style>
+         :root {
+            --accent: #FF6B35;
+            --muted: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #fff 0%, #f8fbff 100%);
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link.active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .product-card {
+            border: 0;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+            transition: transform .3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-6px);
+        }
+        
+        .product-img {
+            border-radius: 1rem 1rem 0 0;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--muted);
+        }
+        /* Prevent horizontal scroll on mobile */
+        
+        html,
+        body {
+            overflow-x: hidden;
+        }
+        /* Ensure all images and iframes fit their container */
+        
+        img,
+        iframe,
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+        /* footor */
+        
+        .footer {
+            /* background: linear-gradient(135deg, #e77808, #de5d08); */
+            background: #ff6b35;
+            color: #fff;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            transition: 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #131212;
+            transform: translateX(5px);
+        }
+        
+        .social-btn {
+            font-size: 1.4rem;
+            color: white;
+            transition: 0.3s;
+        }
+        
+        .social-btn.youtube:hover {
+            color: #f10505;
+            transform: scale(1.2);
+        }
+        
+        .social-btn.instagram:hover {
+            color: #E4405F;
+            transform: scale(1.2);
+        }
+        
+        .social-btn.twitter:hover {
+            color: #1DA1F2;
+            transform: scale(1.2);
+        }
+        
+        hr {
+            opacity: 0.2;
+        }
+        /* Dropdown opens on hover */
+        
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            /* prevent gap */
+            transition: all 0.3s;
+        }
+        /* Optional: smooth fade-in effect */
+        
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="home.html" style="color:#FF6B35;">Vocal For Local</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gov.idea.html">Gov Ideas</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      More
+    </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li class="nav-item"><a class="nav-link" href="small.html">Business Ideas</a></li>
+                            <li class="nav-item"><a class="nav-link " href="sucsess.html">successful stories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        🌐 Select Language
+    </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="shop.html">English</a></li>
+                            <li><a class="dropdown-item" href="shoph.html">Hindi</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Section -->
+    <section class="section container" style="margin-top: 80px;">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold " style="color:#FF6B35;">Local Products</h2>
+            <p class="text-muted">Buy handmade, local and sustainable products to support your community economy.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card product-card">
+                    <img src="https://i.etsystatic.com/14266816/r/il/284422/4195206907/il_1588xN.4195206907_rlm7.jpg" class="product-img" alt="Handmade Pottery">
+                    <div class="card-body">
+                        <h5 class="card-title">Handmade Clay Pottery</h5>
+                        <p class="card-text text-muted">Beautiful eco-friendly clay pots crafted by local artisans.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹350</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card product-card">
+                    <img src="https://i.etsystatic.com/60575260/r/il/4a3cb4/7056258025/il_1588xN.7056258025_7f6t.jpg" class="product-img" alt="Handloom Scarf">
+                    <div class="card-body">
+                        <h5 class="card-title">Handloom Cotton Scarf</h5>
+                        <p class="card-text text-muted">Soft and vibrant scarf made by local weavers using organic cotton.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹250</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="https://m.media-amazon.com/images/I/31pIfhMWyLL._SX300_SY300_QL70_FMwebp_.jpg" class="product-img" alt="Organic Honey">
+                    <div class="card-body">
+                        <h5 class="card-title">Organic Honey</h5>
+                        <p class="card-text text-muted">Pure and natural honey collected from local farms without additives.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹180</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="card product-card">
+                    <img src="https://i.etsystatic.com/32509168/r/il/d30949/3738787426/il_1588xN.3738787426_fgo2.jpg" class="product-img" alt="Handmade Basket">
+                    <div class="card-body">
+                        <h5 class="card-title">Handwoven Bamboo Basket</h5>
+                        <p class="card-text text-muted">Eco-friendly bamboo baskets handcrafted by local artisans.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹300</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card product-card">
+                    <img src="https://m.media-amazon.com/images/I/51K-MVKTzpL._SY300_SX300_QL70_FMwebp_.jpg" class="product-img" alt="Wooden Toy">
+                    <div class="card-body">
+                        <h5 class="card-title">Wooden Toy Set</h5>
+                        <p class="card-text text-muted">Colorful and safe toys made from sustainable wood sources.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹400</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="https://www.nourishedlife.com.au/cdn/shop/files/variant_1065636.jpg?v=1724141319&width=767" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title">Natural Handmade Soap</h5>
+                        <p class="card-text text-muted">Refreshing handmade soaps infused with organic ingredients.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹120</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Product 7 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p1.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title">Saras Aajeevika Handi 0.5 L with Lid</h5>
+                        <p class="card-text text-muted">Refreshing handmade infused with organic ingredients.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Product 8 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p2.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title">BS NATURAL 731 Handi 1 L</h5>
+                        <p class="card-text text-muted">Refreshing handmade infused with organic ingredients.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- product 9 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p3.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title"> Enterprises Terracotta (Brown, Cup Set)</h5>
+                        <p class="card-text text-muted">Refreshing handmade infused with organic ingredients.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- product 10 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p4.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title">SPR Pack of 8 Terracotta </h5>
+                        <p class="card-text text-muted">Showpiece Mitti ka Dinner Set Dinner Set (Yellow).</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- product 11 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p5.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bankura Traditional Art Center </h5>
+                        <p class="card-text text-muted">Decorative Showpiece - 14 cm (Wood, Clear)</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- product 12 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p6.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title"> Wooden Bangle Stand Bangle organizer </h5>
+                        <p class="card-text text-muted">Folding Chuddi Stand gift (Wood, Brown) </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- product 13 -->
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card product-card">
+                    <img src="assests/images/p7.jpg" class="product-img" alt="Handmade Soap">
+                    <div class="card-body">
+                        <h5 class="card-title">Traditional Art Center Deer Head</h5>
+                        <p class="card-text text-muted"> Home Decor Gift Items ,Clear Colour (B Category Item) (47 cm X 42 cm, Clear).</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">₹248</span>
+                            <button class="btn btn-sm " style="background-color:#FF6B35; color: white;">Buy Local</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <!-- ====== FOOTER SECTION ====== -->
+
+        <div class="container">
+            <div class="row text-center text-md-start ">
+                <!-- Column 1: Logo & Message -->
+                <div class="col-md-4 mb-4 ">
+                    <h3 class="fw-bold text-white ">Vocal For Local 🇮🇳</h3>
+                    <p class="text-light small mt-3 ">
+                        Supporting local artisans, farmers, and small industries to build a self-reliant India.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-4 mb-4 ">
+                    <h5 class=" mb-3 " style="color: rgb(246, 233, 0);">Quick Links</h5>
+                    <ul class="list-unstyled ">
+                        <li><a href="home.html " class="footer-link ">Home</a></li>
+                        <li><a href="about.html " class="footer-link ">About</a></li>
+                        <li><a href="gallery.html " class="footer-link ">Gallery</a></li>
+                        <li><a href="contact.html " class="footer-link ">Contact</a></li>
+                        <li><a href="pledge.html " class="footer-link ">Pledge</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Media -->
+                <div class="col-md-4 mb-4 ">
+                    <h5 class=" mb-3 " style="color: rgb(246, 233, 0);">Follow Us</h5>
+                    <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3 ">
+                        <a href="# " class="social-btn youtube " title="YouTube "><i class="fab fa-youtube "></i></a>
+                        <a href="# " class="social-btn instagram " title="Instagram "><i class="fab fa-instagram "></i></a>
+                        <a href="# " class="social-btn twitter " title="Twitter "><i class="fab fa-twitter "></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="text-secondary ">
+
+
+            <div class="text-center text-light small ">
+                Made by Supriya Maurya Team Unnati — Vocal for Local • Support Your Economy
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800
+        });
+    </script>
+</body>
+
+</html>

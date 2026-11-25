@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+//confirm box
+
+function sw()
+{
+//window.alert("hii hii");
+var t1=document.getElementById("h1").innerHTML;
+//alert(t1);
+var t2=document.getElementById("h3").innerHTML;
+//alert(t2);
+var status=window.confirm("R U sure want to swap");
+if (status==true){
+document.getElementById("h1").innerHTML=t2;
+document.getElementById("h3").innerHTML=t1;
+}
+else
+{
+alert("Good byyy")
+}
+}
+
+ 
+</script>
+</head>
+<body>
+
+<h1 id="h1">SOftpro indiah</h1>
+<h3 id="h3">nitish yadav<h3>
+<input type="button" value="swap" onclick="sw()"/>
+
+</body>
+</html>

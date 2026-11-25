@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vocal for Local — Government Ideas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="f1.png" rel="icon">
+
+    <style>
+         :root {
+            --accent: #FF6B35;
+            --muted: #6c757d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fbff;
+            padding-top: 80px;
+        }
+        
+        .section-title {
+            font-weight: 800;
+            font-size: 2rem;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .idea-card {
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #fff;
+            transition: transform 0.3s;
+        }
+        
+        .idea-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .idea-icon {
+            font-size: 2rem;
+            color: #FF6B35;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-link.active {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            /* color: #6c757d; */
+            margin-top: 3rem;
+        }
+        /* footor */
+        
+        .footer {
+            /* background: linear-gradient(135deg, #e77808, #de5d08); */
+            background: #ff6b35;
+            color: #fff;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            transition: 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #131212;
+            transform: translateX(5px);
+        }
+        
+        .social-btn {
+            font-size: 1.4rem;
+            color: white;
+            transition: 0.3s;
+        }
+        
+        .social-btn.youtube:hover {
+            color: #f10505;
+            transform: scale(1.2);
+        }
+        
+        .social-btn.instagram:hover {
+            color: #E4405F;
+            transform: scale(1.2);
+        }
+        
+        .social-btn.twitter:hover {
+            color: #1DA1F2;
+            transform: scale(1.2);
+        }
+        
+        hr {
+            opacity: 0.2;
+        }
+        /* Dropdown opens on hover */
+        
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            /* prevent gap */
+            transition: all 0.3s;
+        }
+        /* Optional: smooth fade-in effect */
+        
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .nav-item.dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="home.html" style="color:#FF6B35;">Vocal For Local</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gov.idea.html">Gov Ideas</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      More
+    </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li class="nav-item"><a class="nav-link" href="small.html">Business Ideas</a></li>
+                            <li class="nav-item"><a class="nav-link " href="sucsess.html">successful stories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        🌐 Select Language
+    </a>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="gov.idea.html">English</a></li>
+                            <li><a class="dropdown-item" href="gov.ideah.html">Hindi</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-down">Government Ideas for "Vocal for Local"</h2>
+            <p class="text-center text-muted mb-5" data-aos="fade-up">
+                Innovative strategies the government could implement to empower local businesses, artisans, and startups in 2025 and beyond.
+            </p>
+
+            <div class="row g-4">
+                <!-- Example Idea Card -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-certificate"></i></div>
+                        <h5>Local Brand Certification</h5>
+                        <p>“Proudly Local” or “Made in My District” certification builds trust and boosts small producers’ sales.</p>
+                    </div>
+                </div>
+
+                <!-- Idea 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h5>Digital Marketplace</h5>
+                        <p>An official app for artisans, farmers, and startups to sell products safely with government-backed delivery.</p>
+                    </div>
+                </div>
+
+                <!-- Idea 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-school"></i></div>
+                        <h5>Localpreneurship in Schools</h5>
+                        <p>Students adopt local businesses to help with digital marketing, design, and mini start-up challenges.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="650">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-satellite"></i></div>
+                        <h5>Geo-Tagging Local Businesses</h5>
+                        <p>Map registered local businesses digitally so people can explore industries in their area via an app.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h5>Local Tourism + Products</h5>
+                        <p>Encourage tourists to buy district souvenirs & set up ODOP kiosks at airports and tourist sites.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="550">
+                    <div class="idea-card text-center">
+                        <div class="idea-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+                        <h5>Festival Campaigns</h5>
+                        <p>Promote local gifts & artisan products during Diwali, Raksha Bandhan, Independence Day.</p>
+                    </div>
+                </div>
+
+                <!-- Add remaining ideas similarly... -->
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer" class="footer">
+        <!-- ====== FOOTER SECTION ====== -->
+
+        <div class="container ">
+            <div class="row text-center text-md-start ">
+                <!-- Column 1: Logo & Message -->
+                <div class="col-md-4 mb-4 ">
+                    <h3 class="fw-bold text-white ">Vocal For Local 🇮🇳</h3>
+                    <p class="text-light small mt-3 ">
+                        Supporting local artisans, farmers, and small industries to build a self-reliant India.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-md-4 mb-4 ">
+                    <h5 class=" mb-3 " style="color: rgb(246, 233, 0);">Quick Links</h5>
+                    <ul class="list-unstyled ">
+                        <li><a href="home.html " class="footer-link ">Home</a></li>
+                        <li><a href="about.html " class="footer-link ">About</a></li>
+                        <li><a href="gallery.html " class="footer-link ">Gallery</a></li>
+                        <li><a href="contact.html " class="footer-link ">Contact</a></li>
+                        <li><a href="pledge.html " class="footer-link ">Pledge</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Media -->
+                <div class="col-md-4 mb-4 ">
+                    <h5 class=" mb-3 " style="color: rgb(246, 233, 0);">Follow Us</h5>
+                    <div class="social-icons d-flex justify-content-center justify-content-md-start gap-3 ">
+                        <a href="# " class="social-btn youtube " title="YouTube "><i class="fab fa-youtube "></i></a>
+                        <a href="# " class="social-btn instagram " title="Instagram "><i class="fab fa-instagram "></i></a>
+                        <a href="# " class="social-btn twitter " title="Twitter "><i class="fab fa-twitter "></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="text-secondary ">
+
+
+            <div class="text-center text-light small ">
+                Made by Supriya Maurya Team Unnati — Vocal for Local • Support Your Economy
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<script>
+// required validaton
+function ch() {
+
+//alert("hii hii");
+var name=document.getElementById("tb").value;
+
+//alert("kjoerjioj");
+if(name==""){
+//alert("invalid");
+document.getElementById("sp").innerHTML="<img src='8.png' height='10px'width='10px' style='margin-left:-200px'>";
+document.getElementById("tb").style.border="2px solid red";
+
+
+}
+else{ 
+//alert("valid");
+document.getElementById("sp").innerHTML="<img src='r.jpg' height='10px'width='10px' style='margin-left:-20px'>";
+document.getElementById("tb").style.border="";
+}
+
+}
+  
+</script>
+</head>
+<body>
+Name
+
+
+<input type="text" id="tb">
+<span style="color:red" id="sp"></span>
+</br>
+<input type="button" value="check" onclick="ch()">
+</body>
+</html>

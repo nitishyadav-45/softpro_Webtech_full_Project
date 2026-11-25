@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Building Hub</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lilita+One&family=Lobster&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{%  static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SmartBuildingHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-3">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+                <a href="#signin" class="btn btn-warning  text-dark  shadow  border-0 sign-in-btn">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- index page start -->
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-heading shadow bg-transparent !important " data-aos="fade-right">BUILDING TOMORROW TODAY
+            </h1>
+
+
+
+            <p class="lead" data-aos="fade-right">Transforming Visions Into Exceptional Structures</p>
+            <p>With over 25 years of experience, we deliver innovative construction solutions that exceed expectations
+                and stand the test of time.</p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap" data-aos="flip-left">
+                <a href="#get-started" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="#projects" class="btn btn-outline-light btn-lg">Our Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row align-items-center g-4">
+            <!-- Left Column: About Text + Stats Card -->
+            <div class="col-sm-6" data-aos="fade-up-right">
+                <!-- About Text -->
+                <h2 class="fw-bold mb-3">ABOUT OUR COMPANY</h2>
+                <h4 class="text-primary mb-3">Building Dreams With Excellence & Reliability</h4>
+                <p>With decades of industry experience, our team of professional builders and architects are dedicated
+                    to bringing your vision to life. We handle projects of any scale with meticulous attention to detail
+                    and unwavering commitment to quality.</p>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Professional team of
+                        experienced builders and designers</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> High-quality materials
+                        sourced from trusted suppliers</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> On-time project
+                        completion and transparent communication</li>
+                </ul>
+
+                <a href="#about" class="btn btn-primary rounded-pill px-4 py-2 mt-3">Learn More About Us</a>
+
+                <!-- Stats Card -->
+                <div class="card shadow-sm rounded-4 border-0 p-4 text-center bg-white mt-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <h2 class="stat-number">30+</h2>
+                            <p class="stat-label">Years Experience</p>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="stat-number">250+</h2>
+                            <p class="stat-label">Projects Completed</p>
+                        </div>
+                        <div class="col-4">
+                            <h2 class="stat-number">98%</h2>
+                            <p class="stat-label">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="col-sm-6 text-center " data-aos="zoom-in-up">
+                <img src="https://softproproject.pythonanywhere.com/static/img/construction-worker.jpg"
+                    alt="About Company" class="img-fluid rounded-4 p-4 mt-4 h-100 shado">
+            </div>
+        </div>
+    </div>
+
+
+    <section class="platform-features py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" data-aos="zoom-in-down">PLATFORM FEATURES</h2>
+                <h5 class="text-primary mb-3" data-aos="zoom-in-down">Powerful Tools for Modern Construction</h5>
+                <p class="text-muted mx-auto" style="max-width:600px;" data-aos="zoom-in-down">
+                    Our comprehensive suite of features empowers every stakeholder in the construction process with the
+                    tools they need to succeed.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+                    <div class="feature-card p-4 rounded shadow-sm bg-white h-100 animate-up d-flex flex-column">
+                        <h5 class="fw-semibold mb-3">
+                            <i class="bi bi-speedometer2 text-primary me-2"></i> Project Dashboard
+                        </h5>
+                        <p>Centralized hub for tracking progress, milestones, and resource allocation with intuitive
+                            visualizations.</p>
+                        <ul class="list-unstyled text-muted mb-4">
+                            <li>• Real-time status tracking</li>
+                            <li>• Task management system</li>
+                            <li>• Budget monitoring</li>
+                        </ul>
+                        <div class="feature-accent feature-accent-1 mt-auto rounded-bottom"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+                    <div class="feature-card p-4 rounded shadow-sm bg-white h-100 animate-up d-flex flex-column"
+                        style="animation-delay: 0.2s;">
+                        <h5 class="fw-semibold mb-3">
+                            <i class="bi bi-people-fill text-success me-2"></i> Team Collaboration
+                        </h5>
+                        <p>Connect all stakeholders in one platform with powerful communication and file-sharing
+                            capabilities.</p>
+                        <ul class="list-unstyled text-muted mb-4">
+                            <li>• Unified messaging system</li>
+                            <li>• Document sharing & approvals</li>
+                            <li>• Role-based permissions</li>
+                        </ul>
+                        <div class="feature-accent feature-accent-2 mt-auto rounded-bottom"></div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+                    <div class="feature-card p-4 rounded shadow-sm bg-white h-100 animate-up d-flex flex-column"
+                        style="animation-delay: 0.4s;">
+                        <h5 class="fw-semibold mb-3">
+                            <i class="bi bi-cube text-info me-2"></i> 3D Visualization
+                        </h5>
+                        <p>Experience your construction project in three dimensions before breaking ground.</p>
+                        <ul class="list-unstyled text-muted mb-4">
+                            <li>• Interactive models</li>
+                            <li>• Virtual walkthroughs</li>
+                            <li>• Design revisions in real-time</li>
+                        </ul>
+                        <div class="feature-accent feature-accent-3 mt-auto rounded-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-section py-5"
+        style="background: linear-gradient(135deg, #0d1b2a, #1a2a47, #162a4f); color: #ddd;">
+        <!-- Your content here -->
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                <h2 class="fw-bold text-white">OUR SERVICES</h2>
+                <h5 class="text-info mb-3">Comprehensive Construction Solutions</h5>
+                <p class="mx-auto" style="max-width:600px; color: #bbb;">
+                    We offer a wide range of construction services tailored to meet the unique needs of each project,
+                    delivered with exceptional craftsmanship and attention to detail.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-house-door-fill text-primary service-icon me-3"></i>
+                            <h5 class="fw-semibold mb-0">Residential Construction</h5>
+                        </div>
+                        <p class="flex-grow-1 text-muted">From custom homes to multi-family units, we build comfortable,
+                            energy-efficient residential spaces designed for modern living.</p>
+                        <a href="#" class="btn btn-outline-primary mt-3 align-self-start service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-building text-success service-icon me-3"></i>
+                            <h5 class="fw-semibold mb-0">Commercial Buildings</h5>
+                        </div>
+                        <p class="flex-grow-1 text-muted">Office spaces, retail centers, and industrial facilities built
+                            to the highest standards of quality and functionality.</p>
+                        <a href="#" class="btn btn-outline-primary mt-3 align-self-start service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-palette-fill text-info service-icon me-3"></i>
+                            <h5 class="fw-semibold mb-0">Interior Design</h5>
+                        </div>
+                        <p class="flex-grow-1 text-muted">Transform your space with our expert interior design services,
+                            creating environments that inspire and delight.</p>
+                        <a href="#" class="btn btn-outline-primary mt-3 align-self-start service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-arrow-repeat text-warning service-icon me-3"></i>
+                            <h5 class="fw-semibold mb-0">Renovation & Remodeling</h5>
+                        </div>
+                        <p class="flex-grow-1 text-muted">Breathe new life into existing structures with our
+                            comprehensive renovation and remodeling services.</p>
+                        <a href="#" class="btn btn-outline-primary mt-3 align-self-start service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-pencil-square text-danger service-icon me-3"></i>
+                            <h5 class="fw-semibold mb-0">Architectural Design</h5>
+                        </div>
+                        <p class="flex-grow-1 text-muted">Innovative architectural solutions that balance aesthetics,
+                            functionality, and sustainability.</p>
+                        <a href="#" class="btn btn-outline-primary mt-3 align-self-start service-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-4">
+                    <div class="service-card p-4 rounded shadow-sm bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-gear-fill text-secondary service-icon me-3"></i>
+                            <h5 class="fw-semibold mb-0">Construction Management</h5>
+                        </div>
+                        <p class="flex-grow-1 text-muted">Expert oversight of your project from concept to completion,
+                            ensuring efficiency and quality at every stage.</p>
+                        <a href="#" class="btn btn-outline-primary mt-3 align-self-start service-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" data-aos="zoom-out">OUR PROJECTS</h2>
+                <h5 class="text-primary mb-3">Featured Construction Projects</h5>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Take a look at some of our most impressive projects, showcasing our commitment to quality,
+                    innovation, and excellence in construction.
+                </p>
+                <a href="#" class="btn btn-primary mt-3">View All Projects</a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card Template -->
+                <div class="col-sm-4" data-aos="zoom-out">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                            alt="Commercial" class="img-fluid project-img">
+                        <div class="project-overlay p-3 text-white position-absolute bottom-0 start-0 w-100">
+                            <small class="text-uppercase fw-semibold">Commercial</small>
+                            <h5 class="fw-bold mb-2">Modern Office Complex</h5>
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-out">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1560448204-0231b43b4e3a?auto=format&fit=crop&w=800&q=80"
+                            alt="Residential" class="img-fluid project-img">
+                        <div class="project-overlay p-3 text-white position-absolute bottom-0 start-0 w-100">
+                            <small class="text-uppercase fw-semibold">Residential</small>
+                            <h5 class="fw-bold mb-2">Luxury Residential Tower</h5>
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-out">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+                            alt="Public" class="img-fluid project-img">
+                        <div class="project-overlay p-3 text-white position-absolute bottom-0 start-0 w-100">
+                            <small class="text-uppercase fw-semibold">Public</small>
+                            <h5 class="fw-bold mb-2">Sustainable Community Center</h5>
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-out">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1486308510493-cb3000f76e2c?auto=format&fit=crop&w=800&q=80"
+                            alt="Industrial" class="img-fluid project-img">
+                        <div class="project-overlay p-3 text-white position-absolute bottom-0 start-0 w-100">
+                            <small class="text-uppercase fw-semibold">Industrial</small>
+                            <h5 class="fw-bold mb-2">Industrial Manufacturing Hub</h5>
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-out">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80"
+                            alt="Hospitality" class="img-fluid project-img">
+                        <div class="project-overlay p-3 text-white position-absolute bottom-0 start-0 w-100">
+                            <small class="text-uppercase fw-semibold">Hospitality</small>
+                            <h5 class="fw-bold mb-2">Waterfront Hotel & Spa</h5>
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-out">
+                    <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=800&q=80"
+                            alt="Mixed-Use" class="img-fluid project-img">
+                        <div class="project-overlay p-3 text-white position-absolute bottom-0 start-0 w-100">
+                            <small class="text-uppercase fw-semibold">Mixed-Use</small>
+                            <h5 class="fw-bold mb-2">Urban Mixed-Use Development</h5>
+                            <a href="#" class="btn btn-sm btn-outline-light">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="process-section py-5"
+        style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #f0f0f0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" data-aos="fade-left>OUR PROCESS</h2>
+                <h5 class=" text-info mb-3">How SmartBuild Hub Works</h5>
+                    <p class="mx-auto" style="max-width: 650px; color: #cdd4db;" data-aos="fade-left">
+                        Our innovative platform transforms the construction journey from concept to completion through
+                        an
+                        intuitive digital workflow that connects all stakeholders.
+                    </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-3" data-aos="flip-down">
+                    <div class="process-card p-4 rounded shadow h-100 text-center">
+                        <div class="icon-circle mb-3 mx-auto">
+                            <i class="bi bi-pencil-square fs-2"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Project Planning</h5>
+                        <p>Create your vision with our intuitive tools. Define requirements, set budgets, and establish
+                            timelines in a collaborative environment.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-3" data-aos="flip-down">
+                    <div class="process-card p-4 rounded shadow h-100 text-center">
+                        <div class="icon-circle mb-3 mx-auto">
+                            <i class="bi bi-people fs-2"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Team Assembly</h5>
+                        <p>Connect with architects, contractors, and suppliers through our verified network to build
+                            your ideal construction team.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-3" data-aos="flip-down">
+                    <div class="process-card p-4 rounded shadow h-100 text-center">
+                        <div class="icon-circle mb-3 mx-auto">
+                            <i class="bi bi-speedometer2 fs-2"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Project Execution</h5>
+                        <p>Monitor progress in real-time, approve changes instantly, and maintain clear communication
+                            throughout construction.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-3" data-aos="flip-down">
+                    <div class="process-card p-4 rounded shadow h-100 text-center">
+                        <div class="icon-circle mb-3 mx-auto">
+                            <i class="bi bi-check-circle fs-2"></i>
+                        </div>
+                        <h5 class="fw-semibold mb-2">Project Completion</h5>
+                        <p>Receive comprehensive documentation, warranty information, and maintenance schedules for your
+                            new construction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonials-section py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-4" data-aos="zoom-in">
+                <h2 class="fw-bold">TESTIMONIALS</h2>
+                <h6 class="text-primary mb-3">What Our Clients Say</h6>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Our clients share their experiences working with us — praised for quality, reliability, and
+                    professionalism.
+                </p>
+            </div>
+
+            <div class="owl-carousel owl-theme">
+                <!-- Testimonial Card -->
+                <div class="item">
+                    <div class="testimonial-card p-4 shadow-sm rounded bg-light text-center" data-aos="zoom-in">
+                        <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                        <p class="fst-italic text-secondary mb-3" data-aos="zoom-in">
+                            "Working with this construction team was a fantastic experience. Their attention to detail
+                            and commitment to quality exceeded our expectations."
+                        </p>
+                        <div class="client-info mt-3" data-aos="zoom-in">
+                            <img src="https://i.pravatar.cc/70?img=5" class="rounded-circle mb-2 w-25 mx-auto"
+                                alt="Sarah Johnson">
+
+                            <h6 class="fw-bold mb-0" data-aos="zoom-in">Sarah Johnson</h6>
+                            <small class="text-muted" data-aos="zoom-in">Property Developer</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat structure for six testimonials -->
+                <!-- Card 2 -->
+                <div class="item">
+                    <div class="testimonial-card p-4 shadow-sm rounded bg-light text-center" data-aos="zoom-in">
+                        <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                        <p class="fst-italic text-secondary mb-3" data-aos="zoom-in">
+                            "I'm extremely impressed with the professionalism and expertise. The team was responsive,
+                            transparent, and delivered exceptional results."
+                        </p>
+                        <div class="client-info mt-3">
+                            <img src="https://i.pravatar.cc/70?img=5" class="rounded-circle mb-2 w-25 mx-auto"
+                                alt="Sarah Johnson">
+
+                            <h6 class="fw-bold mb-0">Michael Thompson</h6>
+                            <small class="text-muted">Business Owner</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="item">
+                    <div class="testimonial-card p-4 shadow-sm rounded bg-light text-center">
+                        <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                        <p class="fst-italic text-secondary mb-3">
+                            "Our home renovation was handled with such care and precision. The team listened to our
+                            needs and transformed our space beyond imagination."
+                        </p>
+                        <div class="client-info mt-3">
+                            <img src="https://i.pravatar.cc/70?img=5" class="rounded-circle mb-2 w-25 mx-auto"
+                                alt="Sarah Johnson">
+                            <h6 class="fw-bold mb-0">Emily Rodriguez</h6>
+                            <small class="text-muted">Homeowner</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Card 4 -->
+                <div class="item">
+                    <div class="testimonial-card p-4 shadow-sm rounded bg-light text-center">
+                        <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                        <p class="fst-italic text-secondary mb-3">
+                            "Exceptional service from start to finish. They delivered on their promises and exceeded
+                            expectations."
+                        </p>
+                        <div class="client-info mt-3">
+                            <img src="https://i.pravatar.cc/70?img=5" class="rounded-circle mb-2 w-25 mx-auto"
+                                alt="Sarah Johnson">
+                            <h6 class="fw-bold mb-0">Liam Patel</h6>
+                            <small class="text-muted">Real Estate Agent</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Card 5 -->
+                <div class="item">
+                    <div class="testimonial-card p-4 shadow-sm rounded bg-light text-center">
+                        <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                        <p class="fst-italic text-secondary mb-3">
+                            "SmartBuild Hub streamlined every step. I felt informed and confident from start to finish."
+                        </p>
+                        <div class="client-info mt-3">
+                            <img src="https://i.pravatar.cc/70?img=5" class="rounded-circle mb-2 w-25 mx-auto"
+                                alt="Sarah Johnson">
+                            <h6 class="fw-bold mb-0">David Kim</h6>
+                            <small class="text-muted">Investor</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dummy Card 6 -->
+                <div class="item">
+                    <div class="testimonial-card p-4 shadow-sm rounded bg-light text-center">
+                        <i class="bi bi-quote fs-1 text-primary mb-3"></i>
+                        <p class="fst-italic text-secondary mb-3">
+                            "Professional, timely, and reliable. We couldn’t be happier with the final result."
+                        </p>
+                        <div class="client-info mt-3">
+                            <img src="https://i.pravatar.cc/70?img=5" class="rounded-circle mb-2 w-25 mx-auto"
+                                alt="Sarah Johnson">
+                            <h6 class="fw-bold mb-0">Olivia Chen</h6>
+                            <small class="text-muted">Retail Manager</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cta-section py-5" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Left Content -->
+                <div class="col-md-6 text-white mb-4 mb-md-0">
+                    <h2 class="fw-bold mb-3">Ready to Build Your Dream Project?</h2>
+                    <p class="text-light mb-4" style="max-width: 500px;">
+                        Let's discuss how we can bring your vision to life with our expertise in construction and
+                        design.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#estimate" class="btn btn-primary btn-lg px-4 shadow">Get Free Estimate</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4 shadow">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Right Stats Cards -->
+                <div class="col-md-6">
+                    <div class="row g-3">
+                        <!-- Card 1 -->
+                        <div class="col-6">
+                            <div class="stat-card glass-card p-4 text-center text-white rounded animate-up">
+                                <h3 class="fw-bold mb-1">500+</h3>
+                                <p class="mb-0">Projects Completed</p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-6">
+                            <div class="stat-card glass-card p-4 text-center text-white rounded animate-up"
+                                style="animation-delay: 0.1s;">
+                                <h3 class="fw-bold mb-1">120+</h3>
+                                <p class="mb-0">Expert Team Members</p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-6">
+                            <div class="stat-card glass-card p-4 text-center text-white rounded animate-up"
+                                style="animation-delay: 0.2s;">
+                                <h3 class="fw-bold mb-1">25+</h3>
+                                <p class="mb-0">Years of Experience</p>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-6">
+                            <div class="stat-card glass-card p-4 text-center text-white rounded animate-up"
+                                style="animation-delay: 0.3s;">
+                                <h3 class="fw-bold mb-1">98%</h3>
+                                <p class="mb-0">On-Time Completion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- index page end -->
+
+    <!-- location start -->
+    <section class="py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000">
+                <h2 class="fw-bold ">Visit Our Office</h2>
+                <p class="text-light">Find us at our main headquarters</p>
+            </div>
+
+            <div class="card border-0 shadow rounded p-1 bg-secondary overflow-hidden" data-aos="flip-down">
+                <div class="ratio ratio-16x9" style="height: 300px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.689107426443!2d-118.41733678478248!3d34.103003580590196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bfa2d0f9f6e7%3A0x7a4e8be64567a2a!2s123%20Construction%20Ave%2C%20Los%20Angeles%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1689461934033!5m2!1sen!2sus"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- location end -->
+
+    <!-- Bootstrap 5 Footer -->
+    <footer class="bg-dark text-light pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+
+                <!-- Brand & Description -->
+                <div class="col-md-4 mb-4">
+                    <div class="mb-3">
+                        <img src=".iamges/photo.png">
+                    </div>
+                    <p class="small text-white">
+                        An innovative digital platform transforming traditional home construction methods through
+                        seamless collaboration between homeowners, architects, contractors, and suppliers.
+                    </p>
+                    <div class="d-flex gap-3 mt-3 social-icons">
+                        <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2 mb-4">
+                    <h6 class="text-uppercase mb-3 border-bottom border-warning pb-1">Quick Links</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Home</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Services</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Projects</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>About Us</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Contact</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Our Services -->
+                <div class="col-md-3 mb-4">
+                    <h6 class="text-uppercase mb-3 border-bottom border-warning pb-1">Our Services</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Project
+                                Management</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Architecture
+                                Planning</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Contractor
+                                Collaboration</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Supply Chain
+                                Solutions</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Sustainability
+                                Consulting</a></li>
+                        <li><a href="#" class="footer-link"><i class="fas fa-angle-right me-2"></i>Client Portal
+                                Access</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- Contact & Newsletter -->
+                <div class="col-md-3 mb-4">
+                    <h6 class="text-uppercase mb-3 border-bottom border-warning pb-1">Contact Us</h6>
+                    <p class="small mb-1"><i class="fas fa-map-marker-alt me-2"></i>123 Construction Avenue, CA 90210
+                    </p>
+                    <p class="small mb-1"><i class="fas fa-envelope me-2"></i>info@smartbuildhub.com</p>
+                    <p class="small mb-3"><i class="fas fa-phone me-2"></i>+91 7007575886</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control form-control-sm me-2" placeholder="Your email">
+                        <button class="btn btn-warning btn-sm" type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="text-center mt-4 border-top pt-3 small text-light">
+                &copy; 2025 SmartBuildHub. designed and developed by<span class="text-warning"> Shivam gupta</span>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!-- Bootstrap JS Bundle -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/bootstrap.bundle.js" rel="javascript"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                smartSpeed: 600,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    992: { items: 3 }
+                },
+                navText: ['<i class="bi bi-chevron-left fs-3"></i>', '<i class="bi bi-chevron-right fs-3"></i>']
+            });
+        });
+    </script>
+
+</body>
+
+</html>

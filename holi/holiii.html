@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 2026 🎨</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #0a0a2e;
+        }
+
+        /* ===== PARTICLE CANVAS ===== */
+        #particleCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== COLOR SPLASHES ===== */
+        .color-splash {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: 0;
+            animation: floatSplash 8s ease-in-out infinite alternate;
+        }
+        .splash1 { width: 400px; height: 400px; background: #ff006e; top: -100px; left: -100px; animation-delay: 0s; }
+        .splash2 { width: 350px; height: 350px; background: #ffbe0b; top: 20%; right: -80px; animation-delay: 2s; }
+        .splash3 { width: 300px; height: 300px; background: #00f5d4; bottom: 10%; left: 10%; animation-delay: 4s; }
+        .splash4 { width: 350px; height: 350px; background: #8338ec; bottom: -50px; right: 20%; animation-delay: 1s; }
+        .splash5 { width: 250px; height: 250px; background: #fb5607; top: 50%; left: 40%; animation-delay: 3s; }
+
+        @keyframes floatSplash {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, -40px) scale(1.2); }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .holi-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff006e, #ffbe0b, #00f5d4, #8338ec);
+            background-size: 300% 300%;
+            animation: gradientShift 4s ease infinite;
+            padding: 8px 30px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 6rem;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255, 0, 110, 0.5), 0 0 60px rgba(255, 190, 11, 0.3);
+            animation: titlePulse 3s ease-in-out infinite;
+            line-height: 1.1;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 30px rgba(255, 0, 110, 0.5), 0 0 60px rgba(255, 190, 11, 0.3); }
+            50% { transform: scale(1.03); text-shadow: 0 0 50px rgba(255, 0, 110, 0.8), 0 0 100px rgba(255, 190, 11, 0.5), 0 0 150px rgba(0, 245, 212, 0.3); }
+        }
+
+        .hero-year {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff006e, #ffbe0b, #00f5d4, #8338ec, #fb5607);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            animation: fadeInUp 2s ease;
+        }
+
+        /* ===== HOLI IMAGE SECTION ===== */
+        .holi-image-container {
+            position: relative;
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        .holi-main-image {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 30px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(255, 0, 110, 0.3), 0 0 100px rgba(131, 56, 236, 0.2);
+            animation: imageFloat 4s ease-in-out infinite;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .holi-main-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 30px 80px rgba(255, 0, 110, 0.5), 0 0 150px rgba(131, 56, 236, 0.4);
+        }
+
+        @keyframes imageFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .image-ring {
+            position: absolute;
+            border: 3px solid;
+            border-radius: 50%;
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+        .ring1 { width: 120%; height: 120%; top: -10%; left: -10%; border-color: rgba(255, 0, 110, 0.3); animation-delay: 0s; }
+        .ring2 { width: 140%; height: 140%; top: -20%; left: -20%; border-color: rgba(255, 190, 11, 0.2); animation-delay: 1s; }
+        .ring3 { width: 160%; height: 160%; top: -30%; left: -30%; border-color: rgba(0, 245, 212, 0.15); animation-delay: 2s; }
+
+        @keyframes ringPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* ===== WISH BUTTON ===== */
+        .wish-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.4);
+        }
+
+        .wish-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .wish-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 0, 110, 0.6), 0 0 80px rgba(131, 56, 236, 0.3);
+            color: #fff;
+        }
+
+        .wish-btn:hover::before { left: 100%; }
+
+        /* ===== SECTION STYLES ===== */
+        .section-wrapper {
+            position: relative;
+            z-index: 1;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 0 0 20px rgba(255, 190, 11, 0.4);
+        }
+
+        /* ===== WISHES CARDS ===== */
+        .wish-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .wish-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(255, 190, 11, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 0, 110, 0.2);
+        }
+
+        .wish-card:hover::before { opacity: 1; }
+
+        .wish-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: iconBounce 2s ease infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .wish-card h3 {
+            color: #ffbe0b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .wish-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* ===== COLOR PALETTE SECTION ===== */
+        .color-ball {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: ballFloat 3s ease-in-out infinite;
+        }
+
+        .color-ball:hover {
+            transform: scale(1.3) rotate(15deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        @keyframes ballFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 25px 20px;
+            min-width: 120px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-10px);
+            border-color: #ff006e;
+            box-shadow: 0 20px 40px rgba(255, 0, 110, 0.3);
+        }
+
+        .countdown-box .number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff006e, #ffbe0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .countdown-box .label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+            filter: brightness(0.7);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 30px 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item .overlay h4 {
+            color: #ffbe0b;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .gallery-item .overlay p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== MESSAGE SECTION ===== */
+        .message-box {
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.15), rgba(131, 56, 236, 0.15));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 0, 110, 0.1), transparent, rgba(255, 190, 11, 0.1), transparent, rgba(0, 245, 212, 0.1), transparent);
+            animation: rotateBg 10s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            100% { transform: rotate(360deg); }
+        }
+
+        .message-box .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .message-box .quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #fff;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .message-box .author {
+            color: #ffbe0b;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* ===== FLOATING EMOJIS ===== */
+        .floating-emoji {
+            position: fixed;
+            font-size: 2rem;
+            animation: emojiRise linear forwards;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        @keyframes emojiRise {
+            0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg) scale(0); opacity: 0; }
+        }
+
+        /* ===== POWDER BURST ON CLICK ===== */
+        .powder-particle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: powderBurst 1s ease-out forwards;
+        }
+
+        @keyframes powderBurst {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+        }
+
+        /* ===== RANGOLI ===== */
+        .rangoli {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 40px;
+            position: relative;
+            animation: rangoliSpin 20s linear infinite;
+        }
+
+        @keyframes rangoliSpin { 100% { transform: rotate(360deg); } }
+
+        .rangoli-petal {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: 20px 0;
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            z-index: 1;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer .social-icons a {
+            display: inline-flex;
+            width: 50px; height: 50px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            margin: 0 8px;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .footer .social-icons a:hover {
+            background: linear-gradient(135deg, #ff006e, #ffbe0b);
+            border-color: transparent;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+        }
+
+        /* ===== NAV ===== */
+        .holi-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 15px 0;
+            background: rgba(10, 10, 46, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .holi-nav .brand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ffbe0b;
+            text-decoration: none;
+        }
+
+        .holi-nav .nav-link {
+            color: rgba(255,255,255,0.7) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .holi-nav .nav-link:hover {
+            color: #ffbe0b !important;
+        }
+
+        .holi-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            width: 0; height: 2px;
+            background: #ffbe0b;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .holi-nav .nav-link:hover::after { width: 80%; }
+
+        /* ===== PICHKARI SVG ===== */
+        .pichkari {
+            animation: pichkariShake 0.5s ease infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes pichkariShake {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        /* ===== COLOR RAIN ===== */
+        .color-rain {
+            position: fixed;
+            top: -10px;
+            width: 4px;
+            height: 20px;
+            border-radius: 50%;
+            z-index: 0;
+            animation: rainFall linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rainFall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3.5rem; }
+            .hero-year { font-size: 5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .section-title { font-size: 2.5rem; }
+            .countdown-box { min-width: 80px; padding: 15px; }
+            .countdown-box .number { font-size: 2rem; }
+            .message-box { padding: 30px 20px; }
+            .message-box .quote { font-size: 1.5rem; }
+            .color-ball { width: 60px; height: 60px; font-size: 1.3rem; margin: 8px; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-year { font-size: 3.5rem; }
+            .wish-btn { padding: 14px 35px; font-size: 1rem; }
+        }
+
+        /* ===== CONFETTI ===== */
+        .confetti-piece {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 998;
+            pointer-events: none;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotateZ(0deg) rotateX(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotateZ(720deg) rotateX(360deg); opacity: 0; }
+        }
+
+        /* Glitter cursor trail */
+        .cursor-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: trailFade 0.8s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+
+        /* Music toggle */
+        .music-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(255, 0, 110, 0.6);
+        }
+
+        /* Typewriter */
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #ffbe0b;
+            animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+            max-width: 0;
+            display: inline-block;
+        }
+
+        @keyframes typing {
+            from { max-width: 0; }
+            to { max-width: 600px; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Stars */
+        .star {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 0;
+            animation: twinkle 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div id="stars"></div>
+
+    <!-- Color Splashes -->
+    <div class="color-splash splash1"></div>
+    <div class="color-splash splash2"></div>
+    <div class="color-splash splash3"></div>
+    <div class="color-splash splash4"></div>
+    <div class="color-splash splash5"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Color Rain -->
+    <div id="colorRain"></div>
+
+    <!-- Navigation -->
+    <nav class="holi-nav">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="brand">🎨 Holi 2026</a>
+                <div class="d-none d-md-flex gap-4">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#wishes" class="nav-link">Wishes</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#message" class="nav-link">Message</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <div class="holi-badge">🌈 Festival of Colors</div>
+            <h1 class="hero-title">Happy Holi</h1>
+            <div class="hero-year">2026</div>
+
+            <!-- Holi Image -->
+            <div class="holi-image-container">
+                <div class="image-ring ring1"></div>
+                <div class="image-ring ring2"></div>
+                <div class="image-ring ring3"></div>
+                <img src="https://images.unsplash.com/photo-1576024391592-fa32f5c7d21a?w=600&h=400&fit=crop" 
+                     alt="Happy Holi Festival" 
+                     class="holi-main-image"
+                     onerror="this.src='https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=600&h=400&fit=crop'">
+            </div>
+
+            <p class="hero-subtitle">
+                <span class="pichkari">🔫</span> 
+                May your life be filled with colors of happiness 
+                <span class="pichkari">🎨</span>
+            </p>
+
+            <a href="#wishes" class="wish-btn" onclick="burstConfetti(event)">
+                <i class="fas fa-palette me-2"></i> Send Holi Wishes ✨
+            </a>
+
+            <!-- Countdown -->
+            <div class="countdown-container mt-5">
+                <div class="countdown-box">
+                    <div class="number" id="days">000</div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="number" id="hours">00</div>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="number" id="minutes">00</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="number" id="seconds">00</div>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette Section -->
+    <section class="section-wrapper" id="colors">
+        <div class="container text-center">
+            <h2 class="section-title reveal">🌸 Colors of Holi 🌸</h2>
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <div class="color-ball" style="background: linear-gradient(135deg, #ff006e, #ff4081); animation-delay: 0s;" onclick="splashColor(event, '#ff006e')">💗</div>
+                <div class="color-ball" style="background: linear-gradient(135deg, #ffbe0b, #ffd600); animation-delay: 0.3s;" onclick="splashColor(event, '#ffbe0b')">💛</div>
+                <div class="color-ball" style="background: linear-gradient(135deg, #00f5d4, #00e676); animation-delay: 0.6s;" onclick="splashColor(event, '#00f5d4')">💚</div>
+                <div class="color-ball" style="background: linear-gradient(135deg, #8338ec, #b388ff); animation-delay: 0.9s;" onclick="splashColor(event, '#8338ec')">💜</div>
+                <div class="color-ball" style="background: linear-gradient(135deg, #fb5607, #ff9800); animation-delay: 1.2s;" onclick="splashColor(event, '#fb5607')">🧡</div>
+                <div class="color-ball" style="background: linear-gradient(135deg, #3a86ff, #448aff); animation-delay: 1.5s;" onclick="splashColor(event, '#3a86ff')">💙</div>
+            </div>
+            <p class="text-white-50 mt-3 reveal" style="transition-delay: 0.4s;">Click on colors to splash! 🎨</p>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section class="section-wrapper" id="wishes">
+        <div class="container">
+            <h2 class="section-title reveal">✨ Holi Wishes For You ✨</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.1s;">
+                        <div class="icon">🌈</div>
+                        <h3>Colors of Joy</h3>
+                        <p>May the festival of colors bring rainbow of happiness in your life. Wishing you a vibrant and joyful Holi 2026!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.3s;">
+                        <div class="icon">💝</div>
+                        <h3>Love & Togetherness</h3>
+                        <p>Let the colors of Holi spread the message of love and togetherness. May your bonds grow stronger with every color!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.5s;">
+                        <div class="icon">🎉</div>
+                        <h3>Prosperity & Success</h3>
+                        <p>Wishing you a Holi filled with sweet moments and colorful memories. May success paint your life beautifully!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.7s;">
+                        <div class="icon">🕊️</div>
+                        <h3>Peace & Harmony</h3>
+                        <p>May the spirit of Holi fill your heart with peace and your home with harmony. Happy Holi 2026!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.9s;">
+                        <div class="icon">🌺</div>
+                        <h3>New Beginnings</h3>
+                        <p>Let the old colors fade away and new colors of hope and dreams brighten your path this Holi!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="wish-card reveal" style="transition-delay: 1.1s;">
+                        <div class="icon">🎊</div>
+                        <h3>Fun & Laughter</h3>
+                        <p>May your Holi be as colorful as your dreams, as sweet as gujiya, and filled with endless laughter!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-wrapper" id="gallery">
+        <div class="container">
+            <h2 class="section-title reveal">📸 Holi Moments 📸</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1576024391592-fa32f5c7d21a?w=500&h=350&fit=crop" alt="Holi Colors" onerror="this.style.background='linear-gradient(135deg,#ff006e,#ffbe0b)';this.style.height='280px';">
+                        <div class="overlay">
+                            <h4>🎨 Color Splash</h4>
+                            <p>The joy of throwing colors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal" style="transition-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=500&h=350&fit=crop" alt="Holi Celebration" onerror="this.style.background='linear-gradient(135deg,#8338ec,#00f5d4)';this.style.height='280px';">
+                        <div class="overlay">
+                            <h4>🥳 Celebration</h4>
+                            <p>Celebrating with loved ones</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal" style="transition-delay: 0.5s;">
+                        <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=500&h=350&fit=crop" alt="Holi Powder" onerror="this.style.background='linear-gradient(135deg,#fb5607,#ff006e)';this.style.height='280px';">
+                        <div class="overlay">
+                            <h4>💜 Gulal Magic</h4>
+                            <p>Magical powder of joy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal" style="transition-delay: 0.7s;">
+                        <img src="https://images.unsplash.com/photo-1535530992057-57d244f962b0?w=500&h=350&fit=crop" alt="Holi Dance" onerror="this.style.background='linear-gradient(135deg,#ffbe0b,#00f5d4)';this.style.height='280px';">
+                        <div class="overlay">
+                            <h4>💃 Dance & Joy</h4>
+                            <p>Dancing in colors of happiness</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal" style="transition-delay: 0.9s;">
+                        <img src="https://images.unsplash.com/photo-1604422499780-4e4c4a332c78?w=500&h=350&fit=crop" alt="Holi Food" onerror="this.style.background='linear-gradient(135deg,#3a86ff,#8338ec)';this.style.height='280px';">
+                        <div class="overlay">
+                            <h4>🍬 Sweet Treats</h4>
+                            <p>Delicious Holi delicacies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item reveal" style="transition-delay: 1.1s;">
+                        <img src="https://images.unsplash.com/photo-1583932420766-6b5ab07cf981?w=500&h=350&fit=crop" alt="Holi Friends" onerror="this.style.background='linear-gradient(135deg,#ff006e,#8338ec)';this.style.height='280px';">
+                        <div class="overlay">
+                            <h4>🤝 Friendship</h4>
+                            <p>Colors that unite hearts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Message -->
+    <section class="section-wrapper" id="message">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="message-box reveal">
+                        <div class="content">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">🪷</div>
+                            <p class="quote">"Let the colors of Holi paint your life with the shades of happiness, love, and success. May every moment be as bright as the festival itself!"</p>
+                            <p class="author">— Happy Holi 2026 🌸</p>
+                            <button class="wish-btn mt-4" onclick="shareWish()">
+                                <i class="fas fa-share-alt me-2"></i> Share This Wish
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Greeting Card Generator -->
+    <section class="section-wrapper">
+        <div class="container text-center">
+            <h2 class="section-title reveal">🎨 Create Your Greeting 🎨</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="wish-card reveal" style="transition-delay: 0.2s;">
+                        <input type="text" id="senderName" placeholder="Your Name" class="form-control mb-3" 
+                               style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 15px; padding: 15px 20px; font-size: 1.1rem;">
+                        <input type="text" id="receiverName" placeholder="Friend's Name" class="form-control mb-3" 
+                               style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 15px; padding: 15px 20px; font-size: 1.1rem;">
+                        <button class="wish-btn" onclick="generateGreeting()" style="width: 100%;">
+                            🎨 Generate Greeting Card
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="greetingOutput" class="mt-4"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>🎨 Happy Holi 2026 — Spread Colors, Spread Love 🌈</p>
+            <p class="mt-2" style="font-size: 0.85rem;">Made with ❤️ & Colors</p>
+        </div>
+    </footer>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicBtn" onclick="toggleMusic()">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ===== PARTICLE CANVAS SYSTEM =====
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const holiColors = ['#ff006e', '#ffbe0b', '#00f5d4', '#8338ec', '#fb5607', '#3a86ff', '#ff4081', '#ffd600', '#00e676', '#b388ff'];
+        
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 4 + 1;
+                this.speedX = (Math.random() - 0.5) * 1.5;
+                this.speedY = (Math.random() - 0.5) * 1.5;
+                this.color = holiColors[Math.floor(Math.random() * holiColors.length)];
+                this.opacity = Math.random() * 0.6 + 0.2;
+                this.life = Math.random() * 200 + 100;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.life--;
+                if (this.life <= 0 || this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+        }
+
+        const particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // ===== STARS =====
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // ===== COLOR RAIN =====
+        function createColorRain() {
+            const rain = document.getElementById('colorRain');
+            for (let i = 0; i < 30; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'color-rain';
+                drop.style.left = Math.random() * 100 + '%';
+                drop.style.background = holiColors[Math.floor(Math.random() * holiColors.length)];
+                drop.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                drop.style.animationDelay = Math.random() * 10 + 's';
+                drop.style.opacity = Math.random() * 0.5 + 0.1;
+                rain.appendChild(drop);
+            }
+        }
+        createColorRain();
+
+        // ===== COUNTDOWN =====
+        function updateCountdown() {
+            // Holi 2026 is March 10, 2026
+            const holiDate = new Date('March 10, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = holiDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(3, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '🎉';
+                document.getElementById('hours').textContent = '🎨';
+                document.getElementById('minutes').textContent = '🌈';
+                document.getElementById('seconds').textContent = '💝';
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // ===== SCROLL REVEAL =====
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const revealTop = el.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 80) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // ===== POWDER SPLASH ON CLICK =====
+        function splashColor(event, color) {
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'powder-particle';
+                particle.style.left = event.clientX + 'px';
+                particle.style.top = event.clientY + 'px';
+                particle.style.background = color;
+                particle.style.width = (Math.random() * 15 + 5) + 'px';
+                particle.style.height = particle.style.width;
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 200 + 50;
+                particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1000);
+            }
+        }
+
+        // ===== CLICK ANYWHERE POWDER EFFECT =====
+        document.addEventListener('click', (e) => {
+            const colors = holiColors;
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'powder-particle';
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.width = (Math.random() * 10 + 3) + 'px';
+                particle.style.height = particle.style.width;
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 100 + 30;
+                particle.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                particle.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1000);
+            }
+        });
+
+        // ===== CONFETTI BURST =====
+        function burstConfetti(event) {
+            event.preventDefault();
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = holiColors[Math.floor(Math.random() * holiColors.length)];
+                confetti.style.width = (Math.random() * 12 + 5) + 'px';
+                confetti.style.height = (Math.random() * 12 + 5) + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 5000);
+            }
+            // Also spawn emojis
+            const emojis = ['🎨', '🌈', '💜', '💛', '💚', '🧡', '💗', '🎉', '✨', '🎊', '🪷', '🌸'];
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const emoji = document.createElement('div');
+                    emoji.className = 'floating-emoji';
+                    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    emoji.style.left = Math.random() * 100 + '%';
+                    emoji.style.bottom = '-50px';
+                    emoji.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    document.body.appendChild(emoji);
+                    setTimeout(() => emoji.remove(), 6000);
+                }, i * 200);
+            }
+        }
+
+        // ===== CURSOR TRAIL =====
+        let lastTrailTime = 0;
+        document.addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            if (now - lastTrailTime < 50) return;
+            lastTrailTime = now;
+
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = e.clientX + 'px';
+            trail.style.top = e.clientY + 'px';
+            trail.style.background = holiColors[Math.floor(Math.random() * holiColors.length)];
+            document.body.appendChild(trail);
+            setTimeout(() => trail.remove(), 800);
+        });
+
+        // ===== FLOATING EMOJIS AUTO =====
+        function autoEmojis() {
+            const emojis = ['🎨', '🌈', '💜', '💛', '💚', '🧡', '💗', '🌸'];
+            setInterval(() => {
+                const emoji = document.createElement('div');
+                emoji.className = 'floating-emoji';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = Math.random() * 100 + '%';
+                emoji.style.bottom = '-50px';
+                emoji.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                emoji.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+                document.body.appendChild(emoji);
+                setTimeout(() => emoji.remove(), 10000);
+            }, 2000);
+        }
+        autoEmojis();
+
+        // ===== GENERATE GREETING =====
+        function generateGreeting() {
+            const sender = document.getElementById('senderName').value || 'Someone Special';
+            const receiver = document.getElementById('receiverName').value || 'Dear Friend';
+            const output = document.getElementById('greetingOutput');
+            
+            const wishes = [
+                `May every color of Holi add a new shade of happiness in your life!`,
+                `Wishing you a Holi filled with sweet moments and colorful memories!`,
+                `May the vibrant colors of Holi fill your world with joy and laughter!`,
+                `Let the colors of love and friendship brighten your life this Holi!`
+            ];
+            const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+
+            output.innerHTML = `
+                <div class="message-box" style="max-width: 600px; margin: 0 auto; animation: fadeInUp 0.8s ease;">
+                    <div class="content">
+                        <div style="font-size: 3rem;">🎨🌈✨</div>
+                        <h3 style="color: #ffbe0b; font-family: 'Dancing Script', cursive; font-size: 2.5rem; margin: 15px 0;">Happy Holi 2026!</h3>
+                        <p style="color: #fff; font-size: 1.3rem; margin-bottom: 10px;">Dear <span style="color: #ff006e; font-weight: 700;">${receiver}</span>,</p>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.8;">${randomWish}</p>
+                        <p style="color: #ffbe0b; margin-top: 20px; font-weight: 600;">With Love, <span style="color: #00f5d4;">${sender}</span> 💝</p>
+                    </div>
+                </div>
+            `;
+
+            burstConfetti(event);
+        }
+
+        // ===== SHARE WISH =====
+        function shareWish() {
+            const text = "🎨 Happy Holi 2026! 🌈 May your life be filled with colors of happiness, love, and prosperity! Let's celebrate the festival of colors together! 💝✨ #HappyHoli2026 #FestivalOfColors";
+            if (navigator.share) {
+                navigator.share({ title: 'Happy Holi 2026!', text: text });
+            } else {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('🎨 Holi wish copied to clipboard! Share it with your loved ones! 💝');
+                });
+            }
+        }
+
+        // ===== MUSIC TOGGLE =====
+        let isMusicPlaying = false;
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let musicInterval;
+
+        function toggleMusic() {
+            const btn = document.getElementById('musicBtn');
+            if (isMusicPlaying) {
+                clearInterval(musicInterval);
+                btn.innerHTML = '<i class="fas fa-music"></i>';
+                isMusicPlaying = false;
+            } else {
+                playHoliBeats();
+                btn.innerHTML = '<i class="fas fa-pause"></i>';
+                isMusicPlaying = true;
+            }
+        }
+
+        function playNote(freq, duration) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.frequency.value = freq;
+            osc.type = 'sine';
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        function playHoliBeats() {
+            const notes = [523.25, 587.33, 659.25, 698.46, 783.99, 880, 987.77, 1046.5];
+            let i = 0;
+            musicInterval = setInterval(() => {
+                playNote(notes[i % notes.length], 0.3);
+                i++;
+            }, 400);
+        }
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== INITIAL CONFETTI ON LOAD =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti-piece';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = holiColors[Math.floor(Math.random() * holiColors.length)];
+                    confetti.style.width = (Math.random() * 12 + 5) + 'px';
+                    confetti.style.height = (Math.random() * 12 + 5) + 'px';
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 6000);
+                }
+            }, 500);
+        });
+
+        // Animation for fade in
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(40px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

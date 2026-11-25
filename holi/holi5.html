@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 2026 - Super Celebration</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Poppins:wght@300;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --holi-pink: #ff007f;
+            --holi-blue: #00d2ff;
+            --holi-yellow: #ffea00;
+            --holi-green: #00ff88;
+            --holi-purple: #bd00ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: #1a0b2e;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* --- Dynamic Background Animation --- */
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out alternate;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: var(--holi-pink);
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: var(--holi-blue);
+            animation-delay: -2s;
+        }
+
+        .blob-3 {
+            top: 40%;
+            left: 40%;
+            width: 40vw;
+            height: 40vw;
+            background: var(--holi-purple);
+            animation-delay: -4s;
+        }
+
+        .blob-4 {
+            bottom: 20%;
+            left: 10%;
+            width: 30vw;
+            height: 30vw;
+            background: var(--holi-yellow);
+            animation-delay: -6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        /* --- Glassmorphism Card --- */
+        .holi-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .holi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- Typography & Text Effects --- */
+        h1.display-1 {
+            font-family: 'Fredoka One', cursive;
+            text-shadow: 4px 4px 0px var(--holi-pink),
+                8px 8px 0px var(--holi-blue),
+                12px 12px 0px var(--holi-yellow);
+            animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .year-badge {
+            background: linear-gradient(45deg, var(--holi-yellow), var(--holi-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .sub-text {
+            font-family: 'Pacifico', cursive;
+            color: #fff;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* --- Buttons --- */
+        .btn-holi {
+            background: linear-gradient(90deg, var(--holi-pink), var(--holi-purple));
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 20px var(--holi-pink);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-holi::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn-holi:hover::before {
+            left: 100%;
+        }
+
+        .btn-holi:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px var(--holi-blue);
+            color: #fff;
+        }
+
+        /* --- Image Styling --- */
+        .holi-img-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .holi-img-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .holi-img-container:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- Floating Elements --- */
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            animation: floatIcon 3s infinite ease-in-out;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* --- Canvas for Confetti --- */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="bg-blob blob-4"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 py-5">
+        <div class="row w-100 align-items-center">
+
+            <!-- Text Section -->
+            <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                <div class="position-relative">
+                    <i class="fas fa-spray-can floating-icon"
+                        style="top: -20px; left: -20px; color: var(--holi-yellow);"></i>
+                    <i class="fas fa-palette floating-icon"
+                        style="bottom: 0; right: -20px; color: var(--holi-green); animation-delay: 1s;"></i>
+
+                    <h1 class="display-1 text-white mb-3">Happy<br><span class="year-badge">Holi 2026</span></h1>
+                    <p class="sub-text mb-4">Let the colors of joy splash over your life!</p>
+
+                    <p class="text-white-50 mb-5 fs-5">
+                        May this festival bring new opportunities, vibrant happiness, and success to you and your
+                        family.
+                        <br><strong>Wishing you a colorful year ahead!</strong>
+                    </p>
+
+                    <button class="btn btn-holi" onclick="explodeColors()">
+                        <i class="fas fa-paint-brush me-2"></i> Play Colors
+                    </button>
+                </div>
+            </div>
+
+            <!-- Image/Card Section -->
+            <div class="col-lg-6">
+                <div class="holi-card p-4">
+                    <div class="holi-img-container mb-4">
+                        <!-- Using a high quality Unsplash image for Holi -->
+                        <img src="images/bhupesh-pal-hacFEtu9HYk-unsplash.jpg"
+                            alt="Holi Celebration">
+                    </div>
+
+                    <div class="row text-center g-3">
+                        <div class="col-4">
+                            <div class="p-3 rounded-circle bg-white bg-opacity-10 text-white">
+                                <i class="fas fa-heart fa-2x" style="color: var(--holi-pink);"></i>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 rounded-circle bg-white bg-opacity-10 text-white">
+                                <i class="fas fa-music fa-2x" style="color: var(--holi-blue);"></i>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 rounded-circle bg-white bg-opacity-10 text-white">
+                                <i class="fas fa-smile-beam fa-2x" style="color: var(--holi-yellow);"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Initialize Confetti on Load
+        window.onload = function () {
+            fireConfetti();
+        };
+
+        function fireConfetti() {
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function () {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+
+                // Since particles fall down, start a bit higher than random
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        }
+
+        // Button Click Interaction
+        function explodeColors() {
+            // Massive explosion
+            confetti({
+                particleCount: 150,
+                spread: 100,
+                origin: { y: 0.6 },
+                colors: ['#ff007f', '#00d2ff', '#ffea00', '#00ff88', '#bd00ff']
+            });
+
+            // Side cannons
+            setTimeout(() => {
+                confetti({
+                    particleCount: 100,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff007f', '#00d2ff']
+                });
+                confetti({
+                    particleCount: 100,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ffea00', '#00ff88']
+                });
+            }, 200);
+        }
+    </script>
+</body>
+
+</html>
+```

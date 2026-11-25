@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Glass Heart ❤️</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(ellipse at center, #200b35, #080414 65%, #02020b);
+}
+
+.love-card {
+    position: relative;
+    z-index: 2;
+    width: min(95%, 700px);
+    text-align: center;
+    padding: 25px 15px;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    font-family: cursive;
+    color: #ff9ed0;
+    text-shadow: 0 0 25px #ff168b;
+    animation: titleGlow 2s infinite alternate;
+}
+
+.subtitle {
+    margin-top: 15px;
+    color: #e9dff5;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+.heart-scene {
+    height: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 900px;
+    cursor: pointer;
+}
+
+.glass-heart {
+    width: 155px;
+    height: 155px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+    background: linear-gradient(
+        135deg,
+        #ffb4ec,
+        #ff176b 45%,
+        #7000ff
+    );
+    border: 2px solid #ffd7f4;
+    border-radius: 18px;
+    box-shadow:
+        0 0 25px #ff168b,
+        0 0 65px #ff168b,
+        inset 0 0 25px #ffffff77;
+    animation: floating 3s ease-in-out infinite,
+               pulse 1.5s ease-in-out infinite;
+    transition: filter 0.3s;
+}
+
+.glass-heart::before,
+.glass-heart::after {
+    content: "";
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: inherit;
+    border: 2px solid #ffd7f4;
+}
+
+.glass-heart::before {
+    top: -78px;
+    left: -2px;
+}
+
+.glass-heart::after {
+    top: 0;
+    left: 78px;
+}
+
+.glass-heart span {
+    position: absolute;
+    z-index: 2;
+    transform: rotate(45deg);
+    font-size: 110px;
+    color: #fff;
+    text-shadow: 0 0 20px #ff2d9b;
+}
+
+.heart-scene:hover .glass-heart {
+    filter: brightness(1.3);
+}
+
+.heart-glow {
+    position: absolute;
+    bottom: 22px;
+    width: 220px;
+    height: 35px;
+    border-radius: 50%;
+    background: #ff168b;
+    filter: blur(40px);
+    opacity: 0.7;
+}
+
+.orbit {
+    position: absolute;
+    width: 310px;
+    height: 100px;
+    border: 2px solid #ff4cbb;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff168b;
+    pointer-events: none;
+}
+
+.orbit-one {
+    transform: rotate(-18deg);
+    animation: orbitSpin 5s linear infinite;
+}
+
+.orbit-two {
+    width: 350px;
+    height: 125px;
+    border-color: #a879ff;
+    transform: rotate(20deg);
+    animation: orbitSpin 7s linear infinite reverse;
+}
+
+.message {
+    color: #ff9ed0;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin: 10px 0 25px;
+}
+
+button {
+    padding: 15px 28px;
+    background: transparent;
+    color: white;
+    border: 2px solid #ff4cbb;
+    border-radius: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff168b55;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff168b;
+    box-shadow: 0 0 35px #ff168b;
+    transform: scale(1.06);
+}
+
+.counter {
+    margin-top: 18px;
+    color: #c8b6e8;
+    font-size: 14px;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    bottom: -30px;
+    color: #ff72c6;
+    animation: rise linear forwards;
+}
+
+@keyframes floating {
+    0%, 100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -15px;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.06;
+    }
+}
+
+@keyframes orbitSpin {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px #ff168b;
+    }
+    to {
+        text-shadow: 0 0 30px #ff168b, 0 0 45px #a879ff;
+    }
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .heart-scene {
+        height: 300px;
+        transform: scale(0.8);
+    }
+
+    .subtitle {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="stars"></div>
+
+    <main class="love-card">
+        <h1>You Are Special</h1>
+        <p class="subtitle">
+            Not just a part of my life, but my whole heart ❤️
+        </p>
+
+        <div class="heart-scene" id="heartScene">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="glass-heart">
+                <span>♥</span>
+            </div>
+
+            <div class="heart-glow"></div>
+        </div>
+
+        <p class="message" id="message">
+            Forever & Always 💖
+        </p>
+
+        <button id="loveButton">
+            ❤️ Click for More Love
+        </button>
+
+        <p class="counter" id="counter">Love sent: 0 💕</p>
+    </main>
+
+    <script >
+        
+const stars = document.getElementById("stars");
+const loveButton = document.getElementById("loveButton");
+const heartScene = document.getElementById("heartScene");
+const message = document.getElementById("message");
+const counter = document.getElementById("counter");
+
+let loveCount = 0;
+
+const messages = [
+    "You are my happiness ❤️",
+    "You make life beautiful 💖",
+    "You are one of a kind ✨",
+    "Sending you endless love 💕",
+    "Forever & Always 💗"
+];
+
+// Generate floating hearts and sparkles
+function createParticle() {
+    const particle = document.createElement("span");
+
+    particle.className = "star";
+    particle.textContent =
+        Math.random() > 0.35 ? "♥" : "✦";
+
+    particle.style.left = Math.random() * 100 + "vw";
+    particle.style.fontSize =
+        (12 + Math.random() * 22) + "px";
+
+    const duration = 3 + Math.random() * 4;
+    particle.style.animationDuration = duration + "s";
+
+    stars.appendChild(particle);
+
+    setTimeout(() => {
+        particle.remove();
+    }, duration * 1000);
+}
+
+setInterval(createParticle, 250);
+
+// Send love animation
+function sendLove() {
+    loveCount++;
+
+    counter.textContent = `Love sent: ${loveCount} 💕`;
+
+    message.textContent =
+        messages[Math.floor(Math.random() * messages.length)];
+
+    // Create a burst of particles
+    for (let i = 0; i < 18; i++) {
+        setTimeout(createParticle, i * 45);
+    }
+
+    loveButton.textContent = "Love Sent Successfully 💖";
+
+    setTimeout(() => {
+        loveButton.textContent = "❤️ Click for More Love";
+    }, 1200);
+}
+
+loveButton.addEventListener("click", sendLove);
+heartScene.addEventListener("click", sendLove);
+
+    </script>
+</body>
+</html>

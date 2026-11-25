@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f0f8ff;
+        }
+        input, textarea, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        textarea {
+            width: 300px;
+            height: 250px;
+        }
+    </style>
+	<script>
+        function printTable() {
+            var num = document.getElementById("number").value;
+            var output = "";
+
+            if (num === "") {
+                output = "Please enter a number.";
+            } else {
+                for (var i = 1; i <= 10; i++) {
+                    output += num + " × " + i + " = " + (num * i) + "\n";
+                }
+            }
+
+            document.getElementById("result").value = output;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Print Multiplication Table</h2>
+
+    <label for="number">Enter a number:</label><br>
+    <input type="number" id="number"><br>
+
+    <button onclick="printTable()">Generate Table</button><br><br>
+
+    <textarea id="result" readonly></textarea>
+
+    
+
+</body>
+</html>

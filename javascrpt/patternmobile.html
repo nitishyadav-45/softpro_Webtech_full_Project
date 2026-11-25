@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+//pattern validation
+function as(){
+var pmobile=/^[0-9]{10}$/;
+//alert("hii hii");
+var number=document.getElementById("tb").value;
+//alert(name);
+if(!pmobile.test(number)){
+
+//alert("invalid");
+document.getElementById("sp").innerHTML
+document.getElementById("tb").style.border="2px solid red";
+
+}
+else{
+//alert("valid");
+document.getElementById("sp").innerHTML
+document.getElementById("tb").style.border="2px solid green";
+}
+
+}
+
+
+</script>
+</head>
+<body>
+mobile no
+<input type="number" id="tb">
+
+<br>
+<input type="button" value="check" onclick="as()"/>
+<span id="sp"></span>
+</body>
+</html>

@@ -1,0 +1,9 @@
+
+
+
+
+
+
+
+var pname=/^[A-Za-z]{3,7$/};
+var pmobile=/^[0-9]{1,}$/

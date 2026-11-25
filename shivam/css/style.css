@@ -1,0 +1,436 @@
+* {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .sign-in-btn {
+        transition: all 0.4s ease;
+        border-radius: 50px;
+        padding: 0.5rem 1.25rem;
+    }
+
+    .sign-in-btn:hover {
+        background-color: #0d6efd;
+        color: #fff;
+        box-shadow: 0 0 12px rgba(13, 110, 253, 0.5);
+        transform: scale(1.05);
+    }
+
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        background: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: url('https://t4.ftcdn.net/jpg/02/81/89/73/360_F_281897358_3rj9ZBSZHo5s0L1ug7uuIHadSxh9Cc75.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0d6dfde4, #1a1a1aea);
+        opacity: 0.85;
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p.lead {
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+        line-height: 1.6;
+    }
+
+    .btn-primary,
+    .btn-outline-light {
+        padding: 0.6rem 1.5rem;
+        font-weight: 500;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0b5ed7;
+        box-shadow: 0 0 10px rgba(13, 110, 253, 0.6);
+    }
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #0d6efd;
+    }
+
+    .hero-heading {
+         font-family: "Lilita One", sans-serif;
+        font-size:2.5rem;
+        font-weight: 700;
+        margin-bottom: 8px !important;
+        /* letter-spacing: 1px; */
+        /* background: linear-gradient( white 100%); */
+        /* background-size: 200% auto; */
+        /* -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+        /* animation: fadeInSlide 1s ease-out forwards, shine 5s linear infinite;
+        opacity: 0; */
+    }
+
+    @keyframes fadeInSlide {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes shine {
+        0% {
+            background-position: 0% center;
+        }
+
+        100% {
+            background-position: 100% center;
+        }
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0d6efd;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+        color: #555;
+        margin-top: 0.3rem;
+    }
+
+
+    .platform-features {
+        background-color: #f9fafd;
+        color: #333;
+    }
+
+    .feature-card {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        will-change: transform, box-shadow;
+        border: none;
+    }
+
+    .feature-card:hover {
+        box-shadow: 0 20px 40px rgba(13, 110, 253, 0.25);
+        transform: translateY(-12px) scale(1.03);
+    }
+
+    /* Fade-up animation */
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-up {
+        opacity: 0;
+        animation-name: fadeUp;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+
+
+    .feature-card h5 i {
+        font-size: 1.3rem;
+        vertical-align: middle;
+    }
+
+    /* Colorful accent bars at bottom */
+    .feature-accent {
+        height: 6px;
+        width: 100%;
+    }
+
+    /* Different colors for each card */
+    .feature-accent-1 {
+        background: linear-gradient(90deg, #0d6efd, #3a8dff);
+    }
+
+    .feature-accent-2 {
+        background: linear-gradient(90deg, #198754, #57c66a);
+    }
+
+    .feature-accent-3 {
+        background: linear-gradient(90deg, #0dcaf0, #66d9ff);
+    }
+
+
+    .services-section {
+        /* background-color set inline */
+        color: #ddd;
+    }
+
+    .services-section h2,
+    .services-section h5 {
+        /* Override heading colors for dark bg */
+        color: white;
+    }
+
+    .services-section p {
+        color: #bbb;
+    }
+
+    .service-card p {
+        color: #6c757d;
+        /* Bootstrap muted text on white background */
+    }
+
+    /* rest same as before */
+    .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        border: none;
+        background: white !important;
+        /* ensure card bg stays white */
+    }
+
+    .service-card:hover {
+        box-shadow: 0 20px 40px rgba(13, 110, 253, 0.3);
+        transform: translateY(-12px);
+    }
+
+    .service-icon {
+        font-size: 1.8rem;
+        transition: color 0.3s ease;
+    }
+
+    /* brighten icon on hover */
+    .service-card:hover .service-icon {
+        filter: brightness(1.3);
+    }
+
+    .service-btn {
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        padding: 0.5rem 1.5rem;
+        font-weight: 600;
+    }
+
+    .service-btn:hover {
+        background-color: #0d6efd;
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+        text-decoration: none;
+    }
+
+
+    .project-card {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        background: #fff;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .project-img {
+        transition: transform 0.5s ease;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        transform-origin: center center;
+    }
+
+    /* Zoom IN on hover (image grows slightly) */
+    .project-card:hover .project-img {
+        transform: scale(1.1);
+    }
+
+    /* Overlay styling */
+    .project-overlay {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        width: 100%;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Overlay text */
+    .project-overlay h5,
+    .project-overlay small {
+        margin: 0;
+    }
+
+    .project-overlay a.btn {
+        margin-top: 0.5rem;
+    }
+
+    /* Shadow on hover */
+    .project-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+    }
+
+    .process-section {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .process-card {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #f0f0f0;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+        border: none;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .process-card:hover {
+        background-color: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        background-color: #17a2b8;
+        /* Bootstrap info color */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 10px rgba(23, 162, 184, 0.6);
+    }
+
+    .process-card:hover .icon-circle {
+        background-color: #0d6efd;
+        /* Bootstrap primary blue */
+        color: #fff;
+        box-shadow: 0 6px 20px rgba(13, 110, 253, 0.75);
+    }
+
+
+    .testimonial-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* Glassmorphism effect */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover effect */
+    .glass-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animation */
+    .animate-up {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .footer-link i {
+        transition: transform 0.3s ease;
+    }
+
+    .footer-link:hover {
+        color: #f8b739;
+        /* Highlight color on hover */
+        text-decoration: none;
+    }
+
+    .footer-link:hover i {
+        transform: translateX(5px);
+        /* Smooth arrow shift */
+    }
+
+
+    .social-icons a {
+        font-size: 18px;
+        color: #ccc;
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .social-icons a:hover {
+        transform: scale(1.2);
+        color: #fff;
+        background-color: #f57c00;
+        box-shadow: 0 0 10px #f57c00;
+    }

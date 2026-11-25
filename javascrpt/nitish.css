@@ -1,0 +1,21 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.hero-section {
+  background: url('https://images.unsplash.com/photo-1580740077400-326a9f1253f1') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+.text-orange {
+  color: orange;
+}
+
+.info-box {
+  background-color: rgba(15, 15, 30, 0.8);
+  max-width: 700px;
+  margin-top: 3rem;
+}

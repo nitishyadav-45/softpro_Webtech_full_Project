@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Heart ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #25102e, #080b18 75%);
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(25px, 5vw, 42px);
+            color: #ff79b0;
+            text-shadow: 0 0 15px #ff176b;
+            margin-bottom: 85px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .heart-wrapper {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 55px;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: linear-gradient(135deg, #ff1744, #ff4f91);
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite;
+            filter: drop-shadow(0 0 18px #ff1744);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 50px;
+        }
+
+        p {
+            color: #ffd4e5;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 13px 30px;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff1744, #ff4f91);
+            cursor: pointer;
+            box-shadow: 0 0 20px #ff174477;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px #ff1744;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            15% {
+                transform: rotate(-45deg) scale(1.2);
+            }
+
+            30% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            45% {
+                transform: rotate(-45deg) scale(1.15);
+            }
+
+            60% {
+                transform: rotate(-45deg) scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -40px;
+            color: #ff4f91;
+            font-size: 24px;
+            pointer-events: none;
+            animation: floatUp 3s linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) rotate(0deg) scale(0.5);
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-110vh) rotate(360deg) scale(1.5);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                margin-bottom: 70px;
+            }
+
+            .heart-wrapper {
+                margin-bottom: 40px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Forever in My Heart</h1>
+
+        <div class="heart-wrapper" id="heart">
+            <div class="heart"></div>
+        </div>
+
+        <p>You make my world beautiful ❤️</p>
+
+        <button id="loveBtn">Send Love 💖</button>
+    </div>
+
+    <div id="particles"></div>
+
+    <script>
+
+
+        const heart = document.getElementById("heart");
+        const loveBtn = document.getElementById("loveBtn");
+        const particles = document.getElementById("particles");
+
+        // Create floating hearts
+        function createHeart() {
+            const floatingHeart = document.createElement("span");
+
+            floatingHeart.className = "floating-heart";
+            floatingHeart.innerHTML = Math.random() > 0.5 ? "❤️" : "💖";
+
+            floatingHeart.style.left = Math.random() * 100 + "vw";
+            floatingHeart.style.fontSize = (15 + Math.random() * 25) + "px";
+            floatingHeart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+            particles.appendChild(floatingHeart);
+
+            setTimeout(() => {
+                floatingHeart.remove();
+            }, 5000);
+        }
+
+        // Automatically create floating hearts
+        setInterval(createHeart, 500);
+
+        // Create extra hearts on click
+        loveBtn.addEventListener("click", () => {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+
+            loveBtn.textContent = "Love Sent! 💕";
+
+            setTimeout(() => {
+                loveBtn.textContent = "Send Love 💖";
+            }, 1500);
+        });
+
+        // Clicking the main heart creates more hearts
+        heart.addEventListener("click", () => {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(createHeart, i * 80);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

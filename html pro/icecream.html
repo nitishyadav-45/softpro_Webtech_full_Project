@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vadilal Ice Creams - Moments of Delight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- Variables & Reset --- */
+        :root {
+            --primary-red: #e31e24; /* Vadilal Red */
+            --secondary-cream: #fffdd0;
+            --dark-text: #333;
+            --light-text: #fff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Header / Navbar --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i { transform: rotate(-20deg); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--dark-text);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        /* Navbar Hover Effect */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-red);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            padding: 12px 35px;
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(227, 30, 36, 0.4);
+        }
+
+        /* Button Hover & Animation */
+        .btn-main:hover {
+            transform: translateY(-3px) scale(1.05);
+            background-color: #c0151a;
+            box-shadow: 0 6px 20px rgba(227, 30, 36, 0.6);
+        }
+
+        /* --- Stats Section --- */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px 20px;
+            background-color: var(--secondary-cream);
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+        }
+
+        .stat-item p {
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* --- Featured Products --- */
+        .products-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-red);
+            border-radius: 2px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Card Hover Effects */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-img-box {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img-box img {
+            transform: scale(1.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-outline {
+            padding: 8px 20px;
+            border: 2px solid var(--primary-red);
+            color: var(--primary-red);
+            background: transparent;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* --- Categories Section (Circular) --- */
+        .categories {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .cat-item {
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .cat-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 4px solid transparent;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cat-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cat-item:hover .cat-img {
+            border-color: var(--primary-red);
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .cat-item h4 {
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-red);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Reveal Class (JS adds this) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: 0.4s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                color: var(--primary-red);
+            }
+
+            .hero h1 { font-size: 2.5rem; }
+            
+            .stats { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fas fa-ice-cream"></i> VADILAL</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#cafe">Cafe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Moments of Delight for Everyone</h1>
+            <p>Plunge into our Ice Cream ocean. Discover over 125+ lip-smacking flavors made with love and purity.</p>
+            <button class="btn-main">Explore Flavors</button>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <h3>125+</h3>
+            <p>Ice Cream Flavors</p>
+        </div>
+        <div class="stat-item">
+            <h3>25+</h3>
+            <p>Diverse Categories</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Natural Milk</p>
+        </div>
+    </section>
+
+    <section class="categories reveal" id="categories">
+        <div class="section-title">
+            <h2>Our Collections</h2>
+            <p>Find your perfect scoop</p>
+        </div>
+        <div class="category-container">
+            <div class="cat-item">
+                <div class="cat-img">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Cones">
+                </div>
+                <h4>Cones</h4>
+            </div>
+            <div class="cat-item">
+                <div class="cat-img">
+                    <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Scoops">
+                </div>
+                <h4>Gourmet Tubs</h4>
+            </div>
+            <div class="cat-item">
+                <div class="cat-img">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Cakes">
+                </div>
+                <h4>Ice Cream Cakes</h4>
+            </div>
+            <div class="cat-item">
+                <div class="cat-img">
+                    <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Bars">
+                </div>
+                <h4>Candy Bars</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section reveal" id="products">
+        <div class="section-title">
+            <h2>New Arrivals</h2>
+            <p>The cool, new kids on the block</p>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="badge">New</div>
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Choco Fudge">
+                </div>
+                <div class="product-info">
+                    <h3>Choco Fudge</h3>
+                    <p>Rich chocolate fudge swirls in creamy vanilla.</p>
+                    <button class="btn-outline">View Details</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badge">Best Seller</div>
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="American Nuts">
+                </div>
+                <div class="product-info">
+                    <h3>American Nuts</h3>
+                    <p>Loaded with roasted almonds, cashews, and jelly.</p>
+                    <button class="btn-outline">View Details</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="badge">Premium</div>
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1558500524-06a6a0762279?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rajwadi Kulfi">
+                </div>
+                <div class="product-info">
+                    <h3>Rajwadi Kulfi</h3>
+                    <p>Traditional saffron flavored rich creamy kulfi.</p>
+                    <button class="btn-outline">View Details</button>
+                </div>
+            </div>
+             <div class="product-card">
+                <div class="badge">Popular</div>
+                <div class="product-img-box">
+                    <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Strawberry">
+                </div>
+                <div class="product-info">
+                    <h3>Strawberry Bliss</h3>
+                    <p>Fresh strawberry chunks in smooth cream.</p>
+                    <button class="btn-outline">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>About Vadilal</h3>
+                <p>Spreading happiness since 1907. We are committed to quality and innovation in every scoop.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Brand Story</a></li>
+                    <li><a href="#">Franchise</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Locate Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Vadilal House, Ahmedabad, Gujarat</li>
+                    <li><i class="fas fa-phone"></i> +91 79 26564018</li>
+                    <li><i class="fas fa-envelope"></i> info@vadilalgroup.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Vadilal Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Scroll Animation (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                } else {
+                    reveal.classList.remove('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Navbar Background Change on Scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.background = "rgba(255, 255, 255, 1)";
+                header.style.boxShadow = "0 2px 15px rgba(0,0,0,0.15)";
+            } else {
+                header.style.background = "rgba(255, 255, 255, 0.95)";
+                header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+            }
+        });
+    </script>
+</body>
+</html>

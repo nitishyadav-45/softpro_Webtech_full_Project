@@ -1,0 +1,33 @@
+<html>
+<head>
+<script>
+//amazon cart
+function prise()
+{
+//alert("hii");
+var pp=document.getElementById("pp").innerHTML;
+//alert(pp);
+var qut=document.getElementById("qut").value;
+//alert(qut);
+ var v=qut*pp;
+document.getElementById("tp").innerHTML=v;
+
+}
+
+</script>
+</head>
+<body>
+<p id="pp">3502</p>
+Qnantity
+<select id="qut" onchange="prise()">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+
+ </select>
+ <p id="tp">3502</p>
+
+</body>
+</html>

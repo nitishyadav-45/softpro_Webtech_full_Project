@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Time App</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0d1a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #111133;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: #111133;
+    padding: 10px;
+  }
+
+  .tab {
+    padding: 10px 20px;
+    background: #222;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .tab:hover {
+    background: #00ffcc;
+    color: #000;
+  }
+
+  .tab.active {
+    background: #00ffcc;
+    color: #000;
+    box-shadow: 0 0 10px #00ffcc;
+  }
+
+  .content {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    background: #1a1a2e;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffcc33;
+    min-height: 350px;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  input, select, button {
+    padding: 10px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+    background: #00ffcc;
+    color: #000;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #00e6b8;
+  }
+
+  .circle {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 20px auto;
+  }
+
+  .circle svg {
+    transform: rotate(-90deg);
+    width: 130px;
+    height: 130px;
+  }
+
+  .circle circle {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 10px #00ffcc);
+  }
+
+  .circle .bg {
+    stroke: #333;
+  }
+
+  .circle .progress {
+    stroke: #00ffcc;
+    stroke-dasharray: 2 * 3.14 * 55; 
+    stroke-dashoffset: 2 * 3.14 * 55;
+    transition: stroke-dashoffset 0.5s linear;
+  }
+
+  .circle .time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .countdown-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Ultimate Time App</h1>
+</header>
+
+<div class="tabs">
+  <div class="tab active" data-tab="clock">Clock</div>
+  <div class="tab" data-tab="timer">Timer</div>
+  <div class="tab" data-tab="stopwatch">Stopwatch</div>
+  <div class="tab" data-tab="alarm">Alarm</div>
+  <div class="tab" data-tab="countdown">Countdown</div>
+</div>
+
+<div id="clock" class="content active">
+  <div id="clockDisplay" style="font-size:2rem;"></div>
+</div>
+
+<div id="timer" class="content">
+  <input type="number" id="timerMinutes" placeholder="Minutes">
+  <button onclick="startTimer()">Start</button>
+  <button onclick="resetTimer()">Reset</button>
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="65" cy="65" r="55"></circle>
+      <circle class="progress" cx="65" cy="65" r="55"></circle>
+    </svg>
+    <div class="time" id="timerDisplay">0:00</div>
+  </div>
+</div>
+
+<div id="stopwatch" class="content">
+  <div class="circle">
+    <svg>
+      <circle class="bg" cx="65" cy="65" r="55"></circle>
+      <circle class="progress" cx="65" cy="65" r="55"></circle>
+    </svg>
+    <div class="time" id="stopwatchDisplay">0:00:00</div>
+  </div>
+  <button onclick="startStopwatch()">Start</button>
+  <button onclick="pauseStopwatch()">Pause</button>
+  <button onclick="resetStopwatch()">Reset</button>
+</div>
+
+<div id="alarm" class="content">
+  <input type="time" id="alarmTime">
+  <select id="alarmAmPm">
+    <option value="AM">AM</option>
+    <option value="PM">PM</option>
+  </select>
+  <button onclick="setAlarm()">Set Alarm</button>
+  <div id="alarmMessage" style="margin-top:10px;"></div>
+</div>
+
+<div id="countdown" class="content">
+  <input type="datetime-local" id="countdownTarget">
+  <button onclick="startCountdown()">Start</button>
+  <button onclick="resetCountdown()">Reset</button>
+  <div class="countdown-container" id="countdownCircles"></div>
+</div>
+
+<audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+<script>
+  // Tabs navigation
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.content');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      contents.forEach(c=>c.classList.remove('active'));
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Clock
+  function updateClock(){
+    const now = new Date();
+    document.getElementById('clockDisplay').innerText = now.toLocaleTimeString();
+  }
+  setInterval(updateClock,1000);
+  updateClock();
+
+  // Timer
+  let timerInterval, timerTime;
+  function startTimer(){
+    let minutes = parseInt(document.getElementById('timerMinutes').value);
+    if(isNaN(minutes)||minutes<=0) return alert('Enter valid minutes');
+    timerTime = minutes*60;
+    const progressCircle = document.querySelector("#timer .progress");
+    const radius = 55;
+    const circumference = 2*Math.PI*radius;
+    clearInterval(timerInterval);
+    timerInterval = setInterval(()=>{
+      const mins = Math.floor(timerTime/60);
+      const secs = timerTime%60;
+      document.getElementById('timerDisplay').innerText = `${mins}:${secs.toString().padStart(2,'0')}`;
+      progressCircle.style.strokeDasharray = circumference;
+      progressCircle.style.strokeDashoffset = circumference - (circumference*(timerTime/(minutes*60)));
+      if(timerTime<=0){
+        clearInterval(timerInterval);
+        document.getElementById('timerDisplay').innerText="Time's Up!";
+        document.getElementById('alarmSound').play();
+      }
+      timerTime--;
+    },1000);
+  }
+  function resetTimer(){
+    clearInterval(timerInterval);
+    document.getElementById('timerDisplay').innerText="0:00";
+    document.querySelector("#timer .progress").style.strokeDashoffset=2*Math.PI*55;
+  }
+
+  // Stopwatch
+  let stopwatchTime=0, stopwatchInterval;
+  function updateStopwatchDisplay(){
+    const hrs=Math.floor(stopwatchTime/3600);
+    const mins=Math.floor((stopwatchTime%3600)/60);
+    const secs=stopwatchTime%60;
+    document.getElementById('stopwatchDisplay').innerText=
+      `${hrs.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+    const progressCircle=document.querySelector("#stopwatch .progress");
+    const radius=55;
+    const circumference=2*Math.PI*radius;
+    let progress=(stopwatchTime%60)/60;
+    progressCircle.style.strokeDasharray=circumference;
+    progressCircle.style.strokeDashoffset=circumference-(circumference*progress);
+  }
+  function startStopwatch(){ clearInterval(stopwatchInterval); stopwatchInterval=setInterval(()=>{stopwatchTime++;updateStopwatchDisplay();},1000);}
+  function pauseStopwatch(){clearInterval(stopwatchInterval);}
+  function resetStopwatch(){clearInterval(stopwatchInterval); stopwatchTime=0; updateStopwatchDisplay();}
+
+  // Alarm
+  let alarmTime=null, alarmAmPm='AM';
+  function setAlarm(){
+    alarmTime=document.getElementById('alarmTime').value;
+    alarmAmPm=document.getElementById('alarmAmPm').value;
+    if(!alarmTime) return alert('Select a valid time');
+    document.getElementById('alarmMessage').innerText=`Alarm set for ${alarmTime} ${alarmAmPm}`;
+  }
+  setInterval(()=>{
+    if(!alarmTime) return;
+    let [hours, minutes]=alarmTime.split(':').map(Number);
+    if(alarmAmPm==='PM' && hours<12) hours+=12;
+    if(alarmAmPm==='AM' && hours===12) hours=0;
+    const now=new Date();
+    if(now.getHours()===hours && now.getMinutes()===minutes && now.getSeconds()===0){
+      document.getElementById('alarmSound').play();
+      alert('⏰ Alarm Ringing!');
+      alarmTime=null;
+      document.getElementById('alarmMessage').innerText='';
+    }
+  },1000);
+
+  // Countdown
+  let countdownInterval;
+  function startCountdown(){
+    const targetInput=document.getElementById('countdownTarget').value;
+    if(!targetInput) return alert('Select a valid date/time');
+    const targetDate=new Date(targetInput).getTime();
+    const container=document.getElementById('countdownCircles');
+    container.innerHTML='';
+    const units=['Days','Hours','Minutes','Seconds'];
+    const circles={};
+    units.forEach(unit=>{
+      const div=document.createElement('div');
+      div.classList.add('circle');
+      div.innerHTML=`<svg>
+        <circle class="bg" cx="60" cy="60" r="50"></circle>
+        <circle class="progress" cx="60" cy="60" r="50"></circle>
+      </svg>
+      <div class="time" id="countdown-${unit}">0${unit[0]}</div>`;
+      container.appendChild(div);
+      circles[unit]=div.querySelector('.progress');
+    });
+    clearInterval(countdownInterval);
+    countdownInterval=setInterval(()=>{
+      const now=new Date().getTime();
+      const distance=targetDate-now;
+      if(distance<=0){
+        clearInterval(countdownInterval);
+        container.innerHTML="<h2>🎉 Countdown Finished!</h2>";
+        document.getElementById('alarmSound').play();
+        return;
+      }
+      const days=Math.floor(distance/(1000*60*60*24));
+      const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+      const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+      const seconds=Math.floor((distance%(1000*60))/1000);
+      document.getElementById('countdown-Days').innerText=`${days}d`;
+      document.getElementById('countdown-Hours').innerText=`${hours}h`;
+      document.getElementById('countdown-Minutes').innerText=`${minutes}m`;
+      document.getElementById('countdown-Seconds').innerText=`${seconds}s`;
+      const radius=50;
+      const circumference=2*Math.PI*radius;
+      circles['Days'].style.strokeDasharray=circumference;
+      circles['Days'].style.strokeDashoffset=circumference-(circumference*(days/365));
+      circles['Hours'].style.strokeDasharray=circumference;
+      circles['Hours'].style.strokeDashoffset=circumference-(circumference*(hours/24));
+      circles['Minutes'].style.strokeDasharray=circumference;
+      circles['Minutes'].style.strokeDashoffset=circumference-(circumference*(minutes/60));
+      circles['Seconds'].style.strokeDasharray=circumference;
+      circles['Seconds'].style.strokeDashoffset=circumference-(circumference*(seconds/60));
+    },1000);
+  }
+  function resetCountdown(){
+    clearInterval(countdownInterval);
+    document.getElementById('countdownCircles').innerHTML='';
+  }
+</script>
+
+</body>
+</html>

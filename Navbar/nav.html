@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+#nav
+{
+height:50px;
+width:600px;
+border:1px solid;
+//background:black;
+margin-top:50px;
+margin-left:50px;
+border-radius:5px;
+}
+#nav ul
+{
+list-style-type:none;
+}
+#nav ul li
+{
+display:inline;
+//border:1px solid red;
+padding:15px;
+border-radius:5px;
+margin-left:10px;
+}
+#nav ul li a
+{
+color:blue;
+text-decoration:none;
+}
+#nav ul li:hover .sub
+{
+background-color:red;
+display:block;
+}
+.sub
+{
+display:none;
+position:absolute;
+margin-left:40px;
+}
+
+</style>
+</head>
+
+<body>
+<div id="nav">
+<ul>
+<li><a href="#">Home</a></li>
+
+<li><a href="#">About</a>
+<ul class="sub">
+<li style="width:70px;"><a href="#">Vision</a></li><br>
+<li style="width:70px;"><a href="#">Mision</a></li><br>
+<li style="width:70px;"><a href="#">login</a></li>
+</ul>
+</li>
+
+
+
+<li><a href="#">Register</a></li>
+<li><a href="#">Login</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Course</a></li>
+</div>
+
+</body>
+</html>

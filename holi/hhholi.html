@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 2026 - Festival of Colors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .holi-bg {
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Colorful Floating Particles */
+        .particle {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-100vh) rotate(360deg); opacity: 1; }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+        }
+
+        /* Animated Text */
+        .holi-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbowText 5s ease infinite, bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes rainbowText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .holi-subtitle {
+            font-size: 2rem;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Holi Image Container */
+        .holi-image-container {
+            position: relative;
+            margin: 2rem auto;
+            max-width: 500px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .holi-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 5px solid white;
+        }
+
+        .holi-image:hover {
+            transform: scale(1.1) rotate(2deg);
+            transition: all 0.5s ease;
+        }
+
+        /* Colored Powder Animation */
+        .colored-powder {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: powderExplosion 3s ease-out forwards;
+        }
+
+        @keyframes powderExplosion {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+        }
+
+        /* Buttons */
+        .holi-btn {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            border-radius: 50px;
+            margin: 10px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .holi-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.6);
+            color: white;
+        }
+
+        .holi-btn-secondary {
+            background: linear-gradient(45deg, #48dbfb, #ff9ff3);
+            box-shadow: 0 10px 30px rgba(72, 219, 251, 0.4);
+        }
+
+        /* Message Section */
+        .message-section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .message-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 30px;
+            padding: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .message-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+        }
+
+        .message-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Wishes Section */
+        .wishes-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 100px 0;
+            color: white;
+        }
+
+        .wish-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .wish-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .wish-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Colorful Borders */
+        .color-border {
+            border: 5px solid;
+            border-image: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b) 1;
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .holi-title {
+                font-size: 3rem;
+            }
+            
+            .holi-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .message-card {
+                padding: 30px 20px;
+            }
+            
+            .message-title {
+                font-size: 2.5rem;
+            }
+            
+            .holi-btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Floating Hearts */
+        .floating-heart {
+            position: fixed;
+            font-size: 2rem;
+            animation: floatHeart 6s ease-in-out infinite;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        /* Color Splashes */
+        .color-splash {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            filter: blur(20px);
+            animation: splash 4s ease-in-out infinite;
+        }
+
+        @keyframes splash {
+            0%, 100% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 0.5; }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Rainbow Border Animation */
+        .rainbow-border {
+            position: relative;
+            animation: rainbowBorder 3s linear infinite;
+        }
+
+        @keyframes rainbowBorder {
+            0% { border-color: #ff6b6b; }
+            25% { border-color: #feca57; }
+            50% { border-color: #48dbfb; }
+            75% { border-color: #ff9ff3; }
+            100% { border-color: #ff6b6b; }
+        }
+
+        /* Text Glitch Effect */
+        .glitch-text {
+            position: relative;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-text::before {
+            animation: glitch 0.3s infinite;
+            color: #ff6b6b;
+            z-index: -1;
+        }
+
+        .glitch-text::after {
+            animation: glitch 0.3s infinite reverse;
+            color: #48dbfb;
+            z-index: -2;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body class="holi-bg">
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+    <div id="hearts"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="hero-content">
+                        <div class="holi-image-container">
+                            <img src="images/maxime-bhm-icyZmdkCGZ0-unsplash.jpg" 
+                                 alt="Happy Holi Celebration" 
+                                 class="holi-image rainbow-border">
+                        </div>
+                        <h1 class="holi-title glitch-text" data-text="Happy Holi 2026">Happy Holi 2026</h1>
+                        <p class="holi-subtitle">🎨 Festival of Colors 🎨</p>
+                        <p class="mt-4" style="color: white; font-size: 1.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                            Let's celebrate the victory of good over evil with colors, love, and joy!
+                        </p>
+                        <div class="mt-5">
+                            <a href="#wishes" class="holi-btn">
+                                <i class="fas fa-heart"></i> Send Wishes
+                            </a>
+                            <a href="#message" class="holi-btn holi-btn-secondary">
+                                <i class="fas fa-envelope"></i> Read Message
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Splashes -->
+        <div class="color-splash" style="top: 10%; left: 5%; background: #ff6b6b;"></div>
+        <div class="color-splash" style="top: 20%; right: 10%; background: #feca57; animation-delay: 1s;"></div>
+        <div class="color-splash" style="bottom: 15%; left: 20%; background: #48dbfb; animation-delay: 2s;"></div>
+        <div class="color-splash" style="bottom: 25%; right: 5%; background: #ff9ff3; animation-delay: 3s;"></div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="message-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="message-card fade-in">
+                        <h2 class="message-title">🎉 Holi Wishes 🎉</h2>
+                        <p class="message-text">
+                            On this auspicious occasion of Holi 2026, may the vibrant colors of life fill your heart with joy, 
+                            your home with happiness, and your days with endless laughter. May the festival of colors bring 
+                            new beginnings, fresh hopes, and beautiful memories. Let's celebrate the triumph of good over evil 
+                            and spread love, positivity, and harmony everywhere!
+                        </p>
+                        <div class="mt-4 text-center">
+                            <i class="fas fa-palette" style="font-size: 3rem; color: #ff6b6b;"></i>
+                            <i class="fas fa-heart" style="font-size: 3rem; color: #feca57; margin: 0 15px;"></i>
+                            <i class="fas fa-smile" style="font-size: 3rem; color: #48dbfb;"></i>
+                        </div>
+                        <p class="mt-4" style="font-weight: bold; color: #ff6b6b; font-size: 1.5rem;">
+                            🌈 Wishing You a Colorful & Happy Holi! 🌈
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="wishes-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4" style="font-family: 'Great Vibes', cursive;">✨ Special Wishes ✨</h2>
+                <p class="lead">Choose your favorite wish to share!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="wish-card fade-in">
+                        <div class="wish-icon" style="color: #ff6b6b;">🎨</div>
+                        <h4>Colorful Wishes</h4>
+                        <p>May your life be as colorful as Holi! Spread happiness and joy everywhere you go.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wish-card fade-in">
+                        <div class="wish-icon" style="color: #feca57;">💖</div>
+                        <h4>Love & Joy</h4>
+                        <p>May the festival of colors fill your heart with love and your home with joy!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wish-card fade-in">
+                        <div class="wish-icon" style="color: #48dbfb;">🎉</div>
+                        <h4>Happy Celebrations</h4>
+                        <p>Celebrate Holi with your loved ones and create beautiful memories!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wish-card fade-in">
+                        <div class="wish-icon" style="color: #ff9ff3;">🌸</div>
+                        <h4>New Beginnings</h4>
+                        <p>Let Holi bring fresh hopes and new beginnings into your life!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wish-card fade-in">
+                        <div class="wish-icon" style="color: #ff6b6b;">🙏</div>
+                        <h4>Peace & Harmony</h4>
+                        <p>May Holi spread peace, harmony, and love in your heart and home!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wish-card fade-in">
+                        <div class="wish-icon" style="color: #feca57;">⭐</div>
+                        <h4>Success & Prosperity</h4>
+                        <p>May you shine bright this Holi with success and prosperity!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" style="padding: 100px 0; background: white;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4" style="font-family: 'Great Vibes', cursive; color: #ff6b6b;">🎨 Holi Gallery 🎨</h2>
+                <p class="lead">Celebrate the colors of joy!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-lg fade-in" style="border-radius: 20px;">
+                        <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?w=400&h=300&fit=crop" 
+                             class="card-img-top" alt="Holi Colors" style="border-radius: 20px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Colors of Joy</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-lg fade-in" style="border-radius: 20px;">
+                        <img src="https://images.unsplash.com/photo-1545622783-b3e021408a4e?w=400&h=300&fit=crop" 
+                             class="card-img-top" alt="Holi Celebration" style="border-radius: 20px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Celebration Time</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-lg fade-in" style="border-radius: 20px;">
+                        <img src="https://images.unsplash.com/photo-1570158268183-d296b2892211?w=400&h=300&fit=crop" 
+                             class="card-img-top" alt="Happy Holi" style="border-radius: 20px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Happy Moments</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo mb-3">Happy Holi 2026</div>
+            <p class="lead">🎨 Celebrate the Festival of Colors! 🎨</p>
+            <div class="mt-4">
+                <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-3 fs-4"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="mt-4 mb-0">Made with ❤️ for Holi 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        // Create Floating Particles
+        function createParticles() {
+            const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3'];
+            const container = document.getElementById('particles');
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                particle.style.width = (Math.random() * 20 + 10) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+
+        // Create Floating Hearts
+        function createHearts() {
+            const container = document.getElementById('hearts');
+            const hearts = ['❤️', '💖', '🎉', '🌈', '✨'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }, 500);
+        }
+
+        // Scroll Animation
+        function setupScrollAnimation() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(el => observer.observe(el));
+        }
+
+        // Create Colored Powder Effect
+        function createPowderEffect() {
+            const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff'];
+            const container = document.querySelector('.hero-section');
+            
+            setInterval(() => {
+                for (let i = 0; i < 5; i++) {
+                    const powder = document.createElement('div');
+                    powder.className = 'colored-powder';
+                    powder.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    powder.style.left = Math.random() * 100 + '%';
+                    powder.style.top = Math.random() * 50 + '%';
+                    powder.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
+                    powder.style.setProperty('--ty', (Math.random() * -200 - 100) + 'px');
+                    container.appendChild(powder);
+                    
+                    setTimeout(() => powder.remove(), 3000);
+                }
+            }, 500);
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            createHearts();
+            setupScrollAnimation();
+            createPowderEffect();
+        });
+
+        // Add click effect for wishes
+        document.querySelectorAll('.wish-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    card.style.transform = '';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 2026 | Festival of Colors</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --holi-pink: #ff00ff;
+            --holi-yellow: #ffff00;
+            --holi-blue: #00ffff;
+            --holi-orange: #ff8c00;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #fff;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #f06, #9f6, #06f, #f06);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 5s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-section {
+            min-height: 100vh;
+            background: url('https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+        .splash {
+            position: absolute;
+            pointer-events: none;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+        .floating-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 5px solid transparent;
+            background-clip: padding-box;
+        }
+        .floating-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+        }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 100px;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-holi {
+            background: linear-gradient(45deg, #ff0080, #ff8c00);
+            border: none;
+            padding: 15px 40px;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .btn-holi:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+            color: white;
+        }
+        .section-title {
+            font-family: 'Pacifico', cursive;
+            color: #ff0080;
+            font-size: 3.5rem;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div id="particles-js"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="container relative z-20">
+            <div class="animate__animated animate__zoomInDown">
+                <h1 class="display-1 fw-black gradient-text mb-4">HAPPY HOLI 2026</h1>
+                <p class="text-white fs-3 mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+                    Spread the colors of love, joy, and prosperity!
+                </p>
+            </div>
+
+            <div class="d-flex justify-content-center gap-4 mb-5 flex-wrap animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="countdown-item">
+                    <div id="days" class="fs-2">00</div>
+                    <div class="small text-uppercase">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div id="hours" class="fs-2">00</div>
+                    <div class="small text-uppercase">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div id="minutes" class="fs-2">00</div>
+                    <div class="small text-uppercase">Mins</div>
+                </div>
+                <div class="countdown-item">
+                    <div id="seconds" class="fs-2">00</div>
+                    <div class="small text-uppercase">Secs</div>
+                </div>
+            </div>
+
+            <a href="#wish-section" class="btn btn-holi animate__animated animate__bounceIn animate__delay-3s">
+                Send Wishes 🎨
+            </a>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <section id="wish-section" class="py-20 bg-white">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="section-title mb-4 animate__animated animate__fadeIn">May Your Life Be Colorful</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-yellow-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 animate__animated animate__slideInLeft">
+                    <div class="floating-card p-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Holi Colors" class="img-fluid rounded-lg hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__slideInRight">
+                    <div class="p-4">
+                        <h3 class="text-3xl font-bold mb-4 text-orange-600">The Magic of March 2026</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Holi is more than just a festival; it's a celebration of togetherness, forgiveness, and the arrival of spring. In 2026, let's break all barriers and paint the world with the colors of unity. 
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 group cursor-pointer">
+                                <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center group-hover:bg-pink-500 transition-colors">
+                                    <span class="text-pink-500 group-hover:text-white">❤️</span>
+                                </div>
+                                <span class="font-semibold text-gray-700">Red: Love & Passion</span>
+                            </div>
+                            <div class="flex items-center space-x-3 group cursor-pointer">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center group-hover:bg-yellow-500 transition-colors">
+                                    <span class="text-yellow-500 group-hover:text-white">💛</span>
+                                </div>
+                                <span class="font-semibold text-gray-700">Yellow: Happiness & Health</span>
+                            </div>
+                            <div class="flex items-center space-x-3 group cursor-pointer">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                                    <span class="text-green-500 group-hover:text-white">💚</span>
+                                </div>
+                                <span class="font-semibold text-gray-700">Green: New Beginnings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishing Form Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white">
+        <div class="container">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-black mb-8">Personalize Your 2026 Holi Wish</h2>
+                <div class="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20">
+                    <input type="text" id="userName" placeholder="Enter Your Name" class="form-control mb-4 bg-white/5 border-white/20 text-white p-4 text-center fs-4 rounded-xl placeholder-gray-400 focus:bg-white/10 focus:border-pink-500 transition-all">
+                    <button onclick="generateWish()" class="btn btn-holi w-full py-4 text-xl">Create Magic ✨</button>
+                    
+                    <div id="generatedWish" class="mt-8 hidden animate__animated animate__fadeIn">
+                        <div class="p-6 bg-white rounded-2xl text-gray-800 relative shadow-2xl">
+                            <h4 id="wishName" class="font-black text-2xl text-pink-600 mb-2"></h4>
+                            <p class="text-lg italic">"Wishes you a vibrant, colorful, and joyful Holi 2026! May your life be as bright as the colors of Gulal!"</p>
+                            <button onclick="copyLink()" class="mt-4 text-sm font-bold text-blue-600 hover:text-blue-800">Copy Link to Share 🔗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center bg-gray-900 text-gray-400">
+        <p>&copy; 2026 Holi Festival Celebrations | Designed for Joy</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js Config
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 10, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 6, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "bubble" }, "onclick": { "enable": true, "mode": "push" } } }
+        });
+
+        // Countdown Timer for March 3, 2026 (Holi 2026 Date)
+        const countDownDate = new Date("Mar 3, 2026 00:00:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        // Dynamic Splash Effect on Click
+        document.addEventListener('click', (e) => {
+            const colors = ['#ff00ff', '#ffff00', '#00ffff', '#ff8c00', '#ff0000', '#00ff00'];
+            const splash = document.createElement('div');
+            splash.className = 'splash animate__animated animate__zoomIn';
+            splash.style.left = e.pageX - 25 + 'px';
+            splash.style.top = e.pageY - 25 + 'px';
+            splash.style.width = '50px';
+            splash.style.height = '50px';
+            splash.style.borderRadius = '50%';
+            splash.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            splash.style.filter = 'blur(10px)';
+            splash.style.opacity = '0.7';
+            document.body.appendChild(splash);
+            
+            setTimeout(() => {
+                splash.remove();
+            }, 1000);
+        });
+
+        function generateWish() {
+            const name = document.getElementById('userName').value;
+            if(name) {
+                document.getElementById('wishName').innerText = name;
+                document.getElementById('generatedWish').classList.remove('hidden');
+                document.getElementById('generatedWish').scrollIntoView({behavior: 'smooth'});
+            } else {
+                alert("Please enter your name!");
+            }
+        }
+
+        function copyLink() {
+            alert("Link copied! Share it with your friends and family.");
+        }
+    </script>
+</body>
+</html>
